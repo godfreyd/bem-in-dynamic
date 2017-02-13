@@ -1,0 +1,11 @@
+input:checked + .toggle__switcher_type_twitter {
+    background: #8ed0f9;
+}
+input:checked + .toggle__switcher_type_twitter::before {
+    left: 20px;
+    background: #1da1f2;
+}
+input:checked + .toggle__switcher_type_twitter:active::before {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(76, 171, 219, 0.2);
+}
+

@@ -1,0 +1,30 @@
+.headline__title {
+    margin-bottom: 10px;
+    margin-top: 0;
+    animation: fade-in-down 1.4s both cubic-bezier(.215,.61,.355,1);
+    animation-delay: 1s
+}
+
+@-webkit-keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fade-in-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}

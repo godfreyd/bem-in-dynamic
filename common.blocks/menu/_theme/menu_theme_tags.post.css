@@ -1,0 +1,6 @@
+.menu_theme_tags {
+    text-align: center;
+    outline: none;
+    animation:fade-in-down 1.4s both cubic-bezier(.215,.61,.355,1);
+    animation-delay: 1.6s
+}

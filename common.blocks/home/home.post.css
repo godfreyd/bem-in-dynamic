@@ -1,0 +1,21 @@
+.home {
+    height:40%;
+    width: 100%;
+    display: table;
+}
+
+.home_full {
+    height:100%
+}
+
+.home__inner {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.home.home_transition-height {
+    transition: height .75s ease-in-out
+}
+

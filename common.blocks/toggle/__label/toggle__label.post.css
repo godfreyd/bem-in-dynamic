@@ -1,0 +1,8 @@
+.toggle__label {
+    display: inline-block;
+    line-height: 24px;
+    margin: 0 20px 0;
+    vertical-align: middle;
+    transition: color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}

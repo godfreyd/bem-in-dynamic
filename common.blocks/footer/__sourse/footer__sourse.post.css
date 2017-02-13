@@ -1,0 +1,9 @@
+.footer__sourse {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 31px
+}
+
+.footer__sourse:last-child {
+    margin-right: 0
+}

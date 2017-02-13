@@ -1,0 +1,9 @@
+.footer__columns {
+    border: 1px solid #dedede;
+    border-left: 0;
+    border-right: 0;
+    padding: 15px 0 10px;
+    margin: 0;
+    height: 20px;
+    text-align: center;
+}

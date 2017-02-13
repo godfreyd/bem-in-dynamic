@@ -1,0 +1,17 @@
+.header__filter {
+    float: right;
+    padding-right: 34px;
+}
+
+@media screen and (max-width: 767px) {
+    .header__filter {
+        float: left;
+        padding: 10px 4px 0;
+    }
+}
+@media only screen and (max-width: 479px) {
+    /* прячем фильтр */
+    .header__filter {
+        display: none;
+    }
+}
