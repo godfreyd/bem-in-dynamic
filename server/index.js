@@ -1,5 +1,3 @@
-Object.assign || (Object.assign = require('object-assign'));
-
 var fs = require('fs'),
     path = require('path'),
     express = require('express'),
@@ -25,19 +23,11 @@ var fs = require('fs'),
 
     port = process.env.PORT || config.defaultPort,
     isSocket = isNaN(port),
-    isDev = process.env.NODE_ENV === 'development';
-
+    isDev = process.env.NODE_ENV === 'development',
 
     // REST Twitter API
-    var Twitter = require('twitter');
-    var twitterkeys = require('./twitterkeys');
-    var client = new Twitter({
-      consumer_key: twitterkeys.consumer_key,
-      consumer_secret: twitterkeys.consumer_secret,
-      access_token_key: twitterkeys.access_token_key,
-      access_token_secret: twitterkeys.access_token_secret
-    });
-
+    Twitter = require('twitter'),
+    client = new Twitter(config.services.twitter);
 
 require('debug-http')();
 
@@ -74,96 +64,53 @@ app.get('/ping/', function(req, res) {
     res.send('ok');
 });
 
-
-
 app.get('/', function(req, res) {
-
-    var tweets = [], tweetsResult = [];
-
-    if (req.xhr) {
-
-        var params = {q: '#' + req.query.q, count: 12, lang: 'en', result_type: 'recent'};
-
+    var query = req.query,
+        params = {
+        q: query.q ? '#' + query.q : '#bem',
         // the max_id is passed in via a query string param
-        if(req.query.max_id) {
-            params.max_id = req.query.max_id;
-        }
-
-    } else {
-
-        var params = {q: '#bem', count: 12, lang: 'en', result_type: 'recent'};
-    }
+        // https://dev.twitter.com/rest/public/timelines
+        max_id: query.max_id && query.max_id,
+        count: 12,
+        lang: 'en',
+        result_type: 'recent'
+    };
 
     // request data
-    client.get('search/tweets', params, function (err, data, resp) {
+    client.get('search/tweets', params, function(err, data) {
+        if (err) {
+            res.status(500);
 
-        if(err) throw err;
+            return render(req, res, { view: 500 });
+        };
 
-        tweets = data.statuses;
-
-        var i = 0, len = tweets.length;
-
-        console.log(params.q);
-
-
-        for(i; i < len; i++) {
-
-            var tweet = {};
-            tweet.name = tweets[i].user.name;
-            tweet.time = tweets[i].created_at;
-            tweet.q = params.q;
-            tweet.id = tweets[i].id;
-            tweet.url = 'https://twitter.com/' + tweets[i].user.screen_name + '/status/' + tweets[i].id_str;
-            tweet.avatar = tweets[i].user.profile_image_url;
-            tweet.message = tweets[i].text;
-            tweet.service = 'twitter';
-            tweetsResult.push(tweet);
-
-        }
-
-
-
-        if (req.xhr) {
-
-            return render(req, res, {
-                tweetsResult: tweetsResult
-            }, { block: 'lost'});
-
-        }
+        var tweets = data.statuses.map(function(tweet) {
+            return {
+                name: tweet.user.name,
+                time: tweet.created_at,
+                q: params.q,
+                id: tweet.id,
+                url: 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
+                avatar: tweet.user.profile_image_url,
+                message: tweet.text,
+                service: 'twitter'
+            };
+        });
 
         render(req, res, {
             view: 'index',
             title: 'Social Services Search Robot',
             meta: {
-                description: 'Page description',
+                description: 'Page description', // TODO: придумать описание
                 og: {
                     url: 'http://localhost:3000',
-                    siteName: 'БЭМ'
+                    siteName: 'BEM'
                 }
             },
-            tweetsResult: tweetsResult
-
-        });
-
-
+            tweets: tweets
+        }, req.xhr && { block: 'result' });
     });
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 isDev && require('./rebuild')(app);
 

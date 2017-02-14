@@ -1,3 +1,0 @@
-block('lost')(
-    js()(true)
-);

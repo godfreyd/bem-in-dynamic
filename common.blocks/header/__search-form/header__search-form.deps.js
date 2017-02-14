@@ -1,5 +1,6 @@
 ({
     shouldDeps: [
+        'form',
         {
             block: 'button',
             mods: { theme: 'islands', size: 'l', type: 'submit' }

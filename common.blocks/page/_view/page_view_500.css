@@ -1,0 +1,9 @@
+.page_view_500 {
+    font-size: 72px;
+    text-align: center;
+    color: red;
+
+    .page__inner {
+        padding: 0;
+    }
+}

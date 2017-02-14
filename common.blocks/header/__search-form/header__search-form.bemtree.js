@@ -8,7 +8,8 @@ block('header').elem('search-form').replace()(function() {
                 content: [
                     {
                         block: 'input',
-                        mods: { theme: 'islands', size: 'l', 'has-clear': true, type: 'search' }
+                        mods: { theme: 'islands', size: 'l', 'has-clear': true, type: 'search' },
+                        val: this.data.tweets[0].q.substr(1)
                     },
                     {
                         block: 'button',
