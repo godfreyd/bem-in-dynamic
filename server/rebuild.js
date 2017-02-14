@@ -42,7 +42,6 @@ process.env.NO_LIVERELOAD || watch([
     path.join(rootDir, 'desktop.bundles/*/*.bemhtml.js'),
     path.join(rootDir, 'desktop.bundles/*/*.bemtree.js'),
 ], watchOpts).on('all', function(event, file) {
-    console.log('!!!');
     tinyLr.changed(file);
 });
 

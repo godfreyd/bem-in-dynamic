@@ -1,3 +1,0 @@
-block('container')(
-    js()(true)
-);

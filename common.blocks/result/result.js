@@ -22,5 +22,10 @@ modules.define('result', ['i-bem-dom', 'jquery', 'events'], function (provide, b
 
         }
 
+    }, {
+        lazyInit: true,
+        onInit: function() {
+
+        }
     }));
 });

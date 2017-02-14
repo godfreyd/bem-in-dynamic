@@ -1,3 +1,1 @@
-block('header')(
-    tag()('header')
-);
+block('header').tag()('header');

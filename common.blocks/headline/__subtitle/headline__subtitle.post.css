@@ -1,6 +1,6 @@
 .headline__subtitle {
     margin-bottom: 17px;
     margin-top: 0;
-    animation:fade-in-down 1.4s both cubic-bezier(.215,.61,.355,1);
+    animation: headline-fade-in-down 1.4s both cubic-bezier(.215,.61,.355,1);
     animation-delay: 1.3s
 }

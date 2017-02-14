@@ -1,18 +1,18 @@
-block('container').content()(function() {
+block('sssr').content()(function() {
     return [
         {
             block: 'header'
         },
         {
-            block: 'home',
+            block: 'main',
             mods: { full: true }
         },
         {
-            block: 'result'
+            block: 'result',
+            mix: { block: 'lost' }
         },
         {
-            block: 'scroll-btn',
-            mods: {'scroll': true, 'at-start': true }
+            elem: 'more'
         },
         {
             block: 'footer'

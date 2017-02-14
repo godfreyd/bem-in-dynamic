@@ -1,5 +1,5 @@
 block('page').content()(function() {
     return {
-        block: 'container'
+        block: 'sssr'
     };
 });
