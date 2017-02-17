@@ -1,4 +1,4 @@
-.footer {
+:block(footer) {
     position: relative;
     margin-top: -10px;
     background: #fff;
@@ -6,11 +6,11 @@
     text-align: center;
     line-height: 42px;
 
-    & .link {
+    :block(link) {
         margin: 0 10px;
         text-decoration: none;
         color: #616161;
     }
-}
 
+}
 

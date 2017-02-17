@@ -1,6 +1,10 @@
 ({
     shouldDeps: [
         'lost',
-        'post'
+        'post',
+        {
+            block: 'functions',
+            elems: 'throttle'
+        }
     ]
 })

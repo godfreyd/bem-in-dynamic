@@ -1,4 +1,4 @@
-.headline__subtitle {
+:block(headline):elem(subtitle) {
     margin-bottom: 17px;
     margin-top: 0;
     animation: headline-fade-in-down 1.4s both cubic-bezier(.215,.61,.355,1);

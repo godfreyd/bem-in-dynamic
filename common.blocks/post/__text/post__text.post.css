@@ -1,22 +1,21 @@
-.post__text {
+:block(post):elem(text) {
     font-weight: 200;
 }
 
 @media (max-width: 479px) {
-    .post__text {
+    :block(post):elem(text) {
         font-size: 13px;
     }
 }
+
 @media screen and (min-width: 480px) and (max-width: 839px) {
-    .post__text {
+    :block(post):elem(text) {
         font-size: 14px;
     }
-
 }
+
 @media (min-width: 840px) {
-    .post__text {
+    :block(post):elem(text) {
         font-size: 14px;
     }
-
-
 }

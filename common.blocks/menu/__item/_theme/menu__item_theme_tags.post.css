@@ -1,4 +1,4 @@
-.menu__item_theme_tags {
+:block(menu):elem(item):mod(theme tags) {
     font-size: 14px;
     cursor: pointer;
     color: #0072ff;
@@ -20,7 +20,7 @@
         opacity: .5
     }
 
-    &.menu__item_checked {
+    &:block(menu):elem(item):mod(checked){
         background: #0072ff;
         color: #fff;
 

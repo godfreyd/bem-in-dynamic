@@ -9,10 +9,7 @@ block('sssr').content()(function() {
         },
         {
             block: 'result',
-            mix: { block: 'lost' }
-        },
-        {
-            elem: 'more'
+            mix: { block: 'lost'}
         },
         {
             block: 'footer'

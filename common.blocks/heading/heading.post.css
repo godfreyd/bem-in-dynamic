@@ -1,34 +1,36 @@
-.heading {
+:block(heading) {
     line-height: 1;
     letter-spacing: -0.01em;
 }
 
-.heading_level_1 {
+:block(heading):mod(level 1) {
     font-size: 4px;
     font-weight: 600;
 }
 
-.heading_level_2 {
+:block(heading):mod(level 2) {
     font-size: 50px;
     font-weight: 400;
 }
 
-.heading_level_3 {
+:block(heading):mod(level 3) {
     font-size: 22px;
     font-weight: 400;
 }
 
-.heading_level_4 {
+:block(heading):mod(level 4) {
     font-size: 20px;
     font-weight: 300;
 }
 
-.heading_level_5 {
-    font-size: 18px;
-    font-weight: 200;
-}
-
-.heading_level_6 {
+:block(heading):mod(level 5) {
     font-size: 16px;
     font-weight: 200;
 }
+
+:block(heading):mod(level 6) {
+    font-size: 16px;
+    font-weight: 200;
+}
+
+

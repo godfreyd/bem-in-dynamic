@@ -11,11 +11,11 @@ block('header').elem('filter').replace()(function() {
             checked: true
         }
     ].map(item => ({
-        block: 'toggle',
-        mods: { type: item.name },
-        text: item.title,
+        block: 'checkbox',
+        mix: { block: this.block, elem: this.elem },
+        mods: { type: item.name, checked: item.checked },
         name: item.name,
-        checked: item.checked
+        val: item.name,
+        text: item.title
     }));
-
 });

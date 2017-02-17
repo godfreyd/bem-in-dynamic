@@ -1,7 +1,8 @@
 ({
     shouldDeps: [
         {
-            block: 'toggle'
+            block: 'checkbox',
+            mods: { type: ['instagram', 'twitter'], checked: true },
         }
     ]
 })

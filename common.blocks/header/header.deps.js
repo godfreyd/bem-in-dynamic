@@ -2,7 +2,7 @@
     shouldDeps: [
         'logo',
         {
-            elems: ['search-form']
+            elems: ['search-form', 'filter']
         }
     ]
 })

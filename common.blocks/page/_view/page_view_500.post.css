@@ -1,9 +1,9 @@
-.page_view_500 {
+:block(page):mod(view 500) {
     font-size: 72px;
     text-align: center;
     color: red;
 
-    .page__inner {
+    :block(page):elem(inner) {
         padding: 0;
     }
 }

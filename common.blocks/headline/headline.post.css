@@ -1,4 +1,4 @@
-.headline {
+:block(headline){
     text-align: center;
 }
 
@@ -13,3 +13,4 @@
         transform: translateY(0)
     }
 }
+

@@ -1,20 +1,22 @@
-.main {
+:block(main) {
     height:40%;
     width: 100%;
     display: table;
+
+    &:block(main):mod(transition-height) {
+        transition: height .75s ease-in-out
+    }
 }
 
-.main_full {
-    height:100%
+:block(main):mod(full) {
+    height:100%;
 }
 
-.main__inner {
+:block(main):elem(inner){
     position: relative;
     display: table-cell;
     vertical-align: middle;
     width: 100%;
 }
 
-.main.main_transition-height {
-    transition: height .75s ease-in-out
-}
+

@@ -1,4 +1,4 @@
-.lost {
+:block(lost) {
     box-sizing: border-box;
     zoom: 1;
     max-width: 100%;
@@ -6,118 +6,145 @@
     margin-right: auto;
     margin-top: 30px;
     margin-bottom: 30px;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &:before {
+        box-sizing: border-box;
+        content: '';
+        display: table;
+    }
+
+    &:after {
+        box-sizing: border-box;
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
 }
 
-/* TODO: get rid of asterisk */
-.lost,
-.lost *,
-.lost:before,
-.lost:after
-{
-    box-sizing: border-box;
-}
-
-.lost:before {
-    content: '';
-    display: table;
-}
-.lost:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-.lost:last-of-type {
-    margin-bottom: 0;
-}
-.lost__item {
+:block(lost):elem(item) {
     height: 100px;
     background: #f2f2f2;
-}
-.lost__item div {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.lost .lost__item {
-    width: calc(99.99% * 1/1 - (3px - 3px * 1/1));
-    height: auto;
-    padding: 15px;
-}
-.lost .lost__item:nth-child(1n) {
-    float: left;
-    margin-right: 3px;
-    margin-bottom: 3px;
-    clear: none;
-}
-.lost .lost__item:last-child {
-    margin-right: 0;
-}
-.lost .lost__item:nth-child(1n) {
-    margin-right: 0;
-    float: right;
-}
-.lost .lost__item:nth-child(1n + 1) {
-    clear: left;
-}
-@media (min-width: 500px) {
-    .lost .lost__item {
-        width: calc(99.99% * 2/4 - (3px - 3px * 2/4));
-        height: 200px;
-    }
-    .lost .lost__item:nth-child(1n) {
-        float: left;
-        margin-right: 3px;
-        clear: none;
-    }
-    .lost .lost__item:last-child {
-        margin-right: 0;
-    }
-    .lost .lost__item:nth-child(2n) {
-        margin-right: 0;
-        float: right;
-    }
-    .lost .lost__item:nth-child(2n + 1) {
-        clear: left;
+
+    div {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 }
-@media (min-width: 800px) {
-    .lost .lost__item {
-        width: calc(99.99% * 2/6 - (3px - 3px * 2/6));
-        height: 200px;
+
+:block(lost) {
+
+    :block(lost):elem(item) {
+        width: calc(99.99% * 1/1 - (3px - 3px * 1/1));
+        height: auto;
+        padding: 15px;
+
+        &:nth-child(1n) {
+            float: left;
+            margin-right: 3px;
+            margin-bottom: 3px;
+            clear: none;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:nth-child(1n) {
+            margin-right: 0;
+            float: right;
+        }
+
+        &:nth-child(1n + 1) {
+            clear: left;
+        }
     }
-    .lost .lost__item:nth-child(1n) {
-        float: left;
-        margin-right: 3px;
-        clear: none;
+
+    @media (min-width: 500px) {
+
+        :block(lost):elem(item) {
+            width: calc(99.99% * 2/4 - (3px - 3px * 2/4));
+            height: 200px;
+
+            &:nth-child(1n) {
+                float: left;
+                margin-right: 3px;
+                clear: none;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:nth-child(2n) {
+                margin-right: 0;
+                float: right;
+            }
+
+            &:nth-child(2n + 1) {
+                clear: left;
+            }
+        }
     }
-    .lost .lost__item:last-child {
-        margin-right: 0;
+
+    @media (min-width: 800px) {
+
+        :block(lost):elem(item) {
+            width: calc(99.99% * 2/6 - (3px - 3px * 2/6));
+            height: 200px;
+
+            &:nth-child(1n) {
+                float: left;
+                margin-right: 3px;
+                clear: none;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:nth-child(3n) {
+                margin-right: 0;
+                float: right;
+            }
+
+            &:nth-child(3n + 1) {
+                clear: left;
+            }
+        }
     }
-    .lost .lost__item:nth-child(3n) {
-        margin-right: 0;
-        float: right;
-    }
-    .lost .lost__item:nth-child(3n + 1) {
-        clear: left;
-    }
-}
-@media (min-width: 1100px) {
-    .lost .lost__item {
-        width: calc(99.99% * 2/8 - (3px - 3px * 2/8));
-        height: 200px;
-    }
-    .lost .lost__item:nth-child(1n) {
-        float: left;
-        margin-right: 3px;
-        clear: none;
-    }
-    .lost .lost__item:last-child {
-        margin-right: 0;
-    }
-    .lost .lost__item:nth-child(4n) {
-        margin-right: 0;
-        float: right;
-    }
-    .lost .lost__item:nth-child(4n + 1) {
-        clear: left;
+
+    @media (min-width: 1100px) {
+
+        :block(lost):elem(item) {
+            width: calc(99.99% * 2/8 - (3px - 3px * 2/8));
+            height: 200px;
+
+            &:nth-child(1n) {
+                float: left;
+                margin-right: 3px;
+                clear: none;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:nth-child(4n) {
+                margin-right: 0;
+                float: right;
+            }
+
+            &:nth-child(4n + 1) {
+                clear: left;
+            }
+        }
     }
 }

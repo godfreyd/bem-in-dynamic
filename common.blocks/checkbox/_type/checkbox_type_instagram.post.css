@@ -1,0 +1,16 @@
+:block(checkbox):mod(checked) {
+
+    &:block(checkbox):mod(type instagram) :block(checkbox):elem(box) {
+        background: #95b8d4;
+
+        &::before {
+            left: 20px;
+            background: #3f729b;
+        }
+
+        &:active::before {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(76, 171, 219, 0.2);
+
+        }
+    }
+}

@@ -1,4 +1,4 @@
-.page_theme_art {
+:block(page):mod(theme art) {
     font: 16px 'Open Sans', Arial, sans-serif;
     margin: 0;
     background: #fff;
