@@ -3,7 +3,7 @@
         'headline',
         {
             block: 'menu',
-            mods: { theme: 'tags', mode: ['radio', 'radio-check'] },
+            mods: { theme: 'tags', mode: ['radio-check'] },
             elems: [ 'item' ]
         }
     ]

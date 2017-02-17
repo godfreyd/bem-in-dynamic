@@ -1,12 +1,12 @@
 block('result')(
     def()(function() {
-        var tweets = this.data.tweets,
-        lastTweet = tweets[tweets.length - 1];
+        var data = this.data,
+            tweets = data.tweets,
+            lastTweet = tweets[tweets.length - 1];
 
-        this.ctx.js = {
-            maxId: lastTweet.id,
-            q: lastTweet.q
-        };
+        this.ctx.js = Object.assign({
+            q: data.q
+        }, lastTweet ? { maxId: lastTweet.id } : {});
 
         return applyNext();
     }),

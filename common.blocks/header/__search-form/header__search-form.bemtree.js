@@ -9,6 +9,7 @@ block('header').elem('search-form').replace()(function() {
                     {
                         block: 'input',
                         mods: { theme: 'islands', size: 'l', 'has-clear': true, type: 'search' },
+                        name: 'query',
                         val: this.data.tweets[0].q.substr(1)
                     },
                     {

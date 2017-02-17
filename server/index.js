@@ -66,8 +66,9 @@ app.get('/ping/', function(req, res) {
 
 app.get('/', function(req, res) {
     var query = req.query,
+        q = query.q || 'bem',
         params = {
-        q: query.q ? '#' + query.q : '#bem',
+        q: '#' + q,
         // the max_id is passed in via a query string param
         // https://dev.twitter.com/rest/public/timelines
         max_id: query.max_id && query.max_id,
@@ -107,6 +108,7 @@ app.get('/', function(req, res) {
                     siteName: 'BEM'
                 }
             },
+            q: q,
             tweets: tweets
         }, req.xhr && { block: 'result' });
     });

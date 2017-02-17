@@ -5,7 +5,8 @@ block('main').content()(function() {
         },
         {
             block: 'menu',
-            mods: { theme: 'tags', mode: 'radio' },
+            mods: { theme: 'tags', mode: 'radio-check' },
+            val: 'bem',
             content: [
                 'bem',
                 'love',
