@@ -4,21 +4,24 @@ modules.define('result', ['i-bem-dom', 'functions__throttle'], function(provide,
         onSetMod: {
             js: {
                 inited: function () {
-
-                    this._domEvents(bemDom.win).on('scroll', throttle(this._onWinScroll, 500, this));
-
+                    this._onWinScroll = throttle(this._onWinScroll, 500, this);
+                    this.setMod('active');
+                }
+            },
+            active: {
+                'true': function() {
+                    this._domEvents(bemDom.win).on('scroll', this._onWinScroll);
+                },
+                '': function() {
+                    this._domEvents(bemDom.win).un('scroll', this._onWinScroll);
                 }
             }
         },
-
         _onWinScroll: function() {
-            const resultOffset = bemDom.doc.height() - 30;
-            const pageEnd = bemDom.win.scrollTop() + bemDom.win.height() > resultOffset;
+            var resultOffset = bemDom.doc.height() - 30,
+                pageEnd = bemDom.win.scrollTop() + bemDom.win.height() > resultOffset;
 
-            if (pageEnd) {
-                this._emit('scroll');
-            }
+            pageEnd && this._emit('scroll');
         }
-
     }));
 });
