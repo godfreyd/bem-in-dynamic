@@ -1,11 +1,11 @@
 :block(checkbox):mod(checked) {
 
-    &:block(checkbox):mod(type instagram) :block(checkbox):elem(box) {
-        background: #95b8d4;
+    &:block(filter):elem(service):mod(type twitter) :block(checkbox):elem(box) {
+        background: #8ed0f9;
 
         &::before {
             left: 20px;
-            background: #3f729b;
+            background: #1da1f2;
         }
 
         &:active::before {

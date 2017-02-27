@@ -27,7 +27,14 @@ var fs = require('fs'),
 
     // REST Twitter API
     Twitter = require('twitter'),
-    client = new Twitter(config.services.twitter);
+    clientTwitter = new Twitter(config.services.twitter),
+
+    // REST Facebook API
+    FB = require('fb'),
+    clientFacebook = new FB.Facebook(config.services.facebook);
+    clientFacebook.setAccessToken(config.services.facebook.access_token);
+
+
 
 require('debug-http')();
 
@@ -78,7 +85,7 @@ app.get('/', function(req, res) {
     };
 
     // request data
-    client.get('search/tweets', params, function(err, data) {
+    clientTwitter.get('search/tweets', params, function(err, data) {
         if (err) {
             res.status(500);
 
@@ -112,6 +119,34 @@ app.get('/', function(req, res) {
             tweets: tweets
         }, req.xhr && { block: 'result' });
     });
+
+
+    // ищет
+    clientFacebook.api('4', function (res) {
+      if(!res || res.error) {
+       console.log(!res ? 'error occurred' : res.error);
+       return;
+      }
+      console.log(res.id);
+      console.log(res.name);
+    });
+
+    // не ищет
+    clientFacebook.api("/search",
+    {
+        "type": "topic",
+        "q": "clinton",
+        "fields": "id,name,page"
+    }, function (res) {
+      if(!res || res.error) {
+       console.log(!res ? 'error occurred' : res.error);
+       return;
+      }
+      console.log(res);
+    });
+
+
+
 });
 
 isDev && require('./rebuild')(app);

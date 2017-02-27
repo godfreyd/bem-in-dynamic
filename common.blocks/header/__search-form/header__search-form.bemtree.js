@@ -20,8 +20,7 @@ block('header').elem('search-form').replace()(function() {
                 ]
             },
             {
-                block: this.block,
-                elem: 'filter'
+                block: 'filter'
             },
             {
                 block: 'spin',

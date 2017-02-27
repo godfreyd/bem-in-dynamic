@@ -1,4 +1,4 @@
-block('header').elem('filter').replace()(function() {
+block('filter').replace()(function() {
     return [
         {
             name: 'instagram',
@@ -12,8 +12,8 @@ block('header').elem('filter').replace()(function() {
         }
     ].map(item => ({
         block: 'checkbox',
-        mix: { block: this.block, elem: this.elem },
-        mods: { type: item.name, checked: item.checked },
+        mix: { block: this.block, elem: 'service', elemMods: { type: item.name } },
+        mods: { checked: item.checked },
         name: item.name,
         val: item.name,
         text: item.title
