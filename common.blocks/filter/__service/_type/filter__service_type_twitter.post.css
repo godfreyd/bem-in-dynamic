@@ -1,11 +1,11 @@
 :block(checkbox):mod(checked) {
 
     &:block(filter):elem(service):mod(type twitter) :block(checkbox):elem(box) {
-        background: #8ed0f9;
+        background: #65A2D9;
 
         &::before {
             left: 20px;
-            background: #1da1f2;
+            background: #3A7CA5;
         }
 
         &:active::before {

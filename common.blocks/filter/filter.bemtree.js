@@ -1,8 +1,8 @@
 block('filter').replace()(function() {
     return [
         {
-            name: 'instagram',
-            title: 'Instagram',
+            name: 'youtube',
+            title: 'YouTube',
             checked: false
         },
         {

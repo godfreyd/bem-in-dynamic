@@ -28,7 +28,7 @@ block('post').content()(function() {
 
         },
         {
-            elem: 'text',
+            elem: 'content',
             content: ctx.message
         },
         {

@@ -1,7 +1,7 @@
 block('result')(
     def()(function() {
         var data = this.data,
-            tweets = data.tweets,
+            tweets = data.result,
             lastTweet = tweets[tweets.length - 1];
 
         this.ctx.js = Object.assign({
@@ -11,7 +11,7 @@ block('result')(
         return applyNext();
     }),
     content()(function() {
-        return this.data.tweets.map(function(tweet) {
+        return this.data.result.map(function(tweet) {
             return {
                 block: 'lost',
                 elem: 'item',

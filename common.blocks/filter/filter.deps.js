@@ -5,7 +5,7 @@
             mods: { checked: true },
         },
         {
-            elems: { elem: 'service', mods: { type: ['instagram', 'twitter'] } }
+            elems: { elem: 'service', mods: { type: ['youtube', 'twitter'] } }
 
         }
     ]

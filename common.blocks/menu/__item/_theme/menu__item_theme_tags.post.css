@@ -29,5 +29,15 @@
             opacity: 1;
         }
     }
+
+    &:block(menu):elem(item):mod(hovered){
+        background: #D42428;
+        color:#fff;
+
+        &:before {
+            opacity: 1
+        }
+
+    }
 }
 

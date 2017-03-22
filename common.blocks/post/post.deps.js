@@ -1,6 +1,6 @@
 ({
     shouldDeps: [
-        { elem: 'text' },
+        { elem: 'content' },
         'service',
         {
             block: 'link',

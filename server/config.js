@@ -10,12 +10,12 @@ module.exports = {
             access_token_key: '308396397-ZHSV7obGdaACXlEGRfRQ9qGS6zdcSIyMrNKlugSr',
             access_token_secret: 'MQvl2hBHK1NeCYbcCD0AmlyD3s1Rbqb1dJGTjVpNDG4GH'
         },
-            facebook: {
-            appId: '225064887963091',
-            appSecret: '711c043ab8bd33b2965b63216d743ce7',
-            access_token: '225064887963091|snG6N4tnkgla15CYIXlklxcsWgE',
-            xfbml: true,
-            version: 'v2.8'
+        youtube: {
+            client_id: '601807235520-oghq1ged5d6441bo4q23mtb8kaej97dd.apps.googleusercontent.com',
+            client_secret: 'i1qM4Q2j80ZvDqo0TvMtjMje',
+            redirect_url: 'http://localhost:3000',
+            // access_token: 'ya29.GlsVBAnEznGXUY5NGoKNxbueVPIy_VuA6ZE3jJHp_4Q7bv4OnadXkBTGB6rkObz1X_mUu3nx_ctpAwL3s5hGmHBY6NoZOqlWst0e5KzCHX_gmniYEx5e2mAQ8hCq',
+            // refresh_token: '1/SP2pFM2xdTR8RVJ_rhL_-tBd-t7HXtPwHb_TwvN7I88'
         }
     }
 };

@@ -31,7 +31,8 @@
 
 :block(lost):elem(item) {
     height: 100px;
-    background: #ecf0f1;
+    background: #f4f4f4;
+
 
     div {
         margin-top: 0;

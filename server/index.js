@@ -29,10 +29,41 @@ var fs = require('fs'),
     Twitter = require('twitter'),
     clientTwitter = new Twitter(config.services.twitter),
 
-    // REST Facebook API
-    FB = require('fb'),
-    clientFacebook = new FB.Facebook(config.services.facebook);
-    clientFacebook.setAccessToken(config.services.facebook.access_token);
+    // REST YouTube API
+
+    Youtube = require('./googleyoutube'),
+    clientYoutube = new Youtube();
+
+
+
+
+
+    // google = require('googleapis'),
+    // OAuth2 = google.auth.OAuth2;
+    // var oauth2Client = new OAuth2(config.services.youtube.client_id, config.services.youtube.client_secret, config.services.youtube.redirect_url);
+
+    // // var oauth2Client = new OAuth2(config.services.youtube.client_id, config.services.youtube.client_secret, config.services.youtube.redirect_url);
+    // // Retrieve tokens via token exchange explained above or set them:
+    // oauth2Client.setCredentials({
+    //     access_token: config.services.youtube.access_token,
+    //     refresh_token: config.services.youtube.refresh_token,
+    //     // Optional, provide an expiry_date (milliseconds since the Unix Epoch)
+    //     expiry_date: (new Date()).getTime() + (1000 * 60 * 60 * 24 * 7)
+    // });
+
+
+    // var youtube = google.youtube({
+    //     version: 'v3',
+    //     auth: oauth2Client
+    // });
+
+
+
+
+
+
+
+
 
 
 
@@ -84,26 +115,138 @@ app.get('/', function(req, res) {
         result_type: 'recent'
     };
 
-    // request data
-    clientTwitter.get('search/tweets', params, function(err, data) {
-        if (err) {
-            res.status(500);
 
-            return render(req, res, { view: 500 });
-        };
+    var twitterRequest = new Promise(function(resolve, reject) {
 
-        var tweets = data.statuses.map(function(tweet) {
-            return {
-                name: tweet.user.name,
-                time: tweet.created_at,
-                q: params.q,
-                id: tweet.id,
-                url: 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
-                avatar: tweet.user.profile_image_url,
-                message: tweet.text,
-                service: 'twitter'
-            };
+        clientTwitter.get('search/tweets', params, function(err, data) {
+
+            if(err) {
+                reject(err);
+            }
+
+            var tweets = data.statuses.map(function(tweet) {
+                return {
+                    name: tweet.user.name,
+                    time: tweet.created_at,
+                    q: params.q,
+                    id: tweet.id,
+                    url: 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
+                    avatar: tweet.user.profile_image_url,
+                    message: tweet.text,
+                    service: 'twitter'
+                };
+            });
+
+            resolve(tweets);
+
         });
+    });
+
+
+    var code = (query.code) ? query.code : '';
+
+    // если токена нет
+    if(!clientYoutube.isTokenExists()) {
+        // если кода нет
+        if(!code || 0 === code.length) {
+            console.log('1')
+            var authURL =  clientYoutube.getAuthUrl();
+            res.redirect(authURL);
+
+        }else{
+            // если код есть, получаем токен и записываем его в файл
+            console.log('2')
+            tokens =  clientYoutube.getToken(code);
+            res.redirect('/');
+
+        }
+
+    }
+
+
+    var params = {
+        q: q,
+        // max_id: query.max_id && query.max_id,
+        maxResults: 12,
+        type: 'video',
+        part: 'snippet'
+    };
+
+
+    var youtubeRequest = new Promise(function(resolve, reject) {
+
+        // youtube.search.list(params, function(err, response) {
+
+        //     if(err) {
+        //         reject(err);
+        //         // res.status(500);
+        //         // return render(req, res, { view: 500 });
+        //         return console.log(err);
+        //     }
+
+        //     var video = response.items.map(function(video) {
+        //         return {
+        //             name: video.snippet.channelTitle,
+        //             time: video.snippet.publishedAt,
+        //             q: params.q,
+        //             // id: tweet.id,
+        //             url: 'https://www.youtube.com/watch?v=' + video.id.videoId,
+        //             // avatar: tweet.user.profile_image_url,
+        //             message: video.description,
+        //             service: 'youtube'
+        //         };
+        //     });
+
+        //     resolve(video);
+
+        // });
+
+
+        clientYoutube.searchList(params, function(err, response){
+
+            if(err) {
+                reject(err);
+                // res.status(500);
+                // return render(req, res, { view: 500 });
+                return console.log(err);
+            }
+
+            var video = response.items.map(function(video) {
+                return {
+                    name: video.snippet.channelTitle,
+                    time: video.snippet.publishedAt,
+                    q: params.q,
+                    // id: tweet.id,
+                    url: 'https://www.youtube.com/watch?v=' + video.id.videoId,
+                    // avatar: tweet.user.profile_image_url,
+                    message: video.description,
+                    service: 'youtube'
+                };
+            });
+
+            resolve(video);
+        });
+
+
+    });
+
+    Promise.all([youtubeRequest, twitterRequest]).then(function(results) {
+
+        function convertarray(array) {
+            var res = [];
+            for (var i=0; i<array.length; i++) {
+                if (!Array.isArray(array[i])) {
+                    res.push(array[i]);
+                } else {
+                    res = res.concat(convertarray(array[i]));
+                }
+
+            }
+            return res;
+
+        }
+
+        var result = convertarray(results);
 
         render(req, res, {
             view: 'index',
@@ -116,34 +259,17 @@ app.get('/', function(req, res) {
                 }
             },
             q: q,
-            tweets: tweets
+            result: result
         }, req.xhr && { block: 'result' });
+
+    }).catch(function(err) {
+        console.log(err);
+        res.status(500);
+        render(req, res, {
+            view: '500'
+        });
     });
 
-
-    // ищет
-    clientFacebook.api('4', function (res) {
-      if(!res || res.error) {
-       console.log(!res ? 'error occurred' : res.error);
-       return;
-      }
-      console.log(res.id);
-      console.log(res.name);
-    });
-
-    // не ищет
-    clientFacebook.api("/search",
-    {
-        "type": "topic",
-        "q": "clinton",
-        "fields": "id,name,page"
-    }, function (res) {
-      if(!res || res.error) {
-       console.log(!res ? 'error occurred' : res.error);
-       return;
-      }
-      console.log(res);
-    });
 
 
 
