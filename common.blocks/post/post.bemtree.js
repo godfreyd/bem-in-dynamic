@@ -29,7 +29,8 @@ block('post').content()(function() {
         },
         {
             elem: 'content',
-            content: ctx.message
+            elemMods: { type: ctx.service },
+            data: ctx
         },
         {
             elem: 'footer',

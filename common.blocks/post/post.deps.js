@@ -1,6 +1,6 @@
 ({
     shouldDeps: [
-        { elem: 'content' },
+        { elem: 'content', mods: { type: [ 'twitter', 'youtube' ] } },
         'service',
         {
             block: 'link',

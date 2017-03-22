@@ -217,9 +217,9 @@ app.get('/', function(req, res) {
                     time: video.snippet.publishedAt,
                     q: params.q,
                     // id: tweet.id,
-                    url: 'https://www.youtube.com/watch?v=' + video.id.videoId,
+                    video: 'https://www.youtube.com/watch?v=' + video.id.videoId,
                     // avatar: tweet.user.profile_image_url,
-                    message: video.description,
+                    // message: video.description,
                     service: 'youtube'
                 };
             });
@@ -231,6 +231,8 @@ app.get('/', function(req, res) {
     });
 
     Promise.all([youtubeRequest, twitterRequest]).then(function(results) {
+
+
 
         function convertarray(array) {
             var res = [];
@@ -247,6 +249,8 @@ app.get('/', function(req, res) {
         }
 
         var result = convertarray(results);
+
+        console.log(result)
 
         render(req, res, {
             view: 'index',
