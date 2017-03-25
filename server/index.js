@@ -75,7 +75,6 @@ app.get('/ping/', function(req, res) {
 app.get('/', function(req, res) {
     var query = req.query,
         params = {
-        // q: '#' + q,
         // the max_id is passed in via a query string param
         // https://dev.twitter.com/rest/public/timelines
         max_id: query.max_id && query.max_id,
