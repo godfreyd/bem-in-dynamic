@@ -25,6 +25,8 @@ var fs = require('fs'),
     isSocket = isNaN(port),
     isDev = process.env.NODE_ENV === 'development',
 
+    moment = require('moment'),
+
     // REST Twitter API
     Twitter = require('twitter'),
     clientTwitter = new Twitter(config.services.twitter),
@@ -33,38 +35,6 @@ var fs = require('fs'),
 
     Youtube = require('./googleyoutube'),
     clientYoutube = new Youtube();
-
-
-
-
-
-    // google = require('googleapis'),
-    // OAuth2 = google.auth.OAuth2;
-    // var oauth2Client = new OAuth2(config.services.youtube.client_id, config.services.youtube.client_secret, config.services.youtube.redirect_url);
-
-    // // var oauth2Client = new OAuth2(config.services.youtube.client_id, config.services.youtube.client_secret, config.services.youtube.redirect_url);
-    // // Retrieve tokens via token exchange explained above or set them:
-    // oauth2Client.setCredentials({
-    //     access_token: config.services.youtube.access_token,
-    //     refresh_token: config.services.youtube.refresh_token,
-    //     // Optional, provide an expiry_date (milliseconds since the Unix Epoch)
-    //     expiry_date: (new Date()).getTime() + (1000 * 60 * 60 * 24 * 7)
-    // });
-
-
-    // var youtube = google.youtube({
-    //     version: 'v3',
-    //     auth: oauth2Client
-    // });
-
-
-
-
-
-
-
-
-
 
 
 require('debug-http')();
@@ -127,7 +97,7 @@ app.get('/', function(req, res) {
             var tweets = data.statuses.map(function(tweet) {
                 return {
                     name: tweet.user.name,
-                    time: tweet.created_at,
+                    time: tweet.created_at, // UTC time
                     q: params.q,
                     id: tweet.id,
                     url: 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
@@ -137,7 +107,14 @@ app.get('/', function(req, res) {
                 };
             });
 
-            resolve(tweets);
+
+            var lastTweet = tweets[tweets.length -1],
+                maxId = lastTweet.id,
+                tweetsList = {};
+                tweetsList.maxid = maxId;
+                tweetsList.tweets = tweets;
+
+            resolve(tweetsList);
 
         });
     });
@@ -149,13 +126,11 @@ app.get('/', function(req, res) {
     if(!clientYoutube.isTokenExists()) {
         // если кода нет
         if(!code || 0 === code.length) {
-            console.log('1')
             var authURL =  clientYoutube.getAuthUrl();
             res.redirect(authURL);
 
         }else{
             // если код есть, получаем токен и записываем его в файл
-            console.log('2')
             tokens =  clientYoutube.getToken(code);
             res.redirect('/');
 
@@ -166,43 +141,19 @@ app.get('/', function(req, res) {
 
     var params = {
         q: q,
-        // max_id: query.max_id && query.max_id,
+        pageToken: query.next_page && query.next_page,
         maxResults: 12,
+        relevanceLanguage: 'en',
         type: 'video',
+        order: 'date',
         part: 'snippet'
     };
 
 
     var youtubeRequest = new Promise(function(resolve, reject) {
 
-        // youtube.search.list(params, function(err, response) {
 
-        //     if(err) {
-        //         reject(err);
-        //         // res.status(500);
-        //         // return render(req, res, { view: 500 });
-        //         return console.log(err);
-        //     }
-
-        //     var video = response.items.map(function(video) {
-        //         return {
-        //             name: video.snippet.channelTitle,
-        //             time: video.snippet.publishedAt,
-        //             q: params.q,
-        //             // id: tweet.id,
-        //             url: 'https://www.youtube.com/watch?v=' + video.id.videoId,
-        //             // avatar: tweet.user.profile_image_url,
-        //             message: video.description,
-        //             service: 'youtube'
-        //         };
-        //     });
-
-        //     resolve(video);
-
-        // });
-
-
-        clientYoutube.searchList(params, function(err, response){
+        clientYoutube.searchList(params, function(err, data){
 
             if(err) {
                 reject(err);
@@ -211,46 +162,57 @@ app.get('/', function(req, res) {
                 return console.log(err);
             }
 
-            var video = response.items.map(function(video) {
+
+            var video = data.items.map(function(video) {
                 return {
                     name: video.snippet.channelTitle,
-                    time: video.snippet.publishedAt,
+                    time: video.snippet.publishedAt, // RFC 3339 formatted date-time
                     q: params.q,
-                    // id: tweet.id,
-                    video: 'https://www.youtube.com/watch?v=' + video.id.videoId,
+                    nextpage: data.nextPageToken,
+                    url: 'https://www.youtube.com/embed/' + video.id.videoId,
                     // avatar: tweet.user.profile_image_url,
                     // message: video.description,
                     service: 'youtube'
                 };
             });
 
-            resolve(video);
-        });
+            var lastClip = video[video.length -1];
+                nextPage = lastClip.nextpage,
+                clipsList = {};
+                clipsList.nextpage = nextPage;
+                clipsList.clips = video;
 
+            resolve(clipsList);
+        });
 
     });
 
     Promise.all([youtubeRequest, twitterRequest]).then(function(results) {
 
+        var nextpage = results[0].nextpage;
+        var clips = results[0].clips;
+        var maxid = results[1].maxid;
+        var tweets = results[1].tweets;
+        var result = clips.concat(tweets);
 
+        for (var i =0; i<result.length; i++) {
 
-        function convertarray(array) {
-            var res = [];
-            for (var i=0; i<array.length; i++) {
-                if (!Array.isArray(array[i])) {
-                    res.push(array[i]);
-                } else {
-                    res = res.concat(convertarray(array[i]));
-                }
-
-            }
-            return res;
+            result[i].time = +new Date(result[i].time);
 
         }
 
-        var result = convertarray(results);
+        function compareTime(itemA, itemB) {
+          return itemA.time - itemB.time;
+        }
 
-        console.log(result)
+        result.sort(compareTime);
+
+
+        for (var i =0; i<result.length; i++) {
+
+            result[i].time = moment(result[i].time).fromNow();
+
+        }
 
         render(req, res, {
             view: 'index',
@@ -263,6 +225,8 @@ app.get('/', function(req, res) {
                 }
             },
             q: q,
+            maxid: maxid,
+            nextpage: nextpage,
             result: result
         }, req.xhr && { block: 'result' });
 
@@ -273,8 +237,6 @@ app.get('/', function(req, res) {
             view: '500'
         });
     });
-
-
 
 
 });

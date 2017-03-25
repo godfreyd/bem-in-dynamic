@@ -3,7 +3,7 @@ block('filter').replace()(function() {
         {
             name: 'youtube',
             title: 'YouTube',
-            checked: false
+            checked: true
         },
         {
             name: 'twitter',

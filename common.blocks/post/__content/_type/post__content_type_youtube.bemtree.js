@@ -1,14 +1,12 @@
 block('post').elem('content').elemMod('type', 'youtube').content()(function() {
 
-    var data = this.data;
+    var data = this.ctx.data;
 
     return [
         {
-            block: 'link',
-            mods: { theme : 'islands', size : 'm' },
-            url: data.video,
-            content: 'Video'
+            tag: 'iframe',
+            attrs: { width: '280', height: '120', src: data.url, frameborder: 0, allowfullscreen: true}
         }
-    ]
+    ];
 
 });

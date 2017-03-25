@@ -42,14 +42,17 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
                 data = this._form.serializeToJson(),
                 query = data.query,
                 maxId = opts.isScroll && params.maxId,
+                nextPage = opts.isScroll && params.nextPage,
                 possibleValues = this._menu.getItems().map(function(item) {
                     return item.getVal();
                 });
 
+                console.log(params);
+
             this._menu.setVal(possibleValues.indexOf(query) > -1 ? query : undefined);
             this._result.setMod('active', !!data.twitter);
 
-            if (!query || !data.twitter) {
+            if (!query || !data.twitter || !data.youtube) {
                 return this._renderNoResults();
             }
 
@@ -59,7 +62,7 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
             // console.log('====>', '/?q=' + query + (maxId ? '&max_id=' + maxId : ''));
 
             $.ajax({
-                url: '/?q=' + query + (maxId ? '&max_id=' + maxId : ''),
+                url: '/?q=' + query + (maxId ? '&max_id=' + maxId : '') + (nextPage ? '&next_page=' + nextPage : ''),
             }).then(function(res) {
                 _this._spin.delMod('visible');
                 var items = $(res).children();
