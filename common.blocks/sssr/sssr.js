@@ -28,8 +28,6 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
             var val = e.bemTarget.getVal();
 
             val && this._form.findChildBlock(Input).setVal(val);
-
-            console.log(val)
         },
 
         _renderNoResults: function() {
