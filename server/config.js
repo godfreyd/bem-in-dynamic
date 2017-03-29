@@ -13,9 +13,7 @@ module.exports = {
         youtube: {
             client_id: '601807235520-oghq1ged5d6441bo4q23mtb8kaej97dd.apps.googleusercontent.com',
             client_secret: 'i1qM4Q2j80ZvDqo0TvMtjMje',
-            redirect_url: 'http://localhost:3000',
-            // access_token: 'ya29.GlsVBAnEznGXUY5NGoKNxbueVPIy_VuA6ZE3jJHp_4Q7bv4OnadXkBTGB6rkObz1X_mUu3nx_ctpAwL3s5hGmHBY6NoZOqlWst0e5KzCHX_gmniYEx5e2mAQ8hCq',
-            // refresh_token: '1/SP2pFM2xdTR8RVJ_rhL_-tBd-t7HXtPwHb_TwvN7I88'
+            redirect_url: 'http://localhost:3000'
         }
     }
 };

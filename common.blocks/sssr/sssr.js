@@ -28,6 +28,8 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
             var val = e.bemTarget.getVal();
 
             val && this._form.findChildBlock(Input).setVal(val);
+
+            console.log(val)
         },
 
         _renderNoResults: function() {
@@ -46,8 +48,6 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
                 possibleValues = this._menu.getItems().map(function(item) {
                     return item.getVal();
                 });
-
-                console.log(params);
 
             this._menu.setVal(possibleValues.indexOf(query) > -1 ? query : undefined);
             this._result.setMod('active', !!data.twitter);
