@@ -32,8 +32,7 @@ var fs = require('fs'),
     clientTwitter = new Twitter(config.services.twitter),
 
     // REST YouTube API
-
-    Youtube = require('./googleyoutube'),
+    Youtube = require('./googleyoutube')(config.services.youtube),
     clientYoutube = new Youtube();
 
 
@@ -72,32 +71,58 @@ app.get('/ping/', function(req, res) {
     res.send('ok');
 });
 
+function getYoutubeData() {
+
+}
+
+function getTwitterData() {
+
+}
+
 app.get('/', function(req, res) {
     var query = req.query,
-        params = {
+        code = query.code || '',
+        q = query.q ? '#' + query.q : '#bem';
+
+    // TODO: поддержать отключение ютуба
+
+    // если токена нет
+    if (!clientYoutube.isTokenExists()) {
+        // если кода нет
+        if (!code || 0 === code.length) {
+            var authURL = clientYoutube.getAuthUrl();
+
+            return res.redirect(authURL);
+        } else {
+            // если код есть, получаем токен и записываем его в файл
+            var tokens = clientYoutube.getToken(code);
+
+            return res.redirect('/');
+        }
+    }
+
+    var twitterParams = {
         // the max_id is passed in via a query string param
         // https://dev.twitter.com/rest/public/timelines
         max_id: query.max_id && query.max_id,
         count: 12,
         lang: 'en',
-        result_type: 'recent'
+        result_type: 'recent',
+        q: q
     };
-    q = params.q = query.q ? '#' + query.q : '#bem';
-
 
     var twitterRequest = new Promise(function(resolve, reject) {
-
-        clientTwitter.get('search/tweets', params, function(err, data) {
-
-            if(err) {
+        clientTwitter.get('search/tweets', twitterParams, function(err, data) {
+            if (err) {
                 reject(err);
+                return;
             }
 
             var tweets = data.statuses.map(function(tweet) {
                 return {
                     name: tweet.user.name,
                     time: tweet.created_at, // UTC time
-                    q: params.q,
+                    q: twitterParams.q,
                     id: tweet.id,
                     url: 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
                     avatar: tweet.user.profile_image_url,
@@ -106,39 +131,16 @@ app.get('/', function(req, res) {
                 };
             });
 
+            var lastTweet = tweets[tweets.length -1];
 
-            var lastTweet = tweets[tweets.length -1],
-                maxId = lastTweet.id,
-                tweetsList = {};
-                tweetsList.maxid = maxId;
-                tweetsList.tweets = tweets;
-
-            resolve(tweetsList);
-
+            resolve({
+                tweets: tweets,
+                maxid: lastTweet.id
+            });
         });
     });
 
-
-    var code = (query.code) ? query.code : '';
-
-    // если токена нет
-    if(!clientYoutube.isTokenExists()) {
-        // если кода нет
-        if(!code || 0 === code.length) {
-            var authURL =  clientYoutube.getAuthUrl();
-            res.redirect(authURL);
-
-        }else{
-            // если код есть, получаем токен и записываем его в файл
-            tokens =  clientYoutube.getToken(code);
-            res.redirect('/');
-
-        }
-
-    }
-
-
-    var params = {
+    var youtubeParams = {
         q: q,
         pageToken: query.next_page && query.next_page,
         maxResults: 12,
@@ -148,25 +150,20 @@ app.get('/', function(req, res) {
         part: 'snippet'
     };
 
-
     var youtubeRequest = new Promise(function(resolve, reject) {
-
-
-        clientYoutube.searchList(params, function(err, data){
-
-            if(err) {
+        clientYoutube.searchList(youtubeParams, function(err, data){
+            if (err) {
                 reject(err);
                 // res.status(500);
                 // return render(req, res, { view: 500 });
                 return console.log(err);
             }
 
-
             var video = data.items.map(function(video) {
                 return {
                     name: video.snippet.channelTitle,
                     time: video.snippet.publishedAt, // RFC 3339 formatted date-time
-                    q: params.q,
+                    q: youtubeParams.q,
                     nextpage: data.nextPageToken,
                     url: 'https://www.youtube.com/embed/' + video.id.videoId,
                     // avatar: tweet.user.profile_image_url,
@@ -183,35 +180,27 @@ app.get('/', function(req, res) {
 
             resolve(clipsList);
         });
-
     });
 
     Promise.all([youtubeRequest, twitterRequest]).then(function(results) {
+        var youtubeData = results[0],
+            twitterData = results[1],
+            nextpage = youtubeData.nextpage,
+            clips = youtubeData.clips,
+            maxid = twitterData.maxid,
+            tweets = twitterData.tweets,
+            results = clips.concat(tweets);
 
-        var nextpage = results[0].nextpage;
-        var clips = results[0].clips;
-        var maxid = results[1].maxid;
-        var tweets = results[1].tweets;
-        var result = clips.concat(tweets);
-
-        for (var i =0; i<result.length; i++) {
-
-            result[i].time = +new Date(result[i].time);
-
-        }
-
-        function compareTime(itemA, itemB) {
-          return itemA.time - itemB.time;
-        }
-
-        result.sort(compareTime);
-
-
-        for (var i =0; i<result.length; i++) {
-
-            result[i].time = moment(result[i].time).fromNow();
-
-        }
+        results
+            .forEach(function(item) {
+                item.time = +new Date(results[i].time);
+            })
+            .sort(function compareTime(itemA, itemB) {
+                return itemB.time - itemA.time;
+            })
+            .forEach(function(item) {
+                item.time = moment(results[i].time).fromNow();
+            });
 
         render(req, res, {
             view: 'index',
@@ -226,7 +215,7 @@ app.get('/', function(req, res) {
             q: q,
             maxid: maxid,
             nextpage: nextpage,
-            result: result
+            result: results
         }, req.xhr && { block: 'result' });
 
     }).catch(function(err) {
