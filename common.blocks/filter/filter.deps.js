@@ -1,8 +1,7 @@
 ({
     shouldDeps: [
         {
-            block: 'checkbox',
-            mods: { checked: true },
+            block: 'checkbox'
         },
         {
             elems: { elem: 'service', mods: { type: ['youtube', 'twitter'] } }
