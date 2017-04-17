@@ -1,3 +1,5 @@
-html, :block(page) {
+html,
+:block(page)
+{
     height: 100%;
 }

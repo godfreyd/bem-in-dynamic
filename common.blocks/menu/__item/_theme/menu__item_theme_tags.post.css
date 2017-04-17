@@ -1,43 +1,62 @@
-:block(menu):elem(item):mod(theme tags) {
+:block(menu):elem(item):mod(theme tags)
+{
     font-size: 14px;
-    cursor: pointer;
-    color: #0072ff;
-    border-radius: 5px;
-    background: #e5f1ff;
-    text-decoration: none;
-    border: none;
-    outline: 0;
-    position: relative;
-    transition: none;
-    text-transform: lowercase;
-    display: inline-block;
-    padding: 3px 11px;
-    margin-bottom: 6px;
-    margin-right: 6px;
 
-    &:before {
+    position: relative;
+
+    display: inline-block;
+
+    margin-right: 6px;
+    margin-bottom: 6px;
+    padding: 3px 11px;
+
+    cursor: pointer;
+    transition: none;
+    text-decoration: none;
+    text-transform: lowercase;
+
+    color: #0072ff;
+    border: none;
+    border-radius: 5px;
+    outline: 0;
+    background: #e5f1ff;
+
+    &:block(menu):elem(item):mod(theme tags):before
+    {
         content: '# ';
-        opacity: .5
+
+        opacity: .5;
     }
 
-    &:block(menu):elem(item):mod(checked){
-        background: #0072ff;
+    &:block(menu):elem(item):mod(checked)
+    {
         color: #fff;
+        background: #0072ff;
 
-        &:before {
+        &:before
+        {
             content: '● ';
+
             opacity: 1;
         }
     }
 
-    &:block(menu):elem(item):mod(hovered){
-        background: #D42428;
-        color:#fff;
+    &:block(menu):elem(item):mod(hovered)
+    {
+        color: #fff;
+        background: #d42428;
 
-        &:before {
-            opacity: 1
+        &:before
+        {
+            opacity: 1;
         }
-
     }
 }
+
+
+
+
+
+
+
 

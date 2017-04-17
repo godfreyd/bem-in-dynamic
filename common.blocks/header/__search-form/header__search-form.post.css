@@ -1,5 +1,8 @@
-.header__search-form {
-    align-items: center;
-    width: 80%;
+.header__search-form
+{
     display: flex;
+
+    width: 80%;
+
+    align-items: center;
 }

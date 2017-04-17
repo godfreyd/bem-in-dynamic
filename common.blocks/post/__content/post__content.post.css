@@ -1,21 +1,28 @@
-:block(post):elem(content) {
+:block(post):elem(content)
+{
     font-weight: 200;
 }
 
-@media (max-width: 479px) {
-    :block(post):elem(content) {
+@media (max-width: 479px)
+{
+    :block(post):elem(content)
+    {
         font-size: 13px;
     }
 }
 
-@media screen and (min-width: 480px) and (max-width: 839px) {
-    :block(post):elem(content) {
+@media screen and (min-width: 480px) and (max-width: 839px)
+{
+    :block(post):elem(content)
+    {
         font-size: 14px;
     }
 }
 
-@media (min-width: 840px) {
-    :block(post):elem(content) {
+@media (min-width: 840px)
+{
+    :block(post):elem(content)
+    {
         font-size: 14px;
     }
 }

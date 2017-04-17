@@ -1,40 +1,52 @@
-:block(lost) {
-    box-sizing: border-box;
+:block(lost)
+{
     zoom: 1;
+
+    box-sizing: border-box;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 30px;
+    margin-right: auto;
     margin-bottom: 30px;
+    margin-left: auto;
 
-    * {
+    *
+    {
         box-sizing: border-box;
     }
 
-    &:before {
-        box-sizing: border-box;
-        content: '';
+    &:before
+    {
         display: table;
+
+        box-sizing: border-box;
+
+        content: '';
     }
 
-    &:after {
-        box-sizing: border-box;
-        content: '';
+    &:after
+    {
         display: table;
         clear: both;
+
+        box-sizing: border-box;
+
+        content: '';
     }
 
-    &:last-of-type {
+    &:last-of-type
+    {
         margin-bottom: 0;
     }
 }
 
-:block(lost):elem(item) {
+:block(lost):elem(item)
+{
     height: 100px;
+
     background: #f4f4f4;
 
-
-    div {
+    div
+    {
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -42,108 +54,136 @@
 
 :block(lost) {
 
-    :block(lost):elem(item) {
+    :block(lost):elem(item)
+    {
         width: calc(99.99% * 1/1 - (3px - 3px * 1/1));
         height: auto;
         padding: 15px;
 
-        &:nth-child(1n) {
+        &:nth-child(1n)
+        {
             float: left;
+            clear: none;
+
             margin-right: 3px;
             margin-bottom: 3px;
-            clear: none;
         }
 
-        &:last-child {
+        &:last-child
+        {
             margin-right: 0;
         }
 
-        &:nth-child(1n) {
-            margin-right: 0;
+        &:nth-child(1n)
+        {
             float: right;
+
+            margin-right: 0;
         }
 
-        &:nth-child(1n + 1) {
+        &:nth-child(1n + 1)
+        {
             clear: left;
         }
     }
 
-    @media (min-width: 500px) {
-
-        :block(lost):elem(item) {
+    @media (min-width: 500px)
+    {
+        :block(lost):elem(item)
+        {
             width: calc(99.99% * 2/4 - (3px - 3px * 2/4));
             height: 200px;
 
-            &:nth-child(1n) {
+            &:nth-child(1n)
+            {
                 float: left;
-                margin-right: 3px;
                 clear: none;
+
+                margin-right: 3px;
             }
 
-            &:last-child {
+            &:last-child
+            {
                 margin-right: 0;
             }
 
-            &:nth-child(2n) {
-                margin-right: 0;
+            &:nth-child(2n)
+            {
                 float: right;
+
+                margin-right: 0;
             }
 
-            &:nth-child(2n + 1) {
+            &:nth-child(2n + 1)
+            {
                 clear: left;
             }
         }
     }
 
-    @media (min-width: 800px) {
-
-        :block(lost):elem(item) {
+    @media (min-width: 800px)
+    {
+        :block(lost):elem(item)
+        {
             width: calc(99.99% * 2/6 - (3px - 3px * 2/6));
             height: 200px;
 
-            &:nth-child(1n) {
+            &:nth-child(1n)
+            {
                 float: left;
-                margin-right: 3px;
                 clear: none;
+
+                margin-right: 3px;
             }
 
-            &:last-child {
+            &:last-child
+            {
                 margin-right: 0;
             }
 
-            &:nth-child(3n) {
-                margin-right: 0;
+            &:nth-child(3n)
+            {
                 float: right;
+
+                margin-right: 0;
             }
 
-            &:nth-child(3n + 1) {
+            &:nth-child(3n + 1)
+            {
                 clear: left;
             }
         }
     }
 
-    @media (min-width: 1100px) {
-
-        :block(lost):elem(item) {
+    @media (min-width: 1100px)
+    {
+        :block(lost):elem(item)
+        {
             width: calc(99.99% * 2/8 - (3px - 3px * 2/8));
             height: 200px;
 
-            &:nth-child(1n) {
+            &:nth-child(1n)
+            {
                 float: left;
-                margin-right: 3px;
                 clear: none;
+
+                margin-right: 3px;
             }
 
-            &:last-child {
+            &:last-child
+            {
                 margin-right: 0;
             }
 
-            &:nth-child(4n) {
-                margin-right: 0;
+            &:nth-child(4n)
+            {
                 float: right;
+
+                margin-right: 0;
             }
 
-            &:nth-child(4n + 1) {
+            &:nth-child(4n + 1)
+            {
                 clear: left;
             }
         }

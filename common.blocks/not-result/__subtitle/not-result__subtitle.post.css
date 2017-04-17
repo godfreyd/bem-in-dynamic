@@ -1,9 +1,13 @@
-:block(not-result):elem(subtitle) {
+:block(not-result):elem(subtitle)
+{
     position: relative;
+
     display: table-cell;
-    vertical-align: middle;
+
     width: 100%;
     margin: 0 0 17px;
-    animation: headline-fade-in-down 0.4s both cubic-bezier(.215,.61,.355,1);
-    animation-delay: 0.3s
+
+    animation: headline-fade-in-down .4s both cubic-bezier(.215,.61,.355,1);
+    animation-delay: .3s;
+    vertical-align: middle;
 }

@@ -1,5 +1,7 @@
-:block(sssr) {
+:block(sssr)
+{
     position: relative;
-    height: 100%;
+
     box-sizing: border-box;
+    height: 100%;
 }

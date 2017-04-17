@@ -1,16 +1,31 @@
-:block(checkbox):mod(checked) {
+:block(checkbox):mod(checked)
+{
+    &:block(filter):elem(service):mod(type youtube) :block(checkbox):elem(box)
+    {
+        background: #d42428;
 
-    &:block(filter):elem(service):mod(type youtube) :block(checkbox):elem(box) {
-        background: #D42428;
-
-        &::before {
+        &::before
+        {
             left: 20px;
-            background: #BA202E;
+
+            background: #ba202e;
         }
 
-        &:active::before {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(76, 171, 219, 0.2);
-
+        &:active::before
+        {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .28), 0 0 0 20px rgba(76, 171, 219, .2);
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

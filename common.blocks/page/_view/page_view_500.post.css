@@ -1,9 +1,14 @@
-:block(page):mod(view 500) {
+:block(page):mod(view 500)
+{
     font-size: 72px;
+
     text-align: center;
+
     color: red;
 
-    :block(page):elem(inner) {
+    :block(page):elem(inner)
+    {
         padding: 0;
     }
 }
+

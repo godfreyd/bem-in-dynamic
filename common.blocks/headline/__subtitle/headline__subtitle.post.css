@@ -1,6 +1,8 @@
-:block(headline):elem(subtitle) {
-    margin-bottom: 17px;
+:block(headline):elem(subtitle)
+{
     margin-top: 0;
+    margin-bottom: 17px;
+
     animation: headline-fade-in-down 1.4s both cubic-bezier(.215,.61,.355,1);
-    animation-delay: 1.3s
+    animation-delay: 1.3s;
 }

@@ -1,5 +1,6 @@
-:block(logo){
+:block(logo)
+{
+    height: 40px;
     margin: 0;
     padding: 0 24px;
-    height: 40px;
 }

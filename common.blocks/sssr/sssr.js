@@ -48,19 +48,16 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
                 });
 
             this._menu.setVal(possibleValues.indexOf(query) > -1 ? query : undefined);
-            this._result.setMod('active', !!data.twitter);
+            this._result.setMod('active', !!data.twitter || !!data.youtube);
 
-            if (!query || !data.twitter || !data.youtube) {
+            if (!query || !data.twitter && !data.youtube) {
                 return this._renderNoResults();
             }
 
             this._spin.setMod('visible');
 
-            // TODO: иногда дублируется запрос с старым maxId
-            // console.log('====>', '/?q=' + query + (maxId ? '&max_id=' + maxId : ''));
-
             $.ajax({
-                url: '/?q=' + query + (maxId ? '&max_id=' + maxId : '') + (nextPage ? '&next_page=' + nextPage : ''),
+                url: '/?q=' + query + (data.youtube ? '&youtube=' + true : '') + (data.twitter ? '&twitter=' + true : '') + (maxId ? '&max_id=' + maxId : '') + (nextPage ? '&next_page=' + nextPage : ''),
             }).then(function(res) {
                 _this._spin.delMod('visible');
                 var items = $(res).children();
@@ -71,7 +68,7 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
                     return _this._renderNoResults();
                 }
 
-                bemDom[maxId ? 'append' : 'update'](_this._result.domElem, items);
+                bemDom[maxId || nextPage ? 'append' : 'update'](_this._result.domElem, items);
             }).fail(function (xhr) {
                 _this._spin.delMod('visible');
                 window.debug && console.log('request failed', xhr);

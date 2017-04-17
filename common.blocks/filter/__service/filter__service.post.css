@@ -1,69 +1,14 @@
-:block(filter):elem(service) {
-
+:block(filter):elem(service)
+{
     padding-right: 25px;
-
-    @media (max-width: 767px) {
+    @media (max-width: 767px)
+    {
         float: left;
+
         padding: 10px 4px 0;
     }
-
-    @media (max-width: 479px) {
+    @media (max-width: 479px)
+    {
         display: none;
     }
-
-    /* TODO: перенести в checkbox_theme_toggle */
-    :block(checkbox):elem(text) {
-        display: inline-block;
-        line-height: 24px;
-        float: left;
-        margin: 0 12px 0;
-        vertical-align: middle;
-        transition: color 0.56s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-
-    }
-
-    :block(checkbox):elem(control) {
-        position: absolute;
-        z-index: -1;
-        margin: 0;
-        opacity: 0;
-
-    }
-
-    :block(checkbox):elem(box) {
-        display: inline-block;
-        position: relative;
-        width: 40px;
-        height: 16px;
-        border-radius: 8px;
-        background: rgba(0, 0, 0, 0.26);
-        transition: background 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-        vertical-align: middle;
-        cursor: pointer;
-
-
-       &::before {
-            content: '';
-            position: absolute;
-            top: -4px;
-            left: -4px;
-            width: 24px;
-            height: 24px;
-            background: #fafafa;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
-            border-radius: 50%;
-            transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-
-        }
-
-        &:active::before {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), 0 0 0 20px rgba(128, 128, 128, 0.1);
-
-        }
-
-    }
-
 }
-
-

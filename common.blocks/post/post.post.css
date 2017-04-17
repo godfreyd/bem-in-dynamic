@@ -1,34 +1,48 @@
-:block(post) {
+:block(post)
+{
     position: relative;
+
     height: 100%;
 }
 
-:block(post):elem(footer) {
+:block(post):elem(footer)
+{
     margin-top: 10px;
 }
 
-:block(post):elem(user-name) {
+:block(post):elem(user-name)
+{
     display: inline-block;
+
     margin-right: 10px;
+
     text-decoration: none;
+
     color: #000;
 
-    &:hover {
+    &:hover
+    {
         text-decoration: underline;
+
         color: #038543;
     }
 }
 
-:block(post):elem(time){
+:block(post):elem(time)
+{
     font-size: 14px;
+
     display: inline-block;
+
     color: #8899a6;
 }
 
-:block(post):elem(user-avatar){
+:block(post):elem(user-avatar)
+{
     position: absolute;
     right: -5px;
     bottom: -5px;
+
     width: 30px;
     height: 30px;
 }

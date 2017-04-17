@@ -1,16 +1,25 @@
-:block(footer) {
-    position: relative;
-    margin-top: -10px;
-    background: #fff;
-    border-top: 1px solid #ccc;
-    text-align: center;
+:block(footer)
+{
     line-height: 42px;
 
-    :block(link) {
+    position: relative;
+
+    margin-top: -10px;
+
+    text-align: center;
+
+    border-top: 1px solid #ccc;
+    background: #fff;
+
+
+    :block(link)
+    {
         margin: 0 10px;
+
         text-decoration: none;
+
         color: #616161;
     }
-
 }
+
 

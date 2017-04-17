@@ -1,6 +1,8 @@
-:block(menu):mod(theme tags){
-    text-align: center;
-    outline: none;
+:block(menu):mod(theme tags)
+{
     animation: headline-fade-in-down 1.4s both cubic-bezier(.215,.61,.355,1);
-    animation-delay: 1.6s
+    animation-delay: 1.6s;
+    text-align: center;
+
+    outline: none;
 }
