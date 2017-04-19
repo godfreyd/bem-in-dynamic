@@ -5,15 +5,15 @@ var passport = require('passport'),
 if (!env.YOUTUBE_APP_ID || !env.YOUTUBE_APP_SECRET) {
     try {
         var config = require('./config'),
-            credentials = config.services.youtube;
+            servicesYouTube = config.services.youtube;
     } catch (err) {}
 }
 
-var clientID = env.YOUTUBE_APP_ID || credentials.client_id,
-    clientSecret = env.YOUTUBE_APP_SECRET || credentials.client_secret;
+var clientID = env.YOUTUBE_APP_ID || servicesYouTube.client_id,
+    clientSecret = env.YOUTUBE_APP_SECRET || servicesYouTube.client_secret;
 
 if (!clientID || !clientSecret) {
-    console.error('Please provide youtube app id and youtube app secret via ENV vars or add config.js (see config.example.js for reference).');
+    console.error('Please provide youtube app id and youtube app secret via ENV vars or add config.json (see config.example.json for reference).');
     process.exit(1);
 }
 

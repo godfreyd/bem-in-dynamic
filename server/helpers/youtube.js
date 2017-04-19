@@ -1,6 +1,5 @@
 var google = require('googleapis'),
-    OAuth2 = google.auth.OAuth2,
-    config = require('../config');
+    OAuth2 = google.auth.OAuth2;
 
 function GoogleYoutube(credentials) {
     this.oauth2Client = new OAuth2(credentials.client_id, credentials.client_secret, credentials.redirect_url);
@@ -23,9 +22,9 @@ GoogleYoutube.prototype.searchList = function(user, params, callback) {
     });
 };
 
-module.exports = function(user, params) {
+module.exports = function(config, user, params) {
     return new Promise(function(resolve, reject) {
-        (new GoogleYoutube(config.services.youtube)).searchList(user, params, function(err, data) {
+        (new GoogleYoutube(config)).searchList(user, params, function(err, data) {
             if (err) return reject(err);
 
             if (!data.items.length) return resolve({});

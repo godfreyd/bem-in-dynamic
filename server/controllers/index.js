@@ -1,23 +1,29 @@
 var Render = require('../render'),
     render = Render.render,
+    config = require('../config'),
     moment = require('moment'),
     helpers = require('../helpers'),
     env = process.env;
 
 function getContent(req, res) {
-    var passport = req.session.passport || {};
-    env.YOUTUBE_TOKEN || (env.YOUTUBE_TOKEN = passport.user && passport.user.token);
+    var passport = req.session.passport || {},
+        servicesYouTube = config.services.youtube,
+        servicesTwitter = config.services.twitter;
+
+    env.YOUTUBE_APP_ID || (env.YOUTUBE_APP_ID = servicesYouTube.client_id);
+    env.YOUTUBE_APP_SECRET || (env.YOUTUBE_APP_SECRET = servicesYouTube.client_secret);
 
     var query = req.query || {},
         q = query.q ? '#' + query.q : '#bem',
         lang = query.lang || 'en',
+        count = query.count || 12,
         youtube = typeof youtube === 'undefined' && !req.xhr ? true : query.youtube,
         twitter = typeof twitter === 'undefined' && !req.xhr ? true : query.twitter;
 
     var youtubeParams = {
         q: q,
         pageToken: query.next_page,
-        maxResults: 12,
+        maxResults: count,
         relevanceLanguage: lang,
         type: 'video',
         order: 'date',
@@ -26,14 +32,14 @@ function getContent(req, res) {
 
     var twitterParams = {
         max_id: query.max_id,
-        count: 12,
+        count: count,
         lang: lang,
         result_type: 'recent',
         q: q
     };
 
-    var youtubeRequest = youtube ? helpers.youtube(passport.user, youtubeParams) : [],
-        twitterRequest = twitter ? helpers.twitter(twitterParams) : [];
+    var youtubeRequest = youtube ? helpers.youtube(servicesYouTube, passport.user, youtubeParams) : [],
+        twitterRequest = twitter ? helpers.twitter(servicesTwitter, twitterParams) : [];
 
     Promise.all([youtubeRequest, twitterRequest]).then(function(results) {
         var youtubeResults = results[0],

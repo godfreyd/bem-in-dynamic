@@ -1,8 +1,8 @@
-const router = require('express').Router(),
-      controllers = require('./controllers'),
-      passportYouTube = require('./auth'),
-      middleware = require('./middleware'),
-      isAuthenticated = middleware.isAuthenticated;
+var router = require('express').Router(),
+    controllers = require('./controllers'),
+    passportYouTube = require('./auth'),
+    middleware = require('./middleware'),
+    isAuthenticated = middleware.isAuthenticated;
 
 router
     .get('/auth/youtube', passportYouTube.authenticate('youtube'))

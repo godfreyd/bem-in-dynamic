@@ -1,10 +1,8 @@
-var config = require('../config'),
-    Twitter = require('twitter'),
-    clientTwitter = new Twitter(config.services.twitter);
+var Twitter = require('twitter');
 
-module.exports = function getContent(params) {
+module.exports = function getContent(config, params) {
     return new Promise(function(resolve, reject) {
-        clientTwitter.get('search/tweets', params, function(err, data) {
+        new Twitter(config).get('search/tweets', params, function(err, data) {
             if (err) return reject(err);
 
             resolve({
