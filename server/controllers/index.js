@@ -6,92 +6,53 @@ var Render = require('../render'),
     env = process;
 
 function getContent(req, res) {
-
     var passport = req.session.passport || {};
     env.YOUTUBE_TOKEN || (env.YOUTUBE_TOKEN = passport.user && passport.user.token);
 
-    var query = req.query,
+    var query = req.query || {},
         q = query.q ? '#' + query.q : '#bem',
-        youtube = query.youtube,
-        twitter = query.twitter;
+        lang = query.lang || 'en',
+        youtube = typeof youtube === 'undefined' ? true : query.youtube,
+        twitter = typeof twitter === 'undefined' ? true : query.twitter;
 
     var youtubeParams = {
         q: q,
-        pageToken: query && query.next_page,
+        pageToken: query.next_page,
         maxResults: 12,
-        relevanceLanguage: 'en',
+        relevanceLanguage: lang,
         type: 'video',
         order: 'date',
         part: 'snippet'
     };
 
     var twitterParams = {
-        max_id: query && query.max_id,
+        max_id: query.max_id,
         count: 12,
-        lang: 'en',
+        lang: lang,
         result_type: 'recent',
         q: q
     };
 
-    if (req.xhr) {
-
-        if (youtube) {
-
-            var youtubeRequest = helpers.youtube.getContent(passport.user, youtubeParams);
-        }
-
-        if (twitter) {
-            var twitterRequest =  helpers.twitter.getContent(twitterParams);
-        }
-
-    } else {
-
-        var youtubeRequest = helpers.youtube.getContent(passport.user, youtubeParams);
-        var twitterRequest = helpers.twitter.getContent(twitterParams);
-    }
+    var youtubeRequest = youtube ? helpers.youtube(passport.user, youtubeParams) : [],
+        twitterRequest = twitter ? helpers.twitter(twitterParams) : [];
 
     Promise.all([youtubeRequest, twitterRequest]).then(function(results) {
-
-        if (results[0] !== undefined) {
-
-            var youtube = results[0],
-                youtubeNextPageId = youtube.nextPageId,
-                videos = youtube.videos;
-        }
-
-        if (results[1] !== undefined) {
-
-            var twitter = results[1],
-                twitterNextPageId = twitter.nextPageId,
-                tweets = twitter.tweets;
-        }
-
-        if (videos && tweets) {
-
-            var  results = videos.concat(tweets);
-
-        } else {
-
-            var  results = videos ? videos : tweets;
-        }
-
-        results
-            .forEach(function(item) {
-                item.time = +new Date(item.time);
-            });
-        results
-            .sort(function compareTime(itemA, itemB) {
-                return itemB.time - itemA.time;
-            })
-            .forEach(function(item) {
-                item.time = moment(item.time).fromNow();
-            });
+        var youtubeResults = results[0],
+            twitterResults = results[1],
+            results = (youtubeResults.videos || []).concat(twitterResults.tweets || [])
+                .sort(function(a, b) {
+                    return +new Date(b.time) - +new Date(a.time);
+                })
+                .map(function(item) {
+                    item.time = moment(item.time).fromNow();
+                    return item;
+                });
 
         render(req, res, {
             view: 'index',
             title: 'Social Services Search Robot',
             meta: {
-                description: 'With the Social Services Search Robot, you can find the latest tweets and videos.',
+                description: 'With the Social Services Search Robot you can find the latest tweets and videos',
                 og: {
                     url: 'http://localhost:3000',
                     siteName: 'BEM'
@@ -99,8 +60,8 @@ function getContent(req, res) {
             },
             q: q,
             user: passport.user,
-            maxid: twitterNextPageId,
-            nextpage: youtubeNextPageId,
+            maxid: twitterResults.nextPageId,
+            nextpage: youtubeResults.nextPageId,
             result: results
         }, req.xhr && { block: 'result' });
 

@@ -4,5 +4,4 @@ module.exports = {
 
         return res.redirect('/auth/youtube');
     }
-
 };

@@ -1,42 +1,48 @@
-var config = require('../config'),
-    Youtube = require('../googleyoutube'),
-    clientYoutube = new Youtube(config.services.youtube);
+var google = require('googleapis'),
+    OAuth2 = google.auth.OAuth2,
+    config = require('../config');
 
-function getContent(user, params) {
+function GoogleYoutube(credentials) {
+    this.oauth2Client = new OAuth2(credentials.client_id, credentials.client_secret, credentials.redirect_url);
+};
 
-    var youtubeRequest = new Promise(function(resolve, reject) {
-
-        clientYoutube.searchList(user, params, function(err, data){
-
-            var videos,
-                youtube = {};
-
-            if (err) {
-                reject(err);
-                return;
-            }
-
-            videos = data.items.map(function(item) {
-                return {
-                    name: item.snippet.channelTitle,
-                    time: item.snippet.publishedAt, // RFC 3339 formatted date-time
-                    q: params.q,
-                    nextpage: data.nextPageToken,
-                    url: 'https://www.youtube.com/embed/' + item.id.videoId,
-                    service: 'youtube'
-                };
-            });
-
-            youtube.nextPageId = videos[videos.length -1].nextpage;
-            youtube.videos = videos;
-
-            resolve(youtube);
-        });
+GoogleYoutube.prototype.searchList = function(user, params, callback) {
+    this.oauth2Client.setCredentials({
+        access_token: user.token,
+        refresh_token: user.refreshtoken,
+        expiry_date: (new Date()).getTime() + 1000 * 60 * 60 * 24 * 7 // one week
     });
 
-    return youtubeRequest;
-}
+    var youtube = google.youtube({
+        version: 'v3',
+        auth: this.oauth2Client
+    });
 
-module.exports = {
-    getContent
+    youtube.search.list(params, function(err, response) {
+        err ? callback(err, null) : callback(null, response);
+    });
+};
+
+module.exports = function(user, params) {
+    return new Promise(function(resolve, reject) {
+        (new GoogleYoutube(config.services.youtube)).searchList(user, params, function(err, data) {
+            if (err) return reject(err);
+
+            if (!data.items.length) return resolve({});
+
+            resolve({
+                nextPageId: data.items[data.items.length -1].nextPageToken,
+                videos: data.items.map(function(item) {
+                    return {
+                        name: item.snippet.channelTitle,
+                        time: item.snippet.publishedAt, // RFC 3339 formatted date-time
+                        q: params.q,
+                        nextpage: data.nextPageToken,
+                        url: 'https://www.youtube.com/embed/' + item.id.videoId,
+                        service: 'youtube'
+                    };
+                })
+            });
+        });
+    });
 };

@@ -2,35 +2,30 @@ var passport = require('passport'),
     YoutubeV3Strategy = require('passport-youtube-v3').Strategy,
     env = process.env;
 
-try {
-    var config = require('./config');
-    var credentials = config.services.youtube;
-} catch (err) {
-    console.error('Add file config.json like config.example.json');
+if (!env.YOUTUBE_APP_ID || !env.YOUTUBE_APP_SECRET) {
+    try {
+        var config = require('./config'),
+            credentials = config.services.youtube;
+    } catch (err) {}
 }
 
 var clientID = env.YOUTUBE_APP_ID || credentials.client_id,
     clientSecret = env.YOUTUBE_APP_SECRET || credentials.client_secret;
 
-function verify(accessToken, refreshToken, profile, done) {
-
-    if(profile) {
-
-        profile = JSON.parse(profile._raw);
-
-        return done(null, {
-            token: accessToken,
-            refreshtoken: refreshToken,
-            profile: profile
-        });
-
-    }
-
-    return done(null, false);
-
+if (!clientID || !clientSecret) {
+    console.error('Please provide youtube app id and youtube app secret via ENV vars or add config.js (see config.example.js for reference).');
+    process.exit(1);
 }
 
-module.exports = passport;
+function verify(accessToken, refreshToken, profile, done) {
+    if (!profile) return done(null, false);
+
+    return done(null, {
+        token: accessToken,
+        refreshtoken: refreshToken,
+        profile: JSON.parse(profile._raw)
+    });
+}
 
 // serialize user into the session
 passport.serializeUser(function(user, done) {
@@ -41,14 +36,11 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
+passport.use(new YoutubeV3Strategy({
+    clientID: clientID,
+    clientSecret: clientSecret,
+    callbackURL: '/auth/youtube/callback',
+    scope: ['https://www.googleapis.com/auth/youtube.readonly']
+}, verify));
 
-if (!clientID || !clientSecret) {
-    console.error('Please provide clientID and clientSecret');
-} else {
-    passport.use(new YoutubeV3Strategy({
-        clientID: clientID,
-        clientSecret: clientSecret,
-        callbackURL: '/auth/youtube/callback',
-        scope: ['https://www.googleapis.com/auth/youtube.readonly']
-    }, verify));
-}
+module.exports = passport;
