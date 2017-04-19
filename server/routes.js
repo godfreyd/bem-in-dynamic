@@ -7,7 +7,7 @@ const router = require('express').Router(),
 router
     .get('/auth/youtube', passportYouTube.authenticate('youtube'))
 
-    .get('/auth/youtube/callback', passportYouTube.authenticate('youtube', { failureRedirect: '/error' }), (req, res) => {
+    .get('/auth/youtube/callback', passportYouTube.authenticate('youtube', { failureRedirect: '/error', failureFlash: true }), (req, res) => {
         res.redirect('/');
     });
 

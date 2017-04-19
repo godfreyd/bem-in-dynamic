@@ -10,8 +10,6 @@ function getContent(req, res) {
     var passport = req.session.passport || {};
     env.YOUTUBE_TOKEN || (env.YOUTUBE_TOKEN = passport.user && passport.user.token);
 
-    console.log(passport.user);
-
     var query = req.query,
         q = query.q ? '#' + query.q : '#bem',
         youtube = query.youtube,

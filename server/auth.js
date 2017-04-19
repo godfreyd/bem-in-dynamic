@@ -13,13 +13,21 @@ var clientID = env.YOUTUBE_APP_ID || credentials.client_id,
     clientSecret = env.YOUTUBE_APP_SECRET || credentials.client_secret;
 
 function verify(accessToken, refreshToken, profile, done) {
-    profile = JSON.parse(profile._raw);
 
-    return done(null, {
-        token: accessToken,
-        refreshtoken: refreshToken,
-        profile: profile
-    });
+    if(profile) {
+
+        profile = JSON.parse(profile._raw);
+
+        return done(null, {
+            token: accessToken,
+            refreshtoken: refreshToken,
+            profile: profile
+        });
+
+    }
+
+    return done(null, false);
+
 }
 
 module.exports = passport;
@@ -32,6 +40,7 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
     done(null, user);
 });
+
 
 if (!clientID || !clientSecret) {
     console.error('Please provide clientID and clientSecret');
