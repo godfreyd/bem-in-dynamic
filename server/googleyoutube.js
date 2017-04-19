@@ -10,7 +10,7 @@ GoogleYoutube.prototype.searchList = function(user, params, callback) {
     this.oauth2Client.setCredentials({
       access_token: user.token,
       refresh_token: user.refreshtoken,
-      expiry_date: true
+      expiry_date: (new Date()).getTime() + (1000 * 60 * 60 * 24 * 7)
     });
 
     var youtube = google.youtube({
