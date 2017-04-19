@@ -8,6 +8,7 @@ npm-debug.log
 static/index.min.*
 static/*/index.min.*
 server/*.txt
+server/config.json
 
 # bem
 .enb/tmp/

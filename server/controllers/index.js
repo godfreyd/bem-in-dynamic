@@ -1,9 +1,8 @@
 var Render = require('../render'),
     render = Render.render,
-    config = require('../config'),
     moment = require('moment'),
     helpers = require('../helpers'),
-    env = process;
+    env = process.env;
 
 function getContent(req, res) {
     var passport = req.session.passport || {};
@@ -12,8 +11,8 @@ function getContent(req, res) {
     var query = req.query || {},
         q = query.q ? '#' + query.q : '#bem',
         lang = query.lang || 'en',
-        youtube = typeof youtube === 'undefined' ? true : query.youtube,
-        twitter = typeof twitter === 'undefined' ? true : query.twitter;
+        youtube = typeof youtube === 'undefined' && !req.xhr ? true : query.youtube,
+        twitter = typeof twitter === 'undefined' && !req.xhr ? true : query.twitter;
 
     var youtubeParams = {
         q: q,

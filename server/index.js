@@ -2,7 +2,7 @@ var fs = require('fs'),
     app = require('./app'),
     config = require('./config'),
     env = process.env,
-    port = process.env.PORT || config.defaultPort,
+    port = env.PORT || (env.PORT = config.defaultPort),
     isSocket = isNaN(port);
 
 exports.start = function() {
