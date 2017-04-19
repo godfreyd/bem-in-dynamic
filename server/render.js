@@ -1,5 +1,3 @@
-"use strict";
-
 var fs = require('fs'),
     path = require('path'),
     nodeEval = require('node-eval'),
@@ -32,7 +30,7 @@ function render(req, res, data, context) {
         // extend with data needed for all routes
         data: Object.assign({}, {
             url: req._parsedUrl,
-            csrf: req.csrfToken()
+            // csrf: req.csrfToken()
         }, data)
     };
 

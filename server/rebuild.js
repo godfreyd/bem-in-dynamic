@@ -14,11 +14,7 @@ var path = require('path'),
 process.env.NO_AUTOMAKE || watch(path.join(rootDir, '*.blocks/**'), watchOpts)
     .on('all', function(event, file) {
         console.time('Rebuild: ' + file);
-        // NOTE: chokidar fires events before files are written
         process.nextTick(function() {
-            // TODO: get target via file extention
-            // TODO: get current bundle via websocket
-            // NOTE: use `[path.join('desktop.bundles', 'index')]` to build specific target
             make()
                 .then(function() {
                     console.timeEnd('Rebuild: ' + file);

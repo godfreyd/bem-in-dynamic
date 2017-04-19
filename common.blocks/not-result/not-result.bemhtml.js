@@ -1,9 +1,23 @@
 block('not-result').content()(function() {
-    return [{
-        block: 'heading',
+    return [
+    {
+        elem: 'content',
         mix: { block: 'not-result', elem: 'subtitle'},
-        mods: { level: 4 },
-        content: 'Not results'
+        content: [
+            {
+                block: 'heading',
+                mods: { level: 2 },
+                content: '¯\\_(ツ)_/¯'
 
-    }]
+            },
+            {
+                block: 'heading',
+                mods: { level: 4 },
+                content: 'Not results'
+
+            }
+        ]
+    }
+
+]
 });
