@@ -146,8 +146,8 @@
                   siteName: 'Site name'
               }
           },
-          hello: hello,                   // Передали переменную в data
-          world: world                    // Передали переменную в data
+          hello: hello,                   // Передали переменную `hello` в data
+          world: world                    // Передали переменную `world` в data
       })
   });
   ```
