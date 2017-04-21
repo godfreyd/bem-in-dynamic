@@ -77,90 +77,90 @@
 
 3. Удалите историю версионирования исходного репозитория:
 
-  ```bash
-  rm -rf .git
-  ```
+    ```bash
+    rm -rf .git
+    ```
 
 4. Инициализируйте собственный Git-репозиторий:
 
-  ```bash
-  git init
-  ```
+    ```bash
+    git init
+    ```
 
 5. Устанавите зависимости:
 
-  ```bash
-  npm install
-  ```
+    ```bash
+    npm install
+    ```
 
-  > **Примечание** Не используйте права суперпользователя (`root`) при установке npm- и bower-зависимостей. Bower-зависимости ставятся при выполнении `npm postinstall` в директории `libs`.
+    > **Примечание** Не используйте права суперпользователя (`root`) при установке npm- и bower-зависимостей. Bower-зависимости ставятся при выполнении `npm postinstall` в директории `libs`.
 
 6. Соберите проект и запустите сервер:
 
-  ```bash
-  npm run dev
-  ```
+    ```bash
+    npm run dev
+    ```
 
-  > **Примечание** Сборка происходит с помощью [ENB](https://ru.bem.info/toolbox/enb/).
+    > **Примечание** Сборка происходит с помощью [ENB](https://ru.bem.info/toolbox/enb/).
 
-  В результате в командной строке вы увидите следующее сообщение:
+    В результате в командной строке вы увидите следующее сообщение:
 
-  `Server is listening on 3000`
+    `Server is listening on 3000`
 
-  На вашем компьютере запустился:
+    На вашем компьютере запустился:
 
-  * сервер, который будет выполнять код, отвечающий за обработку динамических данных;
-  * [nodemon](https://github.com/remy/nodemon/), который будет следить за изменениями на файловой структуре и перезапускать сервер;
-  * [chokidar](https://github.com/paulmillr/chokidar), который будет следить за изменениями в директориях `*.blocks/` и перестраивать структуру проекта;
-  * [livereload](https://github.com/napcs/node-livereload), который будет обновлять страницу в браузере.
+    * сервер, который будет выполнять код, отвечающий за обработку динамических данных;
+    * [nodemon](https://github.com/remy/nodemon/), который будет следить за изменениями на файловой структуре и перезапускать сервер;
+    * [chokidar](https://github.com/paulmillr/chokidar), который будет следить за изменениями в директориях `*.blocks/` и перестраивать структуру проекта;
+    * [livereload](https://github.com/napcs/node-livereload), который будет обновлять страницу в браузере.
 
-  > **Примечание** Если порт `3000` уже используется другой программой, его можно переназначить в файле `server/config.js`. Например, на `8000`:
-  >
-  > ```js
-  > defaultPort: 8000,
-  > ```
+    > **Примечание** Если порт `3000` уже используется другой программой, его можно переназначить в файле `server/config.js`. Например, на `8000`:
+    >
+    > ```js
+    > defaultPort: 8000,
+    > ```
 
 7. Откройте браузер и введите адрес [http://localhost:3000](http://localhost:3000).
 
-  Должна открыться страница со следующим контентом:
+    Должна открыться страница со следующим контентом:
 
-  ```text
-  Index page content
-  footer content
-  ```
+    ```text
+    Index page content
+    footer content
+    ```
 
-  > **Примечание** Если вы запускаете свое приложение в Windows, то, скорее всего, вы получите уведомление от Браундмауэра Windows. Отключите опцию *Общественные сети* (Public Network), установите опцию *Частные сети* (Private Network) и разрешите доступ.
+    > **Примечание** Если вы запускаете свое приложение в Windows, то, скорее всего, вы получите уведомление от Браундмауэра Windows. Отключите опцию *Общественные сети* (Public Network), установите опцию *Частные сети* (Private Network) и разрешите доступ.
 
 8. Откройте файл `server/index.js` и внесите следующие изменения в код начинающего строкой `app.get('/', function(req, res)`:
 
-  ```js
-  app.get('/', function(req, res) {
-      var hello = 'Hello';                // Инициализировали переменную `hello`
-      var world = 'World';                // Инициализировали переменную `world`
-      render(req, res, {
-          view: 'page-index',
-          title: 'Main page',
-          meta: {
-              description: 'Page description',
-              og: {
-                  url: 'https://site.com',
-                  siteName: 'Site name'
-              }
-          },
-          hello: hello,                   // Передали переменную `hello` в data
-          world: world                    // Передали переменную `world` в data
-      })
-  });
-  ```
+    ```js
+    app.get('/', function(req, res) {
+        var hello = 'Hello';                // Инициализировали переменную `hello`
+        var world = 'World';                // Инициализировали переменную `world`
+        render(req, res, {
+            view: 'page-index',
+            title: 'Main page',
+            meta: {
+                description: 'Page description',
+                og: {
+                    url: 'https://site.com',
+                    siteName: 'Site name'
+                }
+            },
+            hello: hello,                   // Передали переменную `hello` в data
+            world: world                    // Передали переменную `world` в data
+        })
+    });
+    ```
 
 9. Измените код файла `common.blocks/page-index/page-index.bemtree.js`:
 
-  ```js
-  block('page-index').content()(function() {
-      var data = this.data;
-      return data.hello + ', ' + data.world;
-  });
-  ```
+    ```js
+    block('page-index').content()(function() {
+        var data = this.data;
+        return data.hello + ', ' + data.world;
+    });
+    ```
 
 В результате контент страницы изменится на:
 
