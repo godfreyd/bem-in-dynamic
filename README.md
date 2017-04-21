@@ -134,8 +134,8 @@
 
   ```js
   app.get('/', function(req, res) {
-      var hello = 'Hello';
-      var world = 'World';
+      var hello = 'Hello';                // Инициализировали переменную `hello`
+      var world = 'World';                // Инициализировали переменную `world`
       render(req, res, {
           view: 'page-index',
           title: 'Main page',
@@ -146,8 +146,8 @@
                   siteName: 'Site name'
               }
           },
-          hello: hello,
-          world: world
+          hello: hello,                   // Передали переменную в data
+          world: world                    // Передали переменную в data
       })
   });
   ```
