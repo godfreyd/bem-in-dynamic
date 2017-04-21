@@ -65,15 +65,15 @@
 
 1. Склонируйте репозиторий:
 
-  ```bash
-  git clone git@github.com:bem/bem-express.git sssr-project
-  ```
+    ```bash
+    git clone git@github.com:bem/bem-express.git sssr-project
+    ```
 
 2. Перейдите в директорию проекта:
 
-  ```bash
-  cd sssr-project
-  ```
+    ```bash
+    cd sssr-project
+    ```
 
 3. Удалите историю версионирования исходного репозитория:
 
