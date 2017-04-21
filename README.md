@@ -162,12 +162,12 @@
     });
     ```
 
-В результате контент страницы изменится на:
+    В результате контент страницы изменится на:
 
-```text
-Hello, World
-footer content
-```
+    ```text
+    Hello, World
+    footer content
+    ```
 
 Приложение **Hello, World** готово.
 
