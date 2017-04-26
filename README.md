@@ -164,7 +164,7 @@
     });
     ```
 
-    В результате контент страницы изменится на:
+    После сохранения сервер автоматически перезапустится и контент страницы изменится на:
 
     ```text
     Hello, World
@@ -199,6 +199,16 @@ sssr-project/
 ## Схема работы приложения
 
 ![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
+
+
+### Шаг 1
+
+### Шаг 2
+
+### Шаг 3
+
+
+
 
 ### Создание страницы
 
