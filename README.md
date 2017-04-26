@@ -198,7 +198,7 @@ sssr-project/
 
 ## Схема работы приложения
 
-![Chart of Social Services Search Robot](ssr.png)
+![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
 
 ### Создание страницы
 
