@@ -5,10 +5,12 @@
 * [Простейшее приложение Hello, World](#Простейшее-приложение-hello-world)
 * [Файловая структура проекта](#Файловая-структура-проекта)
 * [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
-* [Работа с Twitter Search API](#)
-* [Работа с YouTube Data API](#)
-* [BEMTREE-шаблонизация](#)
-* [BEMHTML-шаблонизация](#)
+* [Клиентская часть](#)
+* [Серверная часть](#)
+  * [Работа с Twitter Search API](#)
+  * [Работа с YouTube Data API](#)
+  * [BEMTREE-шаблонизация](#)
+  * [BEMHTML-шаблонизация](#)
 
 ## Обзор
 
