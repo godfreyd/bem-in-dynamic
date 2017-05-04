@@ -67,6 +67,8 @@
 
 > **Примечание** Для пользователей OS X или Linux все команды выполняются в терминале. Пользователям Windows необходимо выполнять все команды в Git Bash. Убедитесь, что Git Bash запущен от имени администратора.
 
+Итак, чтобы создать приложение **Hello, World**, выполните описанные ниже действия.
+
 1. Склонируйте репозиторий:
 
     ```bash
@@ -117,7 +119,6 @@
     > defaultPort: 8000,
     > ```
 
-
     На вашем компьютере запустился:
 
     * сервер, который будет выполнять код, отвечающий за обработку динамических данных;
@@ -136,12 +137,12 @@
 
     > **Примечание** Если вы запускаете свое приложение в Windows, то, скорее всего, вы получите уведомление от Браундмауэра Windows. Отключите опцию *Общественные сети* (Public Network), установите опцию *Частные сети* (Private Network) и разрешите доступ.
 
-8. Откройте файл `server/index.js` и внесите следующие изменения в код начинающего строкой `app.get('/', function(req, res)`:
+8. Откройте файл `server/index.js` и внесите следующие изменения в код начинающего строкой `app.get('/', function(req, res)`. Изменения определены в комментариях:
 
     ```js
     app.get('/', function(req, res) {
-        var hello = 'Hello';                // Инициализировали переменную `hello`
-        var world = 'World';                // Инициализировали переменную `world`
+        var hello = 'Hello';                  // Инициализировали переменную `hello`
+        var world = 'World';                  // Инициализировали переменную `world`
         render(req, res, {
             view: 'page-index',
             title: 'Main page',
@@ -152,18 +153,18 @@
                     siteName: 'Site name'
                 }
             },
-            hello: hello,                   // Передали переменную `hello` в data
-            world: world                    // Передали переменную `world` в data
+            hello: hello,                     // Передали переменную `hello` в data.hello
+            world: world                      // Передали переменную `world` в data.world
         })
     });
     ```
 
-9. Измените код файла `common.blocks/page-index/page-index.bemtree.js`:
+9. Измените функцию `content` для блока `page-index`. Файл `common.blocks/page-index/page-index.bemtree.js`:
 
     ```js
     block('page-index').content()(function() {
-        var data = this.data;
-        return data.hello + ', ' + data.world;
+        var data = this.data;                  // Получаем данные
+        return data.hello + ', ' + data.world; // Возвращаем содержимое
     });
     ```
 
@@ -178,7 +179,7 @@
 
 ## Файловая структура проекта
 
-Локальная копия проекта имеет следующую файловую структуру:
+Давайте коротко пробежимся по файловой структуре проекта для того чтобы понять, как устроен проект, какие применяются технологии и с какой целью.
 
 ```files
 sssr-project/
@@ -198,11 +199,49 @@ sssr-project/
     package.json          # Описание проекта для npm
 ```
 
+### desktop.bundles
+
+Директория `desktop.bundles` содержит декларации страниц и файлы (бандлы) полученные в результате сборки.
+
+Обычно одной директории бандла соответствует одна страница проекта:
+
+```files
+desktop.bundles/
+    index/                # Бандлы для страницы `index`
+        index.bemdecl.js  # Декларация для страницы `index`
+        index.bemtree.js  # Бандл страницы `index` в технологии реализации BEMTREE
+        index.bemhtml.js  # Бандл страницы `index` в технологии реализации BEMHTML
+        index.css         # Бандл страницы `index` в технологии реализации CSS
+        index.js          # Бандл страницы `index` в технологии реализации JS
+        ...
+    about/                # Бандлы для страницы `about`
+        about.bemdecl.js  # Декларация для страницы `about`
+        about.bemtree.js  # Бандл страницы `about` в технологии реализации BEMTREE
+        ...
+```
+
+Однако иногда бывает удобно иметь возможность не пересобирать каждый раз куски кода общие для всего проекта (например,  блоки `header`, `footer`). Для них собирают отдельные бандлы:
+
+```files
+desktop.bundles/
+    index/                # Бандлы для страницы `index`
+    about/                # Бандлы для страницы `about`
+    header/               # Бандлы для блока `header`
+    footer/               # Бандлы для блока `footer`
+```
+
+Наш проект одностраничный и очевидно, что директория `desktop.bundles` будет иметь следующий вид:
+
+```files
+desktop.bundles/
+    index/                # Бандлы для страницы `index`
+```
+
+> [Подробнее о сборке БЭМ-проектов](https://ru.bem.info/methodology/build/).
 
 ## Схема работы приложения Social Services Search Robot
 
 ![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
-
 
 ### Шаг 1. Получение данных
 
@@ -228,81 +267,6 @@ sssr-project/
 **BEMHTML** является частью шаблонизатора `bem-xjst` и преобзазует BEMJSON в HTML.
 
 Подробное описание шага рассматривается в разделе [BEMHTML-шаблонизация](#).
-
-### Создание страницы
-
-Исходники страниц размещаются в директории `desktop.bundles`. Все страницы создаются по принципу: одна страница — одна директория.
-
-Чтобы создать страницу (например, `hello`) необходимо:
-
-1. Разместить в `desktop.bundles` директорию `hello`.
-2. Добавить в нее файл ([декларацию](../../method/declarations/declarations.ru.md)) `hello.bemdecl.js`.
-3. Описать декларацию — составить список блоков, элементов и модификаторов, используемых на странице.
-
-  Пример декларации `hello.bemdecl.js`:
-
-  ```js
-  exports.blocks = [
-    { name: 'header' },
-    { name: 'body' },
-    { name: 'footer' }
-  ];
-  ```
-
-4. Создать в `common.blocks` директории перечисленных блоков:
-
-  ```files
-  test-project/
-      common.blocks/        # Базовые реализации блоков
-          header/           # Директории блока header
-          body/             # Директории блока body
-          footer/           # Директории блока footer
-  ```
-
-5. Описать реализации блоков, например:
-
-  ```files
-  test-project/
-      common.blocks/               # Базовые реализации блоков
-          header/                  # Директории блока header
-              header.bemtree.js    # Шаблон блока header
-          body/                    # Директории блока body
-              body.bemtree.js      # Шаблон блока body
-          footer/                  # Директории блока footer
-              footer.bemtree.js    # Шаблон блока footer
-  ```
-
-  Пример шаблона `header.bemtree.js`:
-
-  ```js
-  block('header').content()(function() {
-      return [
-          'header content'
-      ];
-  });
-  ```
-
-  > **Примечание** Подробнее о [синтаксисе шаблонов](https://ru.bem.info/platform/bem-xjst/templates-syntax/).
-
-6. Описать серверную часть в файле `server/index.js`:
-
-  ```js
-  app.get('/hello/', function(req, res) {
-      render(req, res, {
-          view: 'hello',
-          title: 'Hello page',
-          meta: {
-              description: 'Page description',
-              og: {
-                  url: 'https://site.com/hello',
-                  siteName: 'Site name'
-              }
-          }
-      })
-  });
-  ```
-
-В результате страница `hello` будет доступна по ссылке: [http://localhost:3000/hello/](http://localhost:3000/hello/).
 
 ### Декларация БЭМ-сущностей
 

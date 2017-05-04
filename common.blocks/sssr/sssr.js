@@ -80,7 +80,6 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
         lazyInit: true,
         onInit: function() {
             var ptp = this.prototype;
-            // TODO: подписываться точечно
             this._events(Menu).on('change', ptp._onMenuChange);
             this._events(Input).on('change', ptp._onChange);
             this._events(Result).on('scroll', ptp._onScroll);
