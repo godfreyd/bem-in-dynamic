@@ -209,9 +209,9 @@ sssr-project/
 
 ### desktop.bundles
 
-Директория `desktop.bundles` содержит [декларации страниц](https://ru.bem.info/methodology/declarations/) и файлы ([бандлы](https://ru.bem.info/methodology/build/#Введение)) полученные в результате сборки.
+Cодержит [декларации](#bemdecljs) и [бандлы](https://ru.bem.info/methodology/build/#Введение) страниц проекта.
 
-**Бандлы**
+Бандлы — это файлы полученные в результате сборки.
 
 Обычно одной директории бандла соответствует одна страница проекта:
 
