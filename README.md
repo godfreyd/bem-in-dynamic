@@ -185,6 +185,8 @@
 * [server](#)
 * [static](#)
 
+### Обзор
+
 Давайте коротко пробежимся по файловой структуре проекта для того чтобы понять, как он устроен.
 
 ```files
@@ -205,7 +207,7 @@ sssr-project/
     package.json          # Описание проекта для npm
 ```
 
-
+### desktop.bundles
 
 Директория `desktop.bundles` содержит [декларации страниц](https://ru.bem.info/methodology/declarations/) и файлы ([бандлы](https://ru.bem.info/methodology/build/#Введение)) полученные в результате сборки.
 
