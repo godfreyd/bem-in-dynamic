@@ -179,14 +179,12 @@
 
 ## Файловая структура проекта
 
-[Обзор]()
-[desktop.bundles]()
-[common.blocks]()
-[server]()
-[static]()
-[.enb]()
-
-
+* [Обзор](#)
+* [desktop.bundles](#)
+* [common.blocks](#)
+* [server](#)
+* [static](#)
+* [.enb](#)
 
 ### Обзор
 
