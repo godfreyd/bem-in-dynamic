@@ -261,7 +261,7 @@ desktop.bundles/
 ## Технологии
 
 * [Обзор](#)
-* [Декларации](#Декларации)
+* [`*.bemdecl.js`](#bemdecljs)
 * [deps.js](#)
 * [bemtree.js](#)
 * [bemhtml.js](#)
