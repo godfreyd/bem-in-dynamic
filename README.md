@@ -207,8 +207,6 @@ sssr-project/
 ```files
 common.blocks/
     page/                # Директория блока `page`
-        __inner/         # Поддиректория элемента `page__inner`
-        _theme/          # Поддиректория модификатора `page_theme`
         _view/           # Поддиректория модификатора `page_view`
 ```
 
@@ -217,10 +215,8 @@ common.blocks/
 ```files
 common.blocks/
     page/
-        page.bemhtml.js  # Реализация блока `page` в технологии BEMHTML
         page.bemtree.js  # Реализация блока `page` в технологии BEMTREE  
         page.deps.js     # Реализация блока `page` в технологии DEPS
-        page.post.css    # Реализация блока `page` в технологии PostCSS
 ```
 
 Перед отправкой в браузер файлы [собираются](#Сборка) и оптимизируются.
@@ -240,15 +236,9 @@ desktop.bundles/
         index.bemhtml.js  # Бандл страницы `index` в технологии реализации BEMHTML
         index.bemtree.js  # Бандл страницы `index` в технологии реализации BEMTREE
         index.css         # Бандл страницы `index` в технологии реализации CSS
+        index.deps.js     # Бандл страницы `index` в технологии реализации DEPS
         index.js          # Бандл страницы `index` в технологии реализации JS
-
-    about/                # Бандлы для страницы `about`
-        about.bemdecl.js  # Декларация для страницы `about`
-        about.bemhtml.js  # Бандл страницы `about` в технологии реализации BEMHTML
-        about.bemtree.js  # Бандл страницы `about` в технологии реализации BEMTREE
-        about.css         # Бандл страницы `about` в технологии реализации CSS
-        about.js          # Бандл страницы `about` в технологии реализации JS
-
+        ...
 ```
 
 Однако иногда бывает удобно иметь возможность не пересобирать каждый раз куски кода общие для всего проекта (например,  блоки `header`, `footer`).
@@ -258,10 +248,11 @@ desktop.bundles/
 ```files
 desktop.bundles/
     index/                # Бандлы для страницы `index`
-    about/                # Бандлы для страницы `about`
     header/               # Бандлы для блока `header`
     footer/               # Бандлы для блока `footer`
 ```
+
+> **Примечание** Кроме бандлов для каждой страницы определяется декларация (файлы `*.bemdecl.js`). Более подробно
 
 ### server
 
