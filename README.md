@@ -8,6 +8,8 @@
   * [desktop.bundles](#desktopbundles)
   * [server](#server)
   * [static](#static)
+* [Технологии](#Технологии)
+  * [*.bemdecl.js](#bemdecljs)
 * [Сборка](#Сборка)
 * [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
 * [Клиентская часть](#)
@@ -259,12 +261,6 @@ desktop.bundles/
 ### static
 
 ## Технологии
-
-* [Обзор](#)
-* [`*.bemdecl.js`](#bemdecljs)
-* [deps.js](#)
-* [bemtree.js](#)
-* [bemhtml.js](#)
 
 ### `*.bemdecl.js`
 
