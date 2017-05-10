@@ -9,7 +9,7 @@
   * [server](#server)
   * [static](#static)
 * [Технологии](#Технологии)
-  * [*.bemdecl.js](#bemdecljs)
+  * [.bemdecl.js](#bemdecljs)
 * [Сборка](#Сборка)
 * [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
 * [Клиентская часть](#)
@@ -262,7 +262,7 @@ desktop.bundles/
 
 ## Технологии
 
-### `*.bemdecl.js`
+### `.bemdecl.js`
 
 Файлы  `*.bemdecl.js`.
 
