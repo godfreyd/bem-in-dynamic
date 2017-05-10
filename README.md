@@ -9,7 +9,11 @@
   * [server](#server)
   * [static](#static)
 * [Технологии](#Технологии)
-  * [BEMDECL](#bemdecljs)
+  * [bemdecl.js](#bemdecljs)
+  * [bemhtml.js](#bemhtmljs)
+  * [bemhtml.js](#bemhtmljs)
+  * [bemtree.js](#bemtreejs)
+  * [deps.js](#depsjs)
 * [Сборка](#Сборка)
 * [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
 * [Клиентская часть](#)
@@ -264,8 +268,6 @@ desktop.bundles/
 
 ### bemdecl.js
 
-Файлы  `*.bemdecl.js`.
-
 Как упоминалось ранее, кроме бандлов для каждой страницы определяется декларация. Декларация описывается в `*.bemdecl.js`-файле и представляет собой список БЭМ-сущностей, используемых на странице.
 
 **Пример**
@@ -287,6 +289,17 @@ exports.blocks = [
     { name: 'root' }
 ];  
 ```
+
+
+### bemhtml.js
+
+### bemtree.js
+
+### deps.js
+
+
+
+
 
 ## Схема работы приложения Social Services Search Robot
 
