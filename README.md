@@ -266,7 +266,7 @@ desktop.bundles/
 * [bemtree.js](#)
 * [bemhtml.js](#)
 
-### Декларации — `*.bemdecl.js`
+### `*.bemdecl.js`
 
 Файлы  `*.bemdecl.js`.
 
