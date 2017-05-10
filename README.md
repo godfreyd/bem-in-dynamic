@@ -243,7 +243,7 @@ desktop.bundles/
 
 ### common.blocks
 
-Содержит все [БЭМ-сущности](https://ru.bem.info/methodology/key-concepts/#БЭМ-сущность) проекта.
+Содержит реализации всех [БЭМ-сущностей](https://ru.bem.info/methodology/key-concepts/#БЭМ-сущность) проекта.
 
 Имена файлов и директорий БЭМ-сущностей соответствуют [соглашению по именованию](https://ru.bem.info/methodology/naming-convention/):
 
