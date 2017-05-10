@@ -11,7 +11,6 @@
 * [Технологии](#Технологии)
   * [bemdecl.js](#bemdecljs)
   * [bemhtml.js](#bemhtmljs)
-  * [bemhtml.js](#bemhtmljs)
   * [bemtree.js](#bemtreejs)
   * [deps.js](#depsjs)
 * [Сборка](#Сборка)
