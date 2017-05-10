@@ -254,11 +254,10 @@ desktop.bundles/
 ```files
 desktop.bundles/
     index/                # Бандлы для страницы `index`
+    ...
     header/               # Бандлы для блока `header`
     footer/               # Бандлы для блока `footer`
 ```
-
-> **Примечание** Такой подход актуален для
 
 ### server
 
