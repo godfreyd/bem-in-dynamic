@@ -4,8 +4,8 @@
 * [Шаблонный репозиторий](#Шаблонный-репозиторий)
 * [Простейшее приложение Hello, World](#Простейшее-приложение-hello-world)
 * [Файловая структура проекта](#Файловая-структура-проекта)
-  * [desktop.bundles](#desktopbundles)
   * [common.blocks](#commonblocks)
+  * [desktop.bundles](#desktopbundles)
   * [server](#server)
   * [static](#static)
 * [Сборка](#Сборка)
@@ -198,6 +198,33 @@ sssr-project/
     package.json          # Описание проекта для npm
 ```
 
+### common.blocks
+
+Содержит реализации всех [БЭМ-сущностей](https://ru.bem.info/methodology/key-concepts/#БЭМ-сущность) проекта.
+
+Имена файлов и директорий БЭМ-сущностей соответствуют [соглашению по именованию](https://ru.bem.info/methodology/naming-convention/):
+
+```files
+common.blocks/
+    page/                # Директория блока `page`
+        __inner/         # Поддиректория элемента `page__inner`
+        _theme/          # Поддиректория модификатора `page_theme`
+        _view/           # Поддиректория модификатора `page_view`
+```
+
+Код разделяется на мелкие независимые части для удобства работы с отдельными блоками:
+
+```files
+common.blocks/
+    page/
+        page.bemhtml.js  # Реализация блока `page` в технологии BEMHTML
+        page.bemtree.js  # Реализация блока `page` в технологии BEMTREE  
+        page.deps.js     # Реализация блока `page` в технологии DEPS
+        page.post.css    # Реализация блока `page` в технологии PostCSS
+```
+
+Перед отправкой в браузер файлы [собираются](#Сборка) и оптимизируются.
+
 ### desktop.bundles
 
 Cодержит [декларации](#bemdecljs) и [бандлы](https://ru.bem.info/methodology/build/#Введение) страниц проекта.
@@ -240,33 +267,6 @@ desktop.bundles/
 desktop.bundles/
     index/                # Бандлы для страницы `index`
 ```
-
-### common.blocks
-
-Содержит реализации всех [БЭМ-сущностей](https://ru.bem.info/methodology/key-concepts/#БЭМ-сущность) проекта.
-
-Имена файлов и директорий БЭМ-сущностей соответствуют [соглашению по именованию](https://ru.bem.info/methodology/naming-convention/):
-
-```files
-common.blocks/
-    page/                # Директория блока `page`
-        __inner/         # Поддиректория элемента `page__inner`
-        _theme/          # Поддиректория модификатора `page_theme`
-        _view/           # Поддиректория модификатора `page_view`
-```
-
-Код разделяется на мелкие независимые части для удобства работы с отдельными блоками:
-
-```files
-common.blocks/
-    page/
-        page.bemhtml.js  # Реализация блока `page` в технологии BEMHTML
-        page.bemtree.js  # Реализация блока `page` в технологии BEMTREE  
-        page.deps.js     # Реализация блока `page` в технологии DEPS
-        page.post.css    # Реализация блока `page` в технологии PostCSS
-```
-
-Перед отправкой в браузер файлы [собираются](#Сборка) и оптимизируются.
 
 ### server
 
