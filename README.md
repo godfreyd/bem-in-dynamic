@@ -4,10 +4,10 @@
 * [Шаблонный репозиторий](#Шаблонный-репозиторий)
 * [Простейшее приложение Hello, World](#Простейшее-приложение-hello-world)
 * [Файловая структура проекта](#Файловая-структура-проекта)
-  * [desktop.bundles](#)
-  * [common.blocks](#)
-  * [server](#)
-  * [static](#)
+  * [desktop.bundles](#desktopbundles)
+  * [common.blocks](#commonblocks)
+  * [server](#server)
+  * [static](#static)
 * [Сборка](#Сборка)
 * [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
 * [Клиентская часть](#)
@@ -269,6 +269,10 @@ common.blocks/
 ```
 
 Перед отправкой в браузер файлы [собираются](#Сборка) и оптимизируются.
+
+### server
+
+### static
 
 ## Технологии
 
