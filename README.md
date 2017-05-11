@@ -18,12 +18,12 @@
 * [Сборка](#Сборка)
 * [Приложение Social Services Search Robot](#)
   * [Схема работы](#Схема-работы)
-* [Клиентская часть](#)
-* [Серверная часть](#)
-  * [Работа с Twitter Search API](#)
-  * [Работа с YouTube Data API](#)
-  * [BEMTREE-шаблонизация](#)
-  * [BEMHTML-шаблонизация](#)
+  * [Клиентская часть](#)
+  * [Серверная часть](#)
+    * [Работа с Twitter Search API](#)
+    * [Работа с YouTube Data API](#)
+    * [BEMTREE-шаблонизация](#)
+    * [BEMHTML-шаблонизация](#)
 
 ## Введение
 
@@ -355,7 +355,9 @@ root(DECL)
 
 ## Приложение Social Services Search Robot
 
-### Схема работы приложения Social Services Search Robot
+
+
+### Схема работы
 
 ![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
 
