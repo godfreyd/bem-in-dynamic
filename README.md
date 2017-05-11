@@ -300,7 +300,7 @@ exports.blocks = [
 ```files
 root(DECL)
 |
-└──> root(BEMHTML||BEMTREE) + root(DEPS)
+└──> root(BEMHTML || & BEMTREE) + root(DEPS)
      |
      └──> page(BEMHTML||BEMTREE) + page(DEPS)
           |
