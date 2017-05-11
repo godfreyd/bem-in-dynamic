@@ -16,7 +16,8 @@
     * [BEMTREE](#bemtree)
     * [DEPS](#deps)
 * [Сборка](#Сборка)
-* [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
+* [Приложение Social Services Search Robot](#)
+  * [Схема работы](#Схема-работы)
 * [Клиентская часть](#)
 * [Серверная часть](#)
   * [Работа с Twitter Search API](#)
@@ -183,7 +184,7 @@
 
 Приложение **Hello, World** готово.
 
-## Файловая структура проекта
+### Файловая структура проекта
 
 Как упоминалось в предыдущем разделе, за основу будет взято созданное приложение **Hello, World**. Давайте рассмотрим как оно выглядит изнутри:
 
@@ -207,7 +208,7 @@ sssr-project/
 
 > **Примечание.** Подробное описание некоторых файлов и директорий приводится ниже.
 
-### common.blocks
+#### common.blocks
 
 Содержит реализации всех [БЭМ-сущностей](https://ru.bem.info/methodology/key-concepts/#БЭМ-сущность) проекта.
 
@@ -237,7 +238,7 @@ common.blocks/
 
 Перед отправкой в браузер файлы [собираются](#Сборка) и оптимизируются.
 
-### desktop.bundles
+#### desktop.bundles
 
 Cодержит файлы полученные в результате [сборки](#Сборка). Такие файлы в БЭМ-методологии принято называть бандлами.
 
@@ -267,16 +268,15 @@ desktop.bundles/
     footer/               # Бандлы для блока `footer`
 ```
 
-### server
+#### server
 
-### static
+#### static
 
-### .borschik
+#### .borschik
 
-### .stylelintrc
+#### .stylelintrc
 
-
-## Технологии
+### Технологии
 
 Полный стек технологий БЭМ состоит из:
 
@@ -287,7 +287,7 @@ desktop.bundles/
 
 > **Примечание.** Подробнее о [BEMJSON-формате](https://ru.bem.info/platform/bemjson/) входных данных.
 
-### BEMDECL
+#### BEMDECL
 
 Технология BEMDECL позволяет определить список БЭМ-сущностей, используемых на странице.
 
@@ -332,14 +332,14 @@ root(DECL)
 
 > **Примечание.** Технология BEMTREE указана через логический оператор `||` (ИЛИ), потому в движке BEMTREE используются только режимы ориентированные на работу с данными. Если динамической передачи данных не предполагается, можно использовать только BEMHTML.
 
-### BEMHTML
+#### BEMHTML
 
 `*.bemhtml.js`-файлы — это описание БЭМ-сущности в формате BEMJSON.
 
-### BEMTREE
+#### BEMTREE
 
 
-### DEPS
+#### DEPS
 
 Технология DEPS позволяет определить зависимости между БЭМ-сущностями, которые разнесены по файловой структуре проекта и не отражены в [декларации](#bemdecl).
 
@@ -353,11 +353,13 @@ root(DECL)
 })
 ```
 
-## Схема работы приложения Social Services Search Robot
+## Приложение Social Services Search Robot
+
+### Схема работы приложения Social Services Search Robot
 
 ![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
 
-### Шаг 1. Получение данных
+#### Шаг 1. Получение данных
 
 Приложение получает запрос от пользователя и обращается за данными к API Twitter и YouTube.
 
@@ -366,7 +368,7 @@ root(DECL)
 * [Работа с Twitter Search API](#).
 * [Работа с YouTube Data API](#).
 
-### Шаг 2. BEMTREE-шаблонизация
+#### Шаг 2. BEMTREE-шаблонизация
 
 После того как данные были получены, их необходимо добавить тем блокам, которые их ожидают. Как и в примере с приложением **Hello, World**, за обработку полученных данных отвечает **BEMTREE** (файлы с расширением `.bemtree.js`).
 
@@ -374,13 +376,16 @@ root(DECL)
 
 Подробное описание шага рассматривается в разделе [BEMTREE-шаблонизация](#).
 
-### Шаг 3. BEMHTML-шаблонизация
+#### Шаг 3. BEMHTML-шаблонизация
 
 После того как итоговый BEMJSON был достроен необходимыми данными, его неоходимо преобразовать в HTML.
 
 **BEMHTML** является частью шаблонизатора `bem-xjst` и преобзазует BEMJSON в HTML.
 
 Подробное описание шага рассматривается в разделе [BEMHTML-шаблонизация](#).
+
+
+
 
 ### Декларация БЭМ-сущностей
 
@@ -479,55 +484,3 @@ block('page').content()(function() {
 * Проверьте все ли зависимости указаны.
 * Ознакомьтесь с нашим [примером реализации](#).
 * Задавайте вопросы на [форуме](https://ru.bem.info/forum/).
-
-
-
-
-Almost the same as [project-stub](https://github.com/bem/project-stub/) but with [BEMTREE](https://en.bem.info/technology/bemtree/) and [Express](http://expressjs.com/).
-
-[![Build Status](https://travis-ci.org/bem/bem-express.svg?branch=master)](https://travis-ci.org/bem/bem-express)
-
-## Installation
-
-```sh
-git clone https://github.com/bem/bem-express.git
-cd bem-express
-npm i
-```
-
-## Development
-
-```sh
-npm run dev
-```
-will run initial `enb make` command and then start the server with `nodemon` which will restart it on any server file update. Also `chokidar` will watch for changes in `*.blocks/**` and rebuild the project automatically. Then livereload will update the page in the browser.
-
-You may also set `NO_LIVERELOAD` env variable to switch livereload off:
-```sh
-NO_LIVERELOAD=1 npm run dev
-```
-
-You may also run rebuild manually with `enb make` or with external watcher (e.g. `npm run watch`). To switch off automatic rebuild use `NO_AUTOMAKE` env variable:
-```sh
-NO_AUTOMAKE=1 npm run dev
-```
-
-## Production
-
-```sh
-YENV=production enb make
-NODE_ENV=production node server
-```
-
-## Templating
-
-Templating starts in `root` block which replaces itself with `page` or any other context (if specified as argument to `render` function).
-
-## Pro tips
-
-Run server in dev mode with `NODE_ENV=development` environment variable (`nodemon` will set it for you).
-
-In dev mode
-
-* Add `?json=1` to URL to see raw data
-* Add `?bemjson=1` to URL to see BEMJSON generated with BEMTREE templates.
