@@ -299,18 +299,22 @@ exports.blocks = [
 
 ```files
 root(DECL)
-    |
-    ∨
-root(BEMHTML||BEMTREE) + root(DEPS)
-         |
-         └──> page(BEMHTML||BEMTREE) + page(DEPS)
-                       |
-                       ├──> header(BEMHTML||BEMTREE) + header(DEPS) ——> ∞
-                       |
-                       ├──> body(BEMHTML||BEMTREE) + body(DEPS) ——> ∞
-                       |
-                       └──> footer(BEMHTML||BEMTREE) + footer(DEPS) ——> ∞
-
+|
+└──> root(BEMHTML||BEMTREE) + root(DEPS)
+     |
+     └──> page(BEMHTML||BEMTREE) + page(DEPS)
+          |
+          ├──> header(BEMHTML||BEMTREE) + header(DEPS)
+          |    |
+          |    └──> ...
+          |
+          ├──> body(BEMHTML||BEMTREE) + body(DEPS)
+          |    |
+          |    └──> ...
+          |
+          └──> footer(BEMHTML||BEMTREE) + footer(DEPS)
+               |
+               └──> ...
 ```
 
 ### BEMHTML
