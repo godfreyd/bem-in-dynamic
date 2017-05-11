@@ -12,9 +12,9 @@
   * [.stylelintrc](#stylelintrc)
 * [Технологии](#Технологии)
   * [BEMDECL](#bemdecl)
-  * [bemhtml.js](#bemhtmljs)
-  * [bemtree.js](#bemtreejs)
-  * [DEPS](#depsjs)
+  * [BEMHTML](#bemhtml)
+  * [BEMTREE](#bemtree)
+  * [DEPS](#deps)
 * [Сборка](#Сборка)
 * [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
 * [Клиентская часть](#)
@@ -273,9 +273,9 @@ desktop.bundles/
 
 ## Технологии
 
-
-* BEMDECL — технология для описания списка БЭМ-сущностей, используемых на странице.
-* BEMHTML — технология для описания списка БЭМ-сущностей, используемых на странице.
+* [BEMDECL](https://ru.bem.info/methodology/declarations/) — технология для описания деклараций.
+* [BEMHTML](https://ru.bem.info/platform/bem-xjst/) — технология для описания BEMJSON-шаблонов.
+* [BEMTREE](https://ru.bem.info/platform/bem-xjst/) — технология для описания BEMJSON-шаблонов, использующие динамические данные.
 * [DEPS](https://ru.bem.info/platform/deps/) — технология для описания зависимостей в БЭМ.
 
 ### BEMDECL
@@ -305,19 +305,14 @@ exports.blocks = [
 
 Это не означает, что на проекте используется один блок. `root` является корневым блоком, а все остальные блоки попадают в сборку по [зависимостям](#depsjs) на основе описанных шаблонов.
 
-> Подробнее о [декларациях в БЭМ](https://ru.bem.info/methodology/declarations/).
-
-### bemhtml.js
+### BEMHTML
 
 `*.bemhtml.js`-файлы — это описание БЭМ-сущности в формате BEMJSON.
 
-> Подробнее о [шаблонизации в БЭМ](https://ru.bem.info/platform/bem-xjst/).
+### BEMTREE
 
-### bemtree.js
 
-> Подробнее о [шаблонизации в БЭМ](https://ru.bem.info/platform/bem-xjst/).
-
-### deps.js
+### DEPS
 
 В `*.deps.js`-файлах описываются зависимости одних БЭМ-сущностей от других.
 
@@ -330,8 +325,6 @@ exports.blocks = [
     shouldDeps: 'page'
 })
 ```
-
-> Подробнее о [зависимостях в БЭМ](https://ru.bem.info/platform/deps/).
 
 ## Схема работы приложения Social Services Search Robot
 
