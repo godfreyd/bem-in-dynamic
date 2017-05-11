@@ -8,6 +8,8 @@
   * [Директория desktop.bundles](#desktopbundles)
   * [Директория server](#server)
   * [Директория static](#static)
+  * [файл .borschik](#static)
+  * [файл .stylelintrc](#static)
 * [Технологии](#Технологии)
   * [bemdecl.js](#bemdecljs)
   * [bemhtml.js](#bemhtmljs)
