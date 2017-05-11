@@ -262,7 +262,7 @@ desktop.bundles/
 ```files
 desktop.bundles/
     index/                # Бандлы для страницы `index`
-    ...
+    ...                   # Бандлы для других страниц
     header/               # Бандлы для блока `header`
     footer/               # Бандлы для блока `footer`
 ```
