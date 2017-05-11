@@ -305,11 +305,11 @@ root(BEMHTML||BEMTREE) + root(DEPS)
          |
          └──> page(BEMHTML||BEMTREE) + page(DEPS)
                        |
-                       ├──> header(BEMHTML||BEMTREE) + header(DEPS) --> ∞
+                       ├──> header(BEMHTML||BEMTREE) + header(DEPS) ——> ∞
                        |
-                       ├──> body(BEMHTML||BEMTREE) + body(DEPS) --> ∞
+                       ├──> body(BEMHTML||BEMTREE) + body(DEPS) ——> ∞
                        |
-                       └──> footer(BEMHTML||BEMTREE) + footer(DEPS) --> ∞
+                       └──> footer(BEMHTML||BEMTREE) + footer(DEPS) ——> ∞
 
 ```
 
