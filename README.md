@@ -11,7 +11,7 @@
   * [.borschik](#borschik)
   * [.stylelintrc](#stylelintrc)
 * [Технологии](#Технологии)
-  * [bemdecl.js](#bemdecljs)
+  * [BEMDECL](#bemdecl)
   * [bemhtml.js](#bemhtmljs)
   * [bemtree.js](#bemtreejs)
   * [DEPS](#depsjs)
@@ -278,7 +278,7 @@ desktop.bundles/
 * BEMHTML — технология для описания списка БЭМ-сущностей, используемых на странице.
 * [DEPS](https://ru.bem.info/platform/deps/) — технология для описания зависимостей в БЭМ.
 
-### bemdecl.js
+### BEMDECL
 
 `*.bemdecl.js`-файлы определяют список БЭМ-сущностей, используемых на странице:
 
