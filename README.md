@@ -273,10 +273,12 @@ desktop.bundles/
 
 ## Технологии
 
-* [BEMDECL](https://ru.bem.info/methodology/declarations/) — технология для описания деклараций.
+* [BEMDECL](https://ru.bem.info/methodology/declarations/) — технология для описания деклараций В БЭМ.
 * [BEMHTML](https://ru.bem.info/platform/bem-xjst/) — технология для описания BEMJSON-шаблонов.
 * [BEMTREE](https://ru.bem.info/platform/bem-xjst/) — технология для описания BEMJSON-шаблонов, использующие динамические данные.
 * [DEPS](https://ru.bem.info/platform/deps/) — технология для описания зависимостей в БЭМ.
+
+> **Примечание.** Подробнее о [BEMJSON-формате](https://ru.bem.info/platform/bemjson/) входных данных.
 
 ### BEMDECL
 
