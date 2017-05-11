@@ -271,6 +271,11 @@ desktop.bundles/
 
 ### static
 
+### .borschik
+
+### .stylelintrc
+
+
 ## Технологии
 
 Полный стек технологий БЭМ состоит из:
