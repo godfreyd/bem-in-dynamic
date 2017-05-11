@@ -14,7 +14,7 @@
   * [bemdecl.js](#bemdecljs)
   * [bemhtml.js](#bemhtmljs)
   * [bemtree.js](#bemtreejs)
-  * [deps.js](#depsjs)
+  * [DEPS](#depsjs)
 * [Сборка](#Сборка)
 * [Схема работы приложения Social Services Search Robot](#Схема-работы-приложения-social-services-search-robot)
 * [Клиентская часть](#)
@@ -272,6 +272,11 @@ desktop.bundles/
 ### static
 
 ## Технологии
+
+
+* BEMDECL — технология для описания списка БЭМ-сущностей, используемых на странице.
+* BEMHTML — технология для описания списка БЭМ-сущностей, используемых на странице.
+* [DEPS](https://ru.bem.info/platform/deps/) — технология для описания зависимостей в БЭМ.
 
 ### bemdecl.js
 
