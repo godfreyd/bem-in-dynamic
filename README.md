@@ -325,7 +325,7 @@ root(DECL)
 
 Шаблоны описываются в BEMJSON-формате в файлах с расширением `.bemtree.js`.
 
-![BEMTREE](static/images/440px-TempEngGen015.svg.png =250px)
+![BEMTREE](static/images/440px-TempEngGen015.svg.png){:height="250px" width="100px"}
 
 // TODO: перерисовать картинку под нас
 
