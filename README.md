@@ -325,6 +325,10 @@ root(DECL)
 
 Шаблоны описываются в BEMJSON-формате в файлах с расширением `.bemtree.js`.
 
+![BEMTREE](static/images/440px-TempEngGen015.svg.png)
+
+// TODO: перерисовать картинку под нас
+
 #### BEMHTML
 
 Является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобзазует шаблоны в HTML.
