@@ -321,13 +321,13 @@ root(DECL)
 
 #### BEMTREE
 
-[BEMTREE](https://ru.bem.info/platform/bem-xjst/) является частью шаблонизатора `bem-xjst` и преобзазует шаблоны с данными в BEMJSON с БЭМ-деревом.
+Является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобзазует шаблоны с данными в BEMJSON с БЭМ-деревом.
 
 Шаблоны описываются в BEMJSON-формате в файлах с расширением `.bemtree.js`.
 
 #### BEMHTML
 
-[BEMHTML](https://ru.bem.info/platform/bem-xjst/) является частью шаблонизатора `bem-xjst` и преобзазует шаблоны в HTML.
+Является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобзазует шаблоны в HTML.
 
 Шаблоны описываются в BEMJSON-формате в файлах с расширением `.bemhtml.js`.
 
