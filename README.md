@@ -339,6 +339,10 @@ root(DECL)
 
 ## Приложение Social Services Search Robot
 
+* [Схема работы](#Схема-работы)
+* [Работа с Twitter Search API](#)
+* [Работа с YouTube Data API](#)
+
 ### Схема работы
 
 ![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
@@ -359,7 +363,3 @@ root(DECL)
 #### Шаг 3. BEMHTML-шаблонизация
 
 После того как итоговый BEMJSON был достроен необходимыми данными, его неоходимо преобразовать в HTML.
-
-
-* [Работа с Twitter Search API](#)
-* [Работа с YouTube Data API](#)
