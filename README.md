@@ -268,8 +268,8 @@ desktop.bundles/
 Полный стек технологий БЭМ состоит из:
 
 * [BEMDECL](#bemdecl) — технология для описания деклараций В БЭМ.
-* [BEMHTML](#bemhtml) — компилирующий обработчик BEMJSON-шаблонов. Позволяет преобразовать BEMJSON в HTML.
 * [BEMTREE](#bemtree) — компилирующий обработчик BEMJSON-шаблонов, использующих динамические данные.
+* [BEMHTML](#bemhtml) — компилирующий обработчик BEMJSON-шаблонов.
 * [DEPS](#deps) — технология для описания зависимостей в БЭМ.
 
 > Подробнее о [BEMJSON-формате](https://ru.bem.info/platform/bemjson/) входных данных.
@@ -319,21 +319,19 @@ root(DECL)
 
 > **Примечание.** Технология BEMTREE указана через логический оператор `||` (ИЛИ), потому в движке BEMTREE используются только режимы ориентированные на работу с данными. Если динамической передачи данных не предполагается, можно использовать только BEMHTML.
 
-#### BEMHTML
-
-[BEMHTML](https://ru.bem.info/platform/bem-xjst/)
-`*.bemhtml.js`-файлы — это описание БЭМ-сущности в формате BEMJSON.
-
-
-**BEMHTML** является частью шаблонизатора `bem-xjst` и преобзазует BEMJSON в HTML.
-
-
 #### BEMTREE
 
-[BEMTREE](https://ru.bem.info/platform/bem-xjst/)
+[BEMTREE](https://ru.bem.info/platform/bem-xjst/) является частью шаблонизатора `bem-xjst` и преобзазует [BEMJSON-шаблоны](https://ru.bem.info/platform/bemjson/) с данными в BEMJSON с БЭМ-деревом.
 
-**BEMTREE** является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобзазует [BEMJSON](https://ru.bem.info/platform/bemjson/) с данными в BEMJSON с БЭМ-деревом.
+Шаблоны описываются в файлах с расширением `.bemtree.js`.
 
+#### BEMHTML
+
+[BEMHTML](https://ru.bem.info/platform/bem-xjst/) является частью шаблонизатора `bem-xjst` и преобзазует [BEMJSON-шаблоны](https://ru.bem.info/platform/bemjson/) в HTML.
+
+Шаблоны описываются в файлах с расширением `.bemhtml.js`.
+
+> **Важно!** Компилирующий обработчик BEMHTML не предназначен для работы с данными.
 
 #### DEPS
 
