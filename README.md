@@ -7,8 +7,6 @@
   * [Технологии](#Технологии)
 * [Приложение Social Services Search Robot](#)
   * [Схема работы](#Схема-работы)
-  * [Клиентская часть](#)
-  * [Серверная часть](#)
 
 ## Введение
 
@@ -315,9 +313,16 @@ root(DECL)
 [BEMHTML](https://ru.bem.info/platform/bem-xjst/)
 `*.bemhtml.js`-файлы — это описание БЭМ-сущности в формате BEMJSON.
 
+
+**BEMHTML** является частью шаблонизатора `bem-xjst` и преобзазует BEMJSON в HTML.
+
+
 #### BEMTREE
 
 [BEMTREE](https://ru.bem.info/platform/bem-xjst/)
+
+**BEMTREE** является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобзазует [BEMJSON](https://ru.bem.info/platform/bemjson/) с данными в BEMJSON с БЭМ-деревом.
+
 
 #### DEPS
 
@@ -334,8 +339,6 @@ root(DECL)
 ```
 
 ## Приложение Social Services Search Robot
-
-
 
 ### Схема работы
 
@@ -354,20 +357,10 @@ root(DECL)
 
 После того как данные были получены, их необходимо добавить тем блокам, которые их ожидают. Как и в примере с приложением **Hello, World**, за обработку полученных данных отвечает **BEMTREE** (файлы с расширением `.bemtree.js`).
 
-**BEMTREE** является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобзазует [BEMJSON](https://ru.bem.info/platform/bemjson/) с данными в BEMJSON с БЭМ-деревом.
-
-Подробное описание шага рассматривается в разделе [BEMTREE-шаблонизация](#).
-
 #### Шаг 3. BEMHTML-шаблонизация
 
 После того как итоговый BEMJSON был достроен необходимыми данными, его неоходимо преобразовать в HTML.
 
-**BEMHTML** является частью шаблонизатора `bem-xjst` и преобзазует BEMJSON в HTML.
-
-Подробное описание шага рассматривается в разделе [BEMHTML-шаблонизация](#).
-
 
 * [Работа с Twitter Search API](#)
 * [Работа с YouTube Data API](#)
-* [BEMTREE-шаблонизация](#)
-* [BEMHTML-шаблонизация](#)
