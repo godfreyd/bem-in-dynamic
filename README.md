@@ -197,9 +197,6 @@ sssr-project/
 * [desktop.bundles](#desktopbundles)
 * [server](#server)
 * [static](#static)
-* [.borschik](#borschik)
-* [.stylelintrc](#stylelintrc)
-
 
 #### common.blocks
 
@@ -256,9 +253,6 @@ desktop.bundles/
 
 #### static
 
-#### .borschik
-
-#### .stylelintrc
 
 ### Технологии
 
