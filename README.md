@@ -262,25 +262,18 @@ desktop.bundles/
 
 ### Технологии
 
-
-* [BEMDECL](#bemdecl)
-* [BEMHTML](#bemhtml)
-* [BEMTREE](#bemtree)
-* [DEPS](#deps)
-
-
 Полный стек технологий БЭМ состоит из:
 
-* [BEMDECL](https://ru.bem.info/methodology/declarations/) — технология для описания деклараций В БЭМ.
-* [BEMHTML](https://ru.bem.info/platform/bem-xjst/) — технология для описания BEMJSON-шаблонов.
-* [BEMTREE](https://ru.bem.info/platform/bem-xjst/) — технология для описания BEMJSON-шаблонов, использующих динамические данные.
-* [DEPS](https://ru.bem.info/platform/deps/) — технология для описания зависимостей в БЭМ.
+* [BEMDECL](#bemdecl) — технология для описания деклараций В БЭМ.
+* [BEMHTML](#bemhtml) — технология для описания BEMJSON-шаблонов.
+* [BEMTREE](#bemtree) — технология для описания BEMJSON-шаблонов, использующих динамические данные.
+* [DEPS](#deps) — технология для описания зависимостей в БЭМ.
 
-> **Примечание.** Подробнее о [BEMJSON-формате](https://ru.bem.info/platform/bemjson/) входных данных.
+> Подробнее о [BEMJSON-формате](https://ru.bem.info/platform/bemjson/) входных данных.
 
 #### BEMDECL
 
-Технология BEMDECL позволяет определить список БЭМ-сущностей, используемых на странице.
+Технология [BEMDECL](https://ru.bem.info/methodology/declarations/) позволяет определить список БЭМ-сущностей, используемых на странице.
 
 Такой список в БЭМ принято называть декларацией. Задача декларации — определить, что и в каком порядке подключать в сборку.
 
@@ -325,14 +318,16 @@ root(DECL)
 
 #### BEMHTML
 
+[BEMHTML](https://ru.bem.info/platform/bem-xjst/)
 `*.bemhtml.js`-файлы — это описание БЭМ-сущности в формате BEMJSON.
 
 #### BEMTREE
 
+[BEMTREE](https://ru.bem.info/platform/bem-xjst/)
 
 #### DEPS
 
-Технология DEPS позволяет определить зависимости между БЭМ-сущностями, которые разнесены по файловой структуре проекта и не отражены в [декларации](#bemdecl).
+Технология [DEPS](https://ru.bem.info/platform/deps/) позволяет определить зависимости между БЭМ-сущностями, которые разнесены по файловой структуре проекта и не отражены в [декларации](#bemdecl).
 
 Зависимости описываются в виде JavaScript-объекта в файлах с расширением `.deps.js`.
 
