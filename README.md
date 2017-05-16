@@ -260,9 +260,9 @@ desktop.bundles/
 Полный стек технологий БЭМ состоит из:
 
 * [BEMDECL](#bemdecl) — технология для описания деклараций в БЭМ.
+* [DEPS](#deps) — технология для описания зависимостей в БЭМ.
 * [BEMTREE](#bemtree) — шаблонизатор преобразующий данные в BEMJSON.
 * [BEMHTML](#bemhtml) — шаблонизатор преобразующий BEMJSON в HTML.
-* [DEPS](#deps) — технология для описания зависимостей в БЭМ.
 * [i-bem.js](#i-bemjs) — JavaScript-фреймворк для БЭМ.
 
 > Подробнее о [BEMJSON-формате](https://ru.bem.info/platform/bemjson/) входных данных.
