@@ -34,7 +34,7 @@
                 </g>
                 <g id="setings_cashe_file_icon" transform="translate(56.967135, 182.907011)">
                     <polygon id="Rectangle-231" fill="#FFE67B" points="43.2850548 0 7.63983175 0 7.63983175 71.2904462 64.6721887 71.2904462 64.6721887 21.3871339"></polygon>
-                    <polygon id="Rectangle-232" fill="#E4A800" opacity="0.4" points="43.2850548 0 43.2850548 21.3871339 64.6721887 21.3871339"></polygon>
+                    <polygon id="Rectangle-232" fill="#FFCC00" points="43.2850548 0 43.2850548 21.3871339 64.6721887 21.3871339"></polygon>
                     <text id="Template-Engine" font-family="ArialMT, Arial" font-size="16" font-weight="normal" fill="#000000">
                         <tspan x="3.85863052" y="90.1968597">Template </tspan>
                         <tspan x="11.4094118" y="107.19686">Engine</tspan>
