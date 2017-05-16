@@ -308,6 +308,20 @@ root(DECL)
                └──> ...
 ```
 
+#### DEPS
+
+Технология [DEPS](https://ru.bem.info/platform/deps/) позволяет определить зависимости между БЭМ-сущностями, которые разнесены по файловой структуре проекта и не отражены в [декларации](#bemdecl).
+
+Зависимости описываются в виде JavaScript-объекта в файлах с расширением `.deps.js`.
+
+Пример зависимостей для блока `root` из приложения **Hello, World**:
+
+```js
+({
+    shouldDeps: 'page'
+})
+```
+
 #### BEMTREE
 
 Является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобразует данные в BEMJSON.
@@ -324,19 +338,6 @@ root(DECL)
 
 ![BEMHTML](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemhtml.svg)
 
-#### DEPS
-
-Технология [DEPS](https://ru.bem.info/platform/deps/) позволяет определить зависимости между БЭМ-сущностями, которые разнесены по файловой структуре проекта и не отражены в [декларации](#bemdecl).
-
-Зависимости описываются в виде JavaScript-объекта в файлах с расширением `.deps.js`.
-
-Пример зависимостей для блока `root` из приложения **Hello, World**:
-
-```js
-({
-    shouldDeps: 'page'
-})
-```
 
 #### i-bem.js
 
