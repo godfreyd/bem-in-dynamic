@@ -314,13 +314,15 @@ root(DECL)
 
 Шаблоны описываются в BEMJSON-формате в файлах с расширением `.bemtree.js`.
 
-![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg###gfgf)
+![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg#####)
 
 #### BEMHTML
 
 Является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобзазует BEMJSON-описание страницы в HTML.
 
 Шаблоны описываются в файлах с расширением `.bemhtml.js`.
+
+![BEMHTML](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemhtml.svg)
 
 #### DEPS
 
