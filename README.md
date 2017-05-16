@@ -22,6 +22,7 @@
 * фреймворк [i-bem.js](https://ru.bem.info/platform/i-bem/);
 * шаблонизатор [bem-xjst](https://ru.bem.info/platform/bem-xjst/);
 * технологию для описания зависимостей [DEPS](https://ru.bem.info/platform/deps/);
+* [Express.js](http://expressjs.com);
 * [YouTube Data API](https://developers.google.com/youtube/v3/docs/search/list);
 * [Twitter Search API](https://dev.twitter.com/rest/public/search).
 
@@ -38,11 +39,9 @@
 
 ## Шаблонный репозиторий
 
-Для создания динамических проектов по БЭМ разработан шаблонный репозиторий [bem-express](https://github.com/bem/bem-express). Он содержит необходимый минимум конфигурационных файлов и решает целый класс задач, таких как сборка проекта, ??? и др.
+Для создания динамических проектов по БЭМ разработан шаблонный репозиторий [bem-express](https://github.com/bem/bem-express). Он содержит необходимый минимум конфигурационных файлов и решает целый класс задач, таких как сборка проекта, настройка линтеров, подключение библиотек и др.
 
-// TODO: дописать основные вкусняшки bem-express
-
-В `bem-express` по умолчанию подключены основные библиотеки:
+В `bem-express` по умолчанию подключены основные БЭМ-библиотеки:
 
 * [bem-core](https://github.com/bem/bem-core)
 * [bem-components](https://github.com/bem/bem-components)
@@ -69,6 +68,8 @@
     git clone git@github.com:bem/bem-express.git sssr-project
     ```
 
+    > **Примечание.** Текущая версия `bem-express`: 2.0.0.
+
 2. Перейдите в директорию проекта:
 
     ```bash
@@ -93,7 +94,7 @@
     npm install
     ```
 
-    > **Примечание.** Не используйте права суперпользователя (`root`) при установке npm-зависимостей.
+    > **Примечание.** Не используйте права суперпользователя `root` при установке npm-зависимостей.
 
 6. Соберите проект и запустите сервер:
 
@@ -181,16 +182,19 @@ sssr-project/
     common.blocks/        # Базовые реализации блоков
     desktop.bundles/      # Директории бандлов проекта
     development.blocks/   # Блоки, подключаемые в процессе разработки (не для Production)  
-    libs/                 # Библиотеки
     node_modules/         # Пакеты
     server/               # Директория с серверным кодом
     static/               # Корневая директория для раздачи статических файлов
+    .bemhint.js           #
     .borschik             # Конфигурация сборщика файлов Borschik
-    .bowerrc              # Конфигурация менеджера пакетов Bower
-    README.md             # Текстовое описание проекта
-    bower.json            # Список зависимостей для Bower
+    .eslintignore         # Исключение файлов и директорий в ESLint
+    .eslintrc             # Конфигурация ESLint
+    .gitignore            # Исключение файлов и директорий в Git
+    .stylelintrc          # Конфигурация Stylelint
+    .travis.yml           # Автоматический запуск линтеров в Continuous Integration
     nodemon.json          # Конфигурация для пакета Nodemon
     package.json          # Описание проекта для npm
+    README.md             # Текстовое описание проекта
 ```
 
 Подробное описание некоторых файлов и директорий:
@@ -206,7 +210,7 @@ sssr-project/
 
 Содержит реализации всех [БЭМ-сущностей](https://ru.bem.info/methodology/key-concepts/#БЭМ-сущность) проекта.
 
-Имена файлов и директорий соответствуют [соглашению по именованию](https://ru.bem.info/methodology/naming-convention/). Код разделяется на мелкие независимые части для удобства работы с отдельными блоками.
+Имена файлов и директорий соответствуют [соглашению по именованию](https://ru.bem.info/methodology/naming-convention/). Код разделяется на независимые части для удобства работы с отдельными блоками.
 
 ```files
 common.blocks/
@@ -241,6 +245,8 @@ desktop.bundles/
         ...
 ```
 
+  > **Примечание.** Единственным не автоматически сгенерированным файлов в директориях бандлов является файл с расширением `.bemdecl.js`.
+
 #### server
 
 // TODO: Добавить описание
@@ -257,6 +263,7 @@ desktop.bundles/
 * [BEMTREE](#bemtree) — компилирующий обработчик шаблонов, описанных в BEMJSON-формате, использующих динамические данные.
 * [BEMHTML](#bemhtml) — компилирующий обработчик шаблонов, описанных в BEMJSON-формате.
 * [DEPS](#deps) — технология для описания зависимостей в БЭМ.
+* [i-bem.js](#deps) — технология для описания зависимостей в БЭМ.
 
 > Подробнее о [BEMJSON-формате](https://ru.bem.info/platform/bemjson/) входных данных.
 
@@ -332,6 +339,9 @@ root(DECL)
     shouldDeps: 'page'
 })
 ```
+
+#### i-bem.js
+
 
 ## Приложение Social Services Search Robot
 
