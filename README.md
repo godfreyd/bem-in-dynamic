@@ -347,7 +347,7 @@ root(DECL)
 
 ### Схема работы
 
-![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg##)
+![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg###ff)
 
 #### Шаг 1. Получение данных
 
