@@ -328,6 +328,8 @@ root(DECL)
 
 Шаблоны описываются в BEMJSON-формате в файлах с расширением `.bemtree.js`.
 
+Вход и выход шаблонизатора:
+
 ![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg#####)
 
 #### BEMHTML
@@ -336,8 +338,9 @@ root(DECL)
 
 Шаблоны описываются в файлах с расширением `.bemhtml.js`.
 
-![BEMHTML](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemhtml.svg)
+Вход и выход шаблонизатора:
 
+![BEMHTML](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemhtml.svg)
 
 #### i-bem.js
 
