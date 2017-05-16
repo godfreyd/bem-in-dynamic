@@ -314,7 +314,7 @@ root(DECL)
 
 Шаблоны описываются в BEMJSON-формате в файлах с расширением `.bemtree.js`.
 
-![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg#3e)
+![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg#3dde)
 
 #### BEMHTML
 
