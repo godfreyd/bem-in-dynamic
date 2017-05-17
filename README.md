@@ -390,7 +390,7 @@ root(DECL)
 
 #### Шаг 1. Получение данных
 
-Приложение получает запрос от пользователя и обращается за данными к API Twitter и YouTube.
+Приложение получает запрос от пользователя и обращается за данными к [Twitter Search API](https://dev.twitter.com/rest/public/search) и [YouTube Data API](https://developers.google.com/youtube/v3/docs/search/list).
 
 Генерация запроса и подготовка полученных данных для дальнейшей шаблонизации более подробно рассматриваются в разделах:
 
