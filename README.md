@@ -348,6 +348,7 @@ root(DECL)
 Пример зависимостей для блока `root` из приложения **Hello, World**:
 
 ```js
+// Файл `common.blocks/root/root.deps.js`
 ({
     shouldDeps: 'page'
 })
