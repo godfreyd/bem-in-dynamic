@@ -488,13 +488,101 @@ console.log(hello.Hello);
 
 ### Подготовка структуры проекта
 
-Как упоминалось ранее, за основу будет взято приложение **Hello, World**. Ранее мы рассматривали его структуру.
+Прежде чем начать писать код, необходимо немного изменить структуру взятого за основу приложения **Hello, World**.
 
-Основные директории с которыми мы будем работать:
+Сначала мы создадим в директории `static` поддиректории `css`, `images`, `js` для удобства хранения статических файлов:
 
 ```files
-sssr-project/
-    common.blocks/        # Базовые реализации блоков
-    server/               # Директория с серверным кодом
-    static/               # Корневая директория для раздачи статических файлов
+static/
+    css/        
+    images/             
+    js/        
+```
+
+Теперь, чтобы сборщик ENB при пересборке проекта копировал бандлы `index.min.js` и `index.min.css` в нужные директории, необходимо внести изменения в конфигурацию сборщика (файл `.enb/make.js`).
+
+Меняем:
+
+```js
+[techs.fileCopy, { source: '?.min.js', target: '../../static/?.min.js' }],
+[techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
+/* ... */
+
+nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/?.min.js', '../../static/?.min.css']);
+/* ... */
+```
+
+На:
+
+```js
+[techs.fileCopy, { source: '?.min.js', target: '../../static/js/?.min.js' }],
+[techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
+/* ... */
+
+nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/js/?.min.js', '../../static/css/?.min.css']);
+/* ... */
+```
+
+Осталось внести изменения в шаблон блока `root`.
+
+Меняем:
+
+```js
+/* ... */
+favicon: '/favicon.ico',
+styles: [
+    {
+        elem: 'css',
+        url: '/index.min.css'
+    }
+],
+scripts: [
+    {
+        elem: 'js',
+        url: '/index.min.js'
+    }
+],
+/* ... */
+```
+
+На:
+
+```js
+/* ... */
+favicon: '/images/favicon.ico',
+styles: [
+    {
+        elem: 'css',
+        url: '/css/index.min.css'
+    }
+],
+scripts: [
+    {
+        elem: 'js',
+        url: '/js/index.min.js'
+    }
+],
+/* ... */
+```
+
+Фавиконку переносим в директорию images, а лежащие в корне `static` файлы `index.min.js`, `index.min.css` удаляем.
+
+Вносим изменения в файл `server/index.js`.
+
+Меняем:
+
+```js
+.use(favicon(path.join(staticFolder, 'favicon.ico')))
+```
+
+На:
+
+```js
+.use(favicon(path.join(staticFolder, '/images/favicon.ico')))
+```
+
+Пересобираем проект:
+
+```js
+npm run dev
 ```
