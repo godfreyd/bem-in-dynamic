@@ -508,7 +508,12 @@ console.log(hello.Hello);
   [techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
   /* ... */
 
-  nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/?.min.js', '../../static/?.min.css']);
+  nodeConfig.addTargets([
+    '?.bemtree.js',
+    '?.bemhtml.js',
+    '../../static/?.min.js',
+    '../../static/?.min.css'
+  ]);
   /* ... */
   ```
 
@@ -519,7 +524,12 @@ console.log(hello.Hello);
   [techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
   /* ... */
 
-  nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/js/?.min.js', '../../static/css/?.min.css']);
+  nodeConfig.addTargets([
+    '?.bemtree.js',
+    '?.bemhtml.js',
+    '../../static/js/?.min.js',
+    '../../static/css/?.min.css'
+  ]);
   /* ... */
   ```
 
