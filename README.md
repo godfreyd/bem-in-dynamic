@@ -466,7 +466,7 @@ var hello = require('./hello');
 console.log(hello.Hello);
 ```
 
-Модули:
+Основные модули **SSSR**:
 
 * [express](#express)
 * [passport](#passport)
