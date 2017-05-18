@@ -490,99 +490,99 @@ console.log(hello.Hello);
 
 Прежде чем начать писать код, необходимо немного изменить структуру взятого за основу приложения **Hello, World**.
 
-Сначала мы создадим в директории `static` поддиректории `css`, `images`, `js` для удобства хранения статических файлов:
+* Сначала мы создадим в директории `static` поддиректории `css`, `images`, `js` для удобства хранения статических файлов:
 
-```files
-static/
-    css/        
-    images/             
-    js/        
-```
+  ```files
+  static/
+      css/        
+      images/             
+      js/        
+  ```
 
-Теперь, чтобы сборщик ENB при пересборке проекта копировал бандлы `index.min.js` и `index.min.css` в нужные директории, необходимо внести изменения в конфигурацию сборщика (файл `.enb/make.js`).
+* Теперь, чтобы сборщик ENB при пересборке проекта копировал бандлы `index.min.js` и `index.min.css` в нужные директории, необходимо внести изменения в конфигурацию сборщика (файл `.enb/make.js`).
 
-Меняем:
+  Меняем:
 
-```js
-[techs.fileCopy, { source: '?.min.js', target: '../../static/?.min.js' }],
-[techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
-/* ... */
+  ```js
+  [techs.fileCopy, { source: '?.min.js', target: '../../static/?.min.js' }],
+  [techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
+  /* ... */
 
-nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/?.min.js', '../../static/?.min.css']);
-/* ... */
-```
+  nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/?.min.js', '../../static/?.min.css']);
+  /* ... */
+  ```
 
-На:
+  На:
 
-```js
-[techs.fileCopy, { source: '?.min.js', target: '../../static/js/?.min.js' }],
-[techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
-/* ... */
+  ```js
+  [techs.fileCopy, { source: '?.min.js', target: '../../static/js/?.min.js' }],
+  [techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
+  /* ... */
 
-nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/js/?.min.js', '../../static/css/?.min.css']);
-/* ... */
-```
+  nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/js/?.min.js', '../../static/css/?.min.css']);
+  /* ... */
+  ```
 
-Осталось внести изменения в шаблон блока `root`.
+* Переносим фавиконку в директорию `images`, а лежащие в корне `static` файлы `index.min.js`, `index.min.css` удаляем.
 
-Меняем:
+* Вносим изменения в файл `server/index.js`.
 
-```js
-/* ... */
-favicon: '/favicon.ico',
-styles: [
-    {
-        elem: 'css',
-        url: '/index.min.css'
-    }
-],
-scripts: [
-    {
-        elem: 'js',
-        url: '/index.min.js'
-    }
-],
-/* ... */
-```
+  Меняем:
 
-На:
+  ```js
+  .use(favicon(path.join(staticFolder, 'favicon.ico')))
+  ```
 
-```js
-/* ... */
-favicon: '/images/favicon.ico',
-styles: [
-    {
-        elem: 'css',
-        url: '/css/index.min.css'
-    }
-],
-scripts: [
-    {
-        elem: 'js',
-        url: '/js/index.min.js'
-    }
-],
-/* ... */
-```
+  На:
 
-Фавиконку переносим в директорию images, а лежащие в корне `static` файлы `index.min.js`, `index.min.css` удаляем.
+  ```js
+  .use(favicon(path.join(staticFolder, '/images/favicon.ico')))
+  ```
 
-Вносим изменения в файл `server/index.js`.
+* Осталось внести изменения в шаблон блока `root`.
 
-Меняем:
+  Меняем:
 
-```js
-.use(favicon(path.join(staticFolder, 'favicon.ico')))
-```
+  ```js
+  /* ... */
+  favicon: '/favicon.ico',
+  styles: [
+      {
+          elem: 'css',
+          url: '/index.min.css'
+      }
+  ],
+  scripts: [
+      {
+          elem: 'js',
+          url: '/index.min.js'
+      }
+  ],
+  /* ... */
+  ```
 
-На:
+  На:
 
-```js
-.use(favicon(path.join(staticFolder, '/images/favicon.ico')))
-```
+  ```js
+  /* ... */
+  favicon: '/images/favicon.ico',
+  styles: [
+      {
+          elem: 'css',
+          url: '/css/index.min.css'
+      }
+  ],
+  scripts: [
+      {
+          elem: 'js',
+          url: '/js/index.min.js'
+      }
+  ],
+  /* ... */
+  ```
 
-Пересобираем проект:
+* Пересобираем проект:
 
-```js
-npm run dev
-```
+  ```js
+  npm run dev
+  ```
