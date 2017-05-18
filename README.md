@@ -431,7 +431,6 @@ var someModule = require('./somefolder/somemodule');
 Важной особенностью любого модуля является то, что он должен быть расчитан на взаимодействие с Node. Для этого его нужно экспортировать с помощью объекта `exports`:
 
 ```js
-// Файл ./folder/somemodule.js
 exports.someFunction = function () {
 
     return 'Hello, World';
