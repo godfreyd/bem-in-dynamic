@@ -525,7 +525,7 @@ app.listen(3000, function () {
 npm install passport --save
 ```
 
-Пример авторизации по протоколу OAuth 2.0:
+Пример авторизации по протоколу [OAuth 2.0](https://oauth.net/2/):
 
 ```js
 var passport = require('passport'),
@@ -534,8 +534,8 @@ var passport = require('passport'),
 passport.use('provider', new OAuth2Strategy({
     authorizationURL: 'https://www.provider.com/oauth2/authorize',
     tokenURL: 'https://www.provider.com/oauth2/token',
-    clientID: '123-456-789',
-    clientSecret: 'shhh-its-a-secret'
+    clientID: SERVICE_APP_ID,
+    clientSecret: SERVICE_APP_SECRET,
     callbackURL: 'https://www.example.com/auth/provider/callback'
 }));
 ```
