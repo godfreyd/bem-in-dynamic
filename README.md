@@ -496,7 +496,7 @@ console.log(hello.Hello);
 npm install express --save
 ```
 
-В документации Express представлено минимальное приложение «Hello World Express»:
+В [документации Express](http://expressjs.com) представлено минимальное приложение «Hello World Express»:
 
 ```js
 var express = require('express')
