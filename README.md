@@ -525,13 +525,64 @@ app.listen(3000, function () {
 npm install passport --save
 ```
 
+Пример:
 
+```js
+var passport = require('passport'),
+    OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
+
+passport.use('provider', new OAuth2Strategy({
+    authorizationURL: 'https://www.provider.com/oauth2/authorize',
+    tokenURL: 'https://www.provider.com/oauth2/token',
+    clientID: '123-456-789',
+    clientSecret: 'shhh-its-a-secret'
+    callbackURL: 'https://www.example.com/auth/provider/callback'
+  },
+  function(accessToken, refreshToken, profile, done) {
+    User.findOrCreate(..., function(err, user) {
+      done(err, user);
+    });
+  }
+));
+```
 
 #### passport-youtube-v3
 
+Предоставляет [механизм](https://github.com/yanatan16/passport-youtube-v3) аутентификации на Youtube посредством аккаунта Youtube и токенов [OAuth 2.0](https://oauth.net/2/).
+
+Установка:
+
+```bash
+npm install passport-youtube-v3 --save
+```
+
+Пример:
+
+```js
+var passport = require('passport'),
+    YoutubeV3Strategy = require('passport-youtube-v3').Strategy;
+
+passport.use(new YoutubeV3Strategy({
+    clientID: YOUTUBE_APP_ID,
+    clientSecret: YOUTUBE_APP_SECRET,
+    callbackURL: '/auth/youtube/callback',
+    scope: ['https://www.googleapis.com/auth/youtube.readonly']
+}, verify));
+```
+
 #### twitter
 
+
 #### googleapis
+
+Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с различными [Google APIs](https://developers.google.com/apis-explorer/#p/).
+
+Установка:
+
+```bash
+npm install googleapis --save
+```
+
 
 
 ### Подготовка структуры проекта
