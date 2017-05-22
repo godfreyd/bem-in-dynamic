@@ -525,7 +525,7 @@ app.listen(3000, function () {
 npm install passport --save
 ```
 
-Пример:
+Пример авторизации по протоколу OAuth 2.0:
 
 ```js
 var passport = require('passport'),
@@ -537,13 +537,7 @@ passport.use('provider', new OAuth2Strategy({
     clientID: '123-456-789',
     clientSecret: 'shhh-its-a-secret'
     callbackURL: 'https://www.example.com/auth/provider/callback'
-  },
-  function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate(..., function(err, user) {
-      done(err, user);
-    });
-  }
-));
+}));
 ```
 
 #### passport-youtube-v3
