@@ -201,7 +201,7 @@ sssr-project/
     README.md             # Текстовое описание проекта
 ```
 
-Ниже приводится подробное описание основных директорий:
+Рассмотрим подробнее некоторые из этих директорий:
 
 * [.enb](#enb)
 * [common.blocks](#commonblocks)
@@ -485,7 +485,22 @@ console.log(hello.Hello);
 npm install express --save
 ```
 
-В документации Express представлено минимальное приложение [Hello World Express](http://expressjs.com/en/starter/hello-world.html).
+В документации [Express](http://expressjs.com/) представлено минимальное приложение «Hello World Express»:
+
+```js
+var express = require('express')
+var app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
+```
+
+Функция `app.det()` обрабатывает все веб-запросы GET, передавая объекты запроса и ответа. По общепринятым соглашениям в приложениях Express используются сокращенные формы `req` и `res`.
 
 
 
