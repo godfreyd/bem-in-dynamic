@@ -540,6 +540,8 @@ passport.use('provider', new OAuth2Strategy({
 }));
 ```
 
+> **Примечание.** [provider](http://passportjs.org/docs/facebook) — Facebook, Twitter, Google и др.
+
 #### passport-youtube-v3
 
 Предоставляет [механизм](https://github.com/yanatan16/passport-youtube-v3) аутентификации на Youtube посредством аккаунта Youtube и токенов [OAuth 2.0](https://oauth.net/2/).
@@ -563,6 +565,7 @@ passport.use(new YoutubeV3Strategy({
     scope: ['https://www.googleapis.com/auth/youtube.readonly']
 }, verify));
 ```
+
 
 #### twitter
 
