@@ -659,7 +659,7 @@ npm install googleapis --save
   .use(favicon(path.join(staticFolder, '/images/favicon.ico')))
   ```
 
-  [Полный код `server/index.js`](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
+  Полный код [`server/index.js`](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
 
 * Вносим изменения в шаблон блока `root`.
 
