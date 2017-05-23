@@ -607,6 +607,7 @@ npm install googleapis --save
   * `css`;
   * `images`;
   * `js`.
+
 * Теперь, чтобы сборщик ENB при пересборке проекта копировал бандлы `index.min.js` и `index.min.css` в нужные директории, необходимо внести изменения в конфигурацию сборщика (файл `.enb/make.js`).
 
   Меняем:
@@ -713,6 +714,18 @@ npm install googleapis --save
   ```bash
   npm run dev
   ```
+
+В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
+
+```files
+static/                   
+    css/
+        index.min.css     # Оптимизированный файл стилей
+    images/
+        favicon.ico       # Фавиконка
+    js/
+        index.min.js      # Оптимизированный JavaScript-файл
+```
 
 #### Изменения для серверного кода
 
