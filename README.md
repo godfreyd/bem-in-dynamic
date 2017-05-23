@@ -796,34 +796,6 @@ static/
   }
   ```
 
-* Добавим в `server/config.json` поле `services` для хранения ключей и токенов YouTube и Twitter:
-
-  ```json
-    "services": {
-        "twitter": {
-            "consumer_key": "",
-            "consumer_secret": "",
-            "access_token_key": "",
-            "access_token_secret": ""
-        },
-        "youtube": {
-            "client_id": "",
-            "client_secret": "",
-            "redirect_url": ""
-        }
-    }
-  ```
-
-  [Полный код server/config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
-
-* Добавим файл `server/config.json` в `.gitignore`, чтобы случайно не добавить личные ключи в репозиторий файлов:
-
-  ```bash
-  server/config.json
-  ```
-
-  [Полный код .gitignore](https://gist.github.com/godfreyd/71a35fde50f54205fa395230bc97358f).
-
 * Разделим функциональность файла `index.js` на следующие модули:
 
     * `index.js` — будет отвечать за запуск приложение и прослушивание запросов на порте;
@@ -863,3 +835,44 @@ server/
     render.js
     routes.js             # Маршрутизатор
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Добавим в `server/config.json` поле `services` для хранения ключей и токенов YouTube и Twitter:
+
+  ```json
+    "services": {
+        "twitter": {
+            "consumer_key": "",
+            "consumer_secret": "",
+            "access_token_key": "",
+            "access_token_secret": ""
+        },
+        "youtube": {
+            "client_id": "",
+            "client_secret": "",
+            "redirect_url": ""
+        }
+    }
+  ```
+
+  [Полный код server/config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
+
+* Добавим файл `server/config.json` в `.gitignore`, чтобы случайно не добавить личные ключи в репозиторий файлов:
+
+  ```bash
+  server/config.json
+  ```
+
+  [Полный код .gitignore](https://gist.github.com/godfreyd/71a35fde50f54205fa395230bc97358f).
