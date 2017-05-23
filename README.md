@@ -738,6 +738,13 @@ static/
   * `middleware` — модули промежуточного звена.
 
 
+
+
+
+
+
+
+
   ```files
   controllers/            # Контроллеры
   helpers/                # Хелперы
