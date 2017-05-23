@@ -833,7 +833,7 @@ static/
 
     ```js
     var router = require('express').Router(),
-    controllers = require('./controllers');
+        controllers = require('./controllers');
 
     router
         .get('/', controllers.getContent);
