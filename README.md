@@ -818,7 +818,7 @@ static/
 
   [Полный код server/config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
 
-* Добавляем файл `server/config.json` в `.gitignore`, чтобы случайно не добавить личные ключи в репозиторий файлов:
+* Добавим файл `server/config.json` в `.gitignore`, чтобы случайно не добавить личные ключи в репозиторий файлов:
 
   ```bash
   server/config.json
