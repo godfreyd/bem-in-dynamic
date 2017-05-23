@@ -709,6 +709,23 @@ npm install googleapis --save
 
   [Полный код common.blocks/root/root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
 
+* Вносим изменения в `.gitignore`:
+
+  Меняем:
+
+  ```bash
+  static/index.min.*
+  ```
+
+  На:
+
+  ```bash
+  static/*/index.min.*
+  ```
+
+  [Полный код .gitignore](https://gist.github.com/godfreyd/c105ced43f2954950ce43e23d6929dbf).
+
+
 * Пересобираем и запускаем проект:
 
   ```bash
@@ -750,6 +767,42 @@ static/
       middleware/  
           index.js          # Модуль проверки прохождения аутентификации
   ```
+
+* Изменим расширение файла `config`:
+
+  `server/config.js` —> `server/config.json`
+
+* Вносим изменения в `server/config.json`.
+
+  Меняем:
+
+  ```js
+  module.exports = {
+      staticFolder: 'static',
+      defaultPort: 3000,
+      cacheTTL: 30000,
+      sessionSecret: 'REPLACE_ME_WITH_RANDOM_STRING'
+  };
+  ```
+
+  На:
+
+  ```json
+  {
+    "staticFolder": "static",
+    "defaultPort": 3000,
+    "cacheTTL": 30000,
+    "sessionSecret": "REPLACE_ME_WITH_RANDOM_STRING"
+  }
+  ```
+
+* Добавляем файл `server/config.json` в `.gitignore`:
+
+  ```bash
+  server/config.json
+  ```
+
+  [Полный код .gitignore](https://gist.github.com/godfreyd/71a35fde50f54205fa395230bc97358f).
 
 * Создадим
 
