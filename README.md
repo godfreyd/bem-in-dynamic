@@ -772,7 +772,7 @@ static/
 
   `server/config.js` —> `server/config.json`
 
-* Вносим изменения в `server/config.json`.
+* Внесем изменения в `server/config.json`.
 
   Меняем:
 
