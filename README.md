@@ -796,7 +796,29 @@ static/
   }
   ```
 
-* Добавляем файл `server/config.json` в `.gitignore`:
+* Добавим в `server/config.json` поле `services` для хранения ключей и токенов YouTube и Twitter:
+
+  ```json
+  {
+    "services": {
+        "twitter": {
+            "consumer_key": "",
+            "consumer_secret": "",
+            "access_token_key": "",
+            "access_token_secret": ""
+        },
+        "youtube": {
+            "client_id": "",
+            "client_secret": "",
+            "redirect_url": ""
+        }
+    }
+  }
+  ```
+
+  [Полный код server/config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
+
+* Добавляем файл `server/config.json` в `.gitignore`, чтобы случайно не добавить личные ключи в репозиторий файлов:
 
   ```bash
   server/config.json
@@ -804,18 +826,7 @@ static/
 
   [Полный код .gitignore](https://gist.github.com/godfreyd/71a35fde50f54205fa395230bc97358f).
 
-* Создадим
 
-  ```files
-  server/
-      app.js                # Express
-      config.example.json   # Пример конфигурации приложения
-      config.json           # Конфигурация приложения (определен в .gitignore)
-      index.js              # Точка входа приложения
-      rebuild.js            # Пересборка приложения
-      render.js             # Рендеринг HTML
-      routes.js             # Маршрутизатор
-  ```
 
 
 
