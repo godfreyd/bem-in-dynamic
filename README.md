@@ -737,8 +737,19 @@ static/
   * `helpers` — хелперы;
   * `middleware` — модули промежуточного звена.
 
+* Добавляем в эти директории пустые файлы:
 
-
+  ```files
+  server/
+      controllers/        
+          index.js          # Контроллер
+      helpers/        
+          index.js          # Входная точка для хелперов
+          twitter.js        # Модуль-хелпер для работы с Twitter Search API
+          youtube.js        # Модуль-хелпер для работы с YouTube Data API
+      middleware/  
+          index.js          # Модуль проверки прохождения аутентификации
+  ```
 
 
 
