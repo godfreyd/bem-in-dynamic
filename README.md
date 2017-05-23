@@ -725,13 +725,6 @@ npm install googleapis --save
 
   [Полный код .gitignore](https://gist.github.com/godfreyd/c105ced43f2954950ce43e23d6929dbf).
 
-
-* Пересобираем и запускаем проект:
-
-  ```bash
-  npm run dev
-  ```
-
 В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
 
 ```files
@@ -807,12 +800,39 @@ static/
 
     Добавляем недостающие `app.js` и `routes.js` и разделяем функциональность:
 
+    `index.js`:
 
-* Пересобираем и запускаем проект:
+    ```js
+    module.exports = {
+        staticFolder: 'static',
+        defaultPort: 3000,
+        cacheTTL: 30000,
+        sessionSecret: 'REPLACE_ME_WITH_RANDOM_STRING'
+    };
+    ```
 
-  ```bash
-  npm run dev
-  ```
+    `app.js`:
+
+    ```js
+    module.exports = {
+        staticFolder: 'static',
+        defaultPort: 3000,
+        cacheTTL: 30000,
+        sessionSecret: 'REPLACE_ME_WITH_RANDOM_STRING'
+    };
+    ```
+
+    `routes.js`:
+
+    ```js
+    module.exports = {
+        staticFolder: 'static',
+        defaultPort: 3000,
+        cacheTTL: 30000,
+        sessionSecret: 'REPLACE_ME_WITH_RANDOM_STRING'
+    };
+    ```
+
 
 В результате выполненных действий файловая структура директории `server` должна иметь следующий вид:
 
