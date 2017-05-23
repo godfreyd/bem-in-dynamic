@@ -638,7 +638,7 @@ npm install googleapis --save
   /* ... */
   ```
 
-  [Полный код примера](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc)
+  [Полный код примера](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
 
 * Переносим фавиконку в директорию `images`, а лежащие в корне `static` файлы `index.min.js`, `index.min.css` удаляем.
 
@@ -656,7 +656,7 @@ npm install googleapis --save
   .use(favicon(path.join(staticFolder, '/images/favicon.ico')))
   ```
 
-  [Полный код примера](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11)
+  [Полный код примера](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
 
 * Вносим изменения в шаблон блока `root`.
 
@@ -700,7 +700,7 @@ npm install googleapis --save
   /* ... */
   ```
 
-  [Полный код примера](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d)
+  [Полный код примера](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
 
 * Пересобираем и запускаем проект:
 
