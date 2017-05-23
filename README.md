@@ -799,7 +799,6 @@ static/
 * Добавим в `server/config.json` поле `services` для хранения ключей и токенов YouTube и Twitter:
 
   ```json
-  {
     "services": {
         "twitter": {
             "consumer_key": "",
@@ -813,7 +812,6 @@ static/
             "redirect_url": ""
         }
     }
-  }
   ```
 
   [Полный код server/config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
