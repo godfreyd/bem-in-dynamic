@@ -444,7 +444,7 @@ JavaScript-код описывается в файлах с расширение
 Подключение модулей происходит при помощи команды `require`. Если модуль установлен с использованием npm, указывать путь не нужно. Достаточно указать имя:
 
 ```js
-var http = require('http');
+var express = require('express');
 ```
 
 Если мы подключаем собственный локальный модуль, необходимо указать путь к нему:
@@ -512,16 +512,16 @@ npm install express --save
 В документации Express представлено минимальное приложение «[Hello World Express](http://expressjs.com/en/starter/hello-world.html)». Оно демонстрирует основную последовательность действий:
 
 ```js
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
-})
+});
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
-})
+});
 ```
 
 Функция `app.get()` обрабатывает все веб-запросы GET, передавая объекты запроса и ответа. По общепринятым соглашениям в приложениях Express используются сокращенные формы `req` и `res`.
@@ -585,14 +585,13 @@ passport.use(new YoutubeV3Strategy({
 
 #### googleapis
 
-Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с различными [Google APIs](https://developers.google.com/apis-explorer/#p/).
+Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с различными [Google APIs](https://developers.google.com/apis-explorer/#p/). Из всего списка поддерживаемых APIs нас интересует YouTube Data API v3.
 
 Установка:
 
 ```bash
 npm install googleapis --save
 ```
-
 
 
 ### Подготовка структуры проекта
@@ -654,7 +653,7 @@ npm install googleapis --save
   .use(favicon(path.join(staticFolder, '/images/favicon.ico')))
   ```
 
-* Осталось внести изменения в шаблон блока `root`.
+* Вносим изменения в шаблон блока `root`.
 
   Меняем:
 
@@ -696,8 +695,32 @@ npm install googleapis --save
   /* ... */
   ```
 
-* Пересобираем проект:
+* Пересобираем и запускаем проект:
 
   ```bash
   npm run dev
   ```
+
+#### Изменения для серверного кода
+
+Для удобства внесения изменений разобъем серверный код на отдельные модули:
+
+```files
+server/
+    controllers/        
+        index.js
+    helpers/        
+        index.js
+        twitter.js
+        youtube.js
+    middleware/  
+        index.js
+    app.js         
+    auth.js             
+    config.example.json
+    config.json
+    index.js
+    rebuild.js
+    render.js
+    routes.js             # Маршрутизатор
+```
