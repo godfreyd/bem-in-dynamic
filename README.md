@@ -640,7 +640,10 @@ npm install googleapis --save
 
   [Полный код .enb/make.js](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
 
-* Переносим фавиконку в директорию `images`, а лежащие в корне `static` файлы `index.min.js`, `index.min.css` удаляем.
+* Удаляем файлы `static/index.min.js`, `static/index.min.css`.
+* Переносим фавиконку в поддиректорию `images`:
+
+  `static/favicon.ico` —> `static/images/favicon.ico`
 
 * Вносим изменения в файл `server/index.js`.
 
