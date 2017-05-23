@@ -741,16 +741,16 @@ static/
 
 * Создадим
 
-```files
-server/
-    app.js                # Express
-    config.example.json   # Пример конфигурации приложения
-    config.json           # Конфигурация приложения (определен в .gitignore)
-    index.js              # Точка входа приложения
-    rebuild.js            # Пересборка приложения
-    render.js             # Рендеринг HTML
-    routes.js             # Маршрутизатор
-```
+  ```files
+  server/
+      app.js                # Express
+      config.example.json   # Пример конфигурации приложения
+      config.json           # Конфигурация приложения (определен в .gitignore)
+      index.js              # Точка входа приложения
+      rebuild.js            # Пересборка приложения
+      render.js             # Рендеринг HTML
+      routes.js             # Маршрутизатор
+  ```
 
 
 
