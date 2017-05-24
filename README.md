@@ -65,6 +65,10 @@
 
 * ![file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/file.svg) — файл;
 * ![add file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-file.svg) — добавить файл;
+* ![edit file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/edit-file.svg) — отредактировать файл;
+* ![trash file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/trash-file.svg) — удалить файл;
+* ![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg) — директория;
+* ![add folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-folder.svg) — создать директорию.
 
 ## Приложение Hello, World
 
