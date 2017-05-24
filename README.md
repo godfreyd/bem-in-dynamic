@@ -64,7 +64,7 @@
 ## Используемые обозначения
 
 * ![file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/file.svg) — файл;
-
+* ![add file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-file.svg) — добавить файл;
 
 ## Приложение Hello, World
 
