@@ -778,21 +778,22 @@ static/
   * `helpers/index.js` — входная точка для хелперов;
   * `helpers/twitter.js` — модуль-хелпер для работы с Twitter Search API;
   * `helpers/youtube.js` — модуль-хелпер для работы с YouTube Data API;
-  * `middleware/index.js` — модуль проверки прохождения аутентификации.
+  * `middleware/index.js` — модуль проверки прохождения аутентификации;
+  * `auth.js` — модуль аутентификации на YouTube.
 
     В результате должна получиться следующая файловая структура
 
     ```files
     server/
         controllers/        
-            index.js          # Контроллер
+            index.js          
         helpers/              
-            index.js          # Входная точка для хелперов
-            twitter.js        # Модуль-хелпер для работы с Twitter Search API
-            youtube.js        # Модуль-хелпер для работы с YouTube Data API
+            index.js         
+            twitter.js        
+            youtube.js        
         middleware/  
-            index.js          # Модуль проверки прохождения аутентификации
-        auth.js               # Модуль аутентификации на YouTube
+            index.js          
+        auth.js               
     ```
 
 * Изменим расширение файла `config`:
