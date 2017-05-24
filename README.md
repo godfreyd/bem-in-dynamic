@@ -815,7 +815,7 @@ static/
   * [index.js](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3);
   * [routes.js](https://gist.github.com/godfreyd/f6de1c33a83dda708a0e3ba9312f0c78).
 
-* Внесем изменения в `rebuild.js`.
+* Осталось сообщить [livereload](https://github.com/napcs/node-livereload) об изменениях в директории `static` (файл `rebuild.js`).
 
   Меняем:
 
