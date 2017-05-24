@@ -821,12 +821,85 @@ static/
     `app.js`:
 
     ```js
-    module.exports = {
-        staticFolder: 'static',
-        defaultPort: 3000,
-        cacheTTL: 30000,
-        sessionSecret: 'REPLACE_ME_WITH_RANDOM_STRING'
-    };
+    Object.assign || (Object.assign = require('object-assign'));
+
+    var fs = require('fs'),
+        path = require('path'),
+        express = require('express'),
+        app = express(),
+        bodyParser = require('body-parser'),
+        favicon = require('serve-favicon'),
+        morgan = require('morgan'),
+        serveStatic = require('serve-static'),
+        cookieParser = require('cookie-parser'),
+        expressSession = require('express-session'),
+        slashes = require('connect-slashes'),
+        passport = require('passport'),
+        // LocalStrategy = require('passport-local').Strategy,
+        csrf = require('csurf'),
+        compression = require('compression'),
+
+        config = require('./config'),
+        staticFolder = config.staticFolder,
+
+        Render = require('./render'),
+        render = Render.render,
+        dropCache = Render.dropCache, // eslint-disable-line no-unused-vars
+
+        port = process.env.PORT || config.defaultPort,
+        isSocket = isNaN(port),
+        routes = require('./routes'),
+        baseUrl = '/',                 
+        isDev = process.env.NODE_ENV === 'development';
+
+    require('debug-http')();
+
+    app
+        .disable('x-powered-by')
+        .enable('trust proxy')
+        .use(compression())
+        .use(favicon(path.join(staticFolder, '/images/favicon.ico')))
+        .use(serveStatic(staticFolder))
+        .use(morgan('combined'))
+        .use(cookieParser())
+        .use(bodyParser.urlencoded({ extended: true }))
+        .use(expressSession({
+            resave: true,
+            saveUninitialized: true,
+            secret: config.sessionSecret
+        }))
+        .use(passport.initialize())
+        .use(passport.session())
+        .use(baseUrl, routes)
+        .use(csrf());
+
+    // NOTE: conflicts with livereload
+    isDev || app.use(slashes());
+
+    passport.serializeUser(function(user, done) {
+        done(null, JSON.stringify(user));
+    });
+
+    passport.deserializeUser(function(user, done) {
+        done(null, JSON.parse(user));
+    });
+
+    isDev && require('./rebuild')(app);
+
+    app.get('*', function(req, res) {
+        res.status(404);
+        return render(req, res, { view: '404' });
+    });
+
+    if (isDev) {
+        app.get('/error/', function() {
+            throw new Error('Uncaught exception from /error');
+        });
+
+        app.use(require('errorhandler')());
+    }
+
+    module.exports = app;
     ```
 
     `routes.js`:
