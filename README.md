@@ -801,147 +801,21 @@ static/
 
     * `index.js` — будет отвечать за запуск приложение и прослушивание запросов на порте;
     * `app.js` — будет отвечать за *монтирование* промежуточных модулей (делать их доступными в приложении);
-    * `routes.js` — будет отвечать за маршрутизацию веб-запросов.
+    * `routes.js` — будет отвечать за маршрутизацию веб-запросов;
+    * `controllers/index.js` — будет отвечать за рендеринг HTML.
 
       > **Примечание.** Порядок *монтирования* промежуточных функций важен, поэтому при добавлении промежуточной функциональности убедитесь в том, что она находится с другими промежуточными модулями в отношениях, рекомендованных разработчиком.
 
-    Добавляем недостающие `app.js` и `routes.js` и разделяем функциональность:
+    Добавляем недостающие `app.js` и `routes.js` в директорию `server` и разделяем функциональность.
 
-    `index.js`:
+    Полный код:
 
-    ```js
-    module.exports = {
-        staticFolder: 'static',
-        defaultPort: 3000,
-        cacheTTL: 30000,
-        sessionSecret: 'REPLACE_ME_WITH_RANDOM_STRING'
-    };
-    ```
+    * [controllers/index.js](https://gist.github.com/godfreyd/4bda7da3db029890378e15bcc38f32de);
+    * [app.js](https://gist.github.com/godfreyd/a584cee1191833afae70fc059ba1f200);
+    * [index.js](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3);
+    * [routes.js](https://gist.github.com/godfreyd/f6de1c33a83dda708a0e3ba9312f0c78).
 
-    `app.js`:
 
-    ```js
-    Object.assign || (Object.assign = require('object-assign'));
-
-    var fs = require('fs'),
-        path = require('path'),
-        express = require('express'),
-        app = express(),
-        bodyParser = require('body-parser'),
-        favicon = require('serve-favicon'),
-        morgan = require('morgan'),
-        serveStatic = require('serve-static'),
-        cookieParser = require('cookie-parser'),
-        expressSession = require('express-session'),
-        slashes = require('connect-slashes'),
-        passport = require('passport'),
-        // LocalStrategy = require('passport-local').Strategy,
-        csrf = require('csurf'),
-        compression = require('compression'),
-
-        config = require('./config'),
-        staticFolder = config.staticFolder,
-
-        Render = require('./render'),
-        render = Render.render,
-        dropCache = Render.dropCache, // eslint-disable-line no-unused-vars
-
-        port = process.env.PORT || config.defaultPort,
-        isSocket = isNaN(port),
-        routes = require('./routes'),
-        baseUrl = '/',                 
-        isDev = process.env.NODE_ENV === 'development';
-
-    require('debug-http')();
-
-    app
-        .disable('x-powered-by')
-        .enable('trust proxy')
-        .use(compression())
-        .use(favicon(path.join(staticFolder, '/images/favicon.ico')))
-        .use(serveStatic(staticFolder))
-        .use(morgan('combined'))
-        .use(cookieParser())
-        .use(bodyParser.urlencoded({ extended: true }))
-        .use(expressSession({
-            resave: true,
-            saveUninitialized: true,
-            secret: config.sessionSecret
-        }))
-        .use(passport.initialize())
-        .use(passport.session())
-        .use(baseUrl, routes)
-        .use(csrf());
-
-    // NOTE: conflicts with livereload
-    isDev || app.use(slashes());
-
-    passport.serializeUser(function(user, done) {
-        done(null, JSON.stringify(user));
-    });
-
-    passport.deserializeUser(function(user, done) {
-        done(null, JSON.parse(user));
-    });
-
-    isDev && require('./rebuild')(app);
-
-    app.get('*', function(req, res) {
-        res.status(404);
-        return render(req, res, { view: '404' });
-    });
-
-    if (isDev) {
-        app.get('/error/', function() {
-            throw new Error('Uncaught exception from /error');
-        });
-
-        app.use(require('errorhandler')());
-    }
-
-    module.exports = app;
-    ```
-
-    `routes.js`:
-
-    ```js
-    var router = require('express').Router(),
-        controllers = require('./controllers');
-
-    router
-        .get('/', controllers.getContent);
-
-    module.exports = router;
-    ```
-
-    `controllers/index.js`:
-
-    ```js
-    var Render = require('../render'),
-        render = Render.render;
-
-    function getContent(req, res) {
-        var hello = 'Hello';
-        var world = 'World';
-        render(req, res, {
-            view: 'page-index',
-            title: 'Main page',
-            meta: {
-                description: 'Page description',
-                og: {
-                    url: 'https://site.com',
-                    siteName: 'Site name'
-                }
-            },
-            hello: hello,
-            world: world
-        });
-    }
-
-    module.exports = {
-        getContent
-    };
-    ```
 
 В результате выполненных действий файловая структура директории `server` должна иметь следующий вид:
 
