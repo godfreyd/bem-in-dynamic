@@ -799,7 +799,7 @@ static/
 
 * Разделим функциональность файла `index.js` на следующие модули:
 
-  * `controllers/index.js` — будет отвечать за обработку запросов и рендеринг HTML;
+  * `server/controllers/index.js` — будет отвечать за обработку запросов и рендеринг HTML;
   * `app.js` — будет отвечать за *монтирование* промежуточных модулей (делать их доступными в приложении);
   * `index.js` — будет отвечать за запуск приложение и прослушивание запросов на порте;
   * `routes.js` — будет отвечать за маршрутизацию веб-запросов.
@@ -810,12 +810,12 @@ static/
 
   Полный код:
 
-  * [controllers/index.js](https://gist.github.com/godfreyd/4bda7da3db029890378e15bcc38f32de);
+  * [server/controllers/index.js](https://gist.github.com/godfreyd/4bda7da3db029890378e15bcc38f32de);
   * [app.js](https://gist.github.com/godfreyd/a584cee1191833afae70fc059ba1f200);
   * [index.js](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3);
   * [routes.js](https://gist.github.com/godfreyd/f6de1c33a83dda708a0e3ba9312f0c78).
 
-* Осталось сообщить [livereload](https://github.com/napcs/node-livereload) об изменениях в директории `static` (файл `rebuild.js`).
+* Осталось сообщить [livereload](https://github.com/napcs/node-livereload) об изменениях в директории `static` (файл `server/rebuild.js`).
 
   Меняем:
 
