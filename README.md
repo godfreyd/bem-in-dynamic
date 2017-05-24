@@ -815,7 +815,7 @@ static/
   * [index.js](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3);
   * [routes.js](https://gist.github.com/godfreyd/f6de1c33a83dda708a0e3ba9312f0c78).
 
-* Внесем изменения
+* Внесем изменения в `rebuild.js`.
 
   Меняем:
 
@@ -836,8 +836,8 @@ static/
   ```js
   // livereload
   process.env.NO_LIVERELOAD || watch([
-      path.join(rootDir, 'static/js', '*.min.js'),
-      path.join(rootDir, 'static/css', '*.min.css'),
+      path.join(rootDir, 'static/js', '*.min.*'),
+      path.join(rootDir, 'static/css', '*.min.*'),
       path.join(bundlesDir, '*', '*.bemtree.js'),
   ].concat(bundles.map(function(bundle) {
       return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
