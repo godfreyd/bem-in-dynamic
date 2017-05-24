@@ -774,11 +774,11 @@ static/
 
 * Добавим пустые `JS`-файлы для будущих модулей:
 
-* `controllers/index.js` — контроллер;
-* `helpers/index.js` — входная точка для хелперов;
-* `helpers/twitter.js` — модуль-хелпер для работы с Twitter Search API;
-* `helpers/youtube.js` — модуль-хелпер для работы с YouTube Data API;
-* `middleware/index.js` — модуль проверки прохождения аутентификации.
+  * `controllers/index.js` — контроллер;
+  * `helpers/index.js` — входная точка для хелперов;
+  * `helpers/twitter.js` — модуль-хелпер для работы с Twitter Search API;
+  * `helpers/youtube.js` — модуль-хелпер для работы с YouTube Data API;
+  * `middleware/index.js` — модуль проверки прохождения аутентификации.
 
 
   ```files
