@@ -781,24 +781,24 @@ static/
   * `middleware/index.js` — модуль проверки прохождения аутентификации;
   * `auth.js` — модуль аутентификации на YouTube.
 
-    Должна получиться следующая файловая структура:
+  Должна получиться следующая файловая структура:
 
-    ```files
-    server/
-        controllers/        
-            index.js          
-        helpers/              
-            index.js         
-            twitter.js        
-            youtube.js        
-        middleware/  
-            index.js          
-        auth.js
-        config.js
-        index.js
-        rebuild.js
-        render.js            
-    ```
+  ```files
+  server/
+      controllers/        
+          index.js          
+      helpers/              
+          index.js         
+          twitter.js        
+          youtube.js        
+      middleware/  
+          index.js          
+      auth.js
+      config.js
+      index.js
+      rebuild.js
+      render.js            
+  ```
 
 * Изменим расширение файла `config`:
 
