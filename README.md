@@ -61,6 +61,11 @@
 
 > **Примечание.** [npm](https://www.npmjs.com) — менеджер модулей Node. По умолчанию устанавливается вместе с Node.
 
+## Используемые обозначения
+
+* ![file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/file.svg) — файл;
+
+
 ## Приложение Hello, World
 
 У программистов есть традиция: начинать программирование на новом языке или фреймворке с приложения **Hello, World**.
