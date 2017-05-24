@@ -799,23 +799,54 @@ static/
 
 * Разделим функциональность файла `index.js` на следующие модули:
 
-    * `controllers/index.js` — будет отвечать за рендеринг HTML;
-    * `app.js` — будет отвечать за *монтирование* промежуточных модулей (делать их доступными в приложении);
-    * `index.js` — будет отвечать за запуск приложение и прослушивание запросов на порте;
-    * `routes.js` — будет отвечать за маршрутизацию веб-запросов.
+  * `controllers/index.js` — будет отвечать за рендеринг HTML;
+  * `app.js` — будет отвечать за *монтирование* промежуточных модулей (делать их доступными в приложении);
+  * `index.js` — будет отвечать за запуск приложение и прослушивание запросов на порте;
+  * `routes.js` — будет отвечать за маршрутизацию веб-запросов.
 
-      > **Примечание.** Порядок *монтирования* промежуточных функций важен, поэтому при добавлении промежуточной функциональности убедитесь в том, что она находится с другими промежуточными модулями в отношениях, рекомендованных разработчиком.
+    > **Примечание.** Порядок *монтирования* промежуточных функций важен, поэтому при добавлении промежуточной функциональности убедитесь в том, что она находится с другими промежуточными модулями в отношениях, рекомендованных разработчиком.
 
-    Добавляем недостающие `app.js` и `routes.js` в директорию `server` и разделяем функциональность.
+  Добавляем недостающие `app.js` и `routes.js` в директорию `server` и разделяем функциональность.
 
-    Полный код:
+  Полный код:
 
-    * [controllers/index.js](https://gist.github.com/godfreyd/4bda7da3db029890378e15bcc38f32de);
-    * [app.js](https://gist.github.com/godfreyd/a584cee1191833afae70fc059ba1f200);
-    * [index.js](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3);
-    * [routes.js](https://gist.github.com/godfreyd/f6de1c33a83dda708a0e3ba9312f0c78).
+  * [controllers/index.js](https://gist.github.com/godfreyd/4bda7da3db029890378e15bcc38f32de);
+  * [app.js](https://gist.github.com/godfreyd/a584cee1191833afae70fc059ba1f200);
+  * [index.js](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3);
+  * [routes.js](https://gist.github.com/godfreyd/f6de1c33a83dda708a0e3ba9312f0c78).
 
+* Внесем изменения
 
+  Меняем:
+
+  ```js
+  // livereload
+  process.env.NO_LIVERELOAD || watch([
+      path.join(rootDir, 'static', '*.min.*'),
+      path.join(bundlesDir, '*', '*.bemtree.js'),
+  ].concat(bundles.map(function(bundle) {
+      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
+  })), watchOpts).on('all', function(event, file) {
+      tinyLr.changed(file);
+  });
+  ```
+
+  На:
+
+  ```js
+  // livereload
+  process.env.NO_LIVERELOAD || watch([
+      path.join(rootDir, 'static/js', '*.min.js'),
+      path.join(rootDir, 'static/css', '*.min.css'),
+      path.join(bundlesDir, '*', '*.bemtree.js'),
+  ].concat(bundles.map(function(bundle) {
+      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
+  })), watchOpts).on('all', function(event, file) {
+      tinyLr.changed(file);
+  });
+  ```
+
+  [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
 
 В результате выполненных действий файловая структура директории `server` должна иметь следующий вид:
 
