@@ -773,7 +773,7 @@ static/
 
 #### Изменения для серверного кода
 
-> Folder => `server/`
+![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg##) — `server/`
 
 Для удобства работы с отдельными модулями:
 
