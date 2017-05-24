@@ -606,6 +606,7 @@ npm install googleapis --save
 
 * [Изменения для статических файлов](#Изменения-для-статических-файлов)
 * [Изменения для серверного кода](#Изменения-для-серверного-кода)
+* [Изменения для .gitignore](#)
 
 #### Изменения для статических файлов
 
@@ -716,21 +717,38 @@ npm install googleapis --save
 
   [Полный код common.blocks/root/root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
 
-* Вносим изменения в `.gitignore`:
+* Осталось сообщить [livereload](https://github.com/napcs/node-livereload) об изменениях в директории `static` (файл `server/rebuild.js`).
 
   Меняем:
 
-  ```bash
-  static/index.min.*
+  ```js
+  // livereload
+  process.env.NO_LIVERELOAD || watch([
+      path.join(rootDir, 'static', '*.min.*'),
+      path.join(bundlesDir, '*', '*.bemtree.js'),
+  ].concat(bundles.map(function(bundle) {
+      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
+  })), watchOpts).on('all', function(event, file) {
+      tinyLr.changed(file);
+  });
   ```
 
   На:
 
-  ```bash
-  static/*/index.min.*
+  ```js
+  // livereload
+  process.env.NO_LIVERELOAD || watch([
+      path.join(rootDir, 'static/js', '*.min.*'),
+      path.join(rootDir, 'static/css', '*.min.*'),
+      path.join(bundlesDir, '*', '*.bemtree.js'),
+  ].concat(bundles.map(function(bundle) {
+      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
+  })), watchOpts).on('all', function(event, file) {
+      tinyLr.changed(file);
+  });
   ```
 
-  [Полный код .gitignore](https://gist.github.com/godfreyd/c105ced43f2954950ce43e23d6929dbf).
+  [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
 
 В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
 
@@ -815,38 +833,6 @@ static/
   * [index.js](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3);
   * [routes.js](https://gist.github.com/godfreyd/f6de1c33a83dda708a0e3ba9312f0c78).
 
-* Осталось сообщить [livereload](https://github.com/napcs/node-livereload) об изменениях в директории `static` (файл `server/rebuild.js`).
-
-  Меняем:
-
-  ```js
-  // livereload
-  process.env.NO_LIVERELOAD || watch([
-      path.join(rootDir, 'static', '*.min.*'),
-      path.join(bundlesDir, '*', '*.bemtree.js'),
-  ].concat(bundles.map(function(bundle) {
-      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
-  })), watchOpts).on('all', function(event, file) {
-      tinyLr.changed(file);
-  });
-  ```
-
-  На:
-
-  ```js
-  // livereload
-  process.env.NO_LIVERELOAD || watch([
-      path.join(rootDir, 'static/js', '*.min.*'),
-      path.join(rootDir, 'static/css', '*.min.*'),
-      path.join(bundlesDir, '*', '*.bemtree.js'),
-  ].concat(bundles.map(function(bundle) {
-      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
-  })), watchOpts).on('all', function(event, file) {
-      tinyLr.changed(file);
-  });
-  ```
-
-  [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
 
 В результате выполненных действий файловая структура директории `server` должна иметь следующий вид:
 
@@ -871,8 +857,24 @@ server/
 
 
 
+#### Изменения для .gitignore
 
 
+* Вносим изменения в `.gitignore`:
+
+  Меняем:
+
+  ```bash
+  static/index.min.*
+  ```
+
+  На:
+
+  ```bash
+  static/*/index.min.*
+  ```
+
+  [Полный код .gitignore](https://gist.github.com/godfreyd/c105ced43f2954950ce43e23d6929dbf).
 
 
 
