@@ -594,9 +594,7 @@ passport.use(new YoutubeV3Strategy({
 }, verify));
 ```
 
-
 #### twitter
-
 
 #### googleapis
 
@@ -683,7 +681,6 @@ npm install googleapis --save
   Меняем:
 
   ```js
-  /* ... */
   favicon: '/favicon.ico',
   styles: [
       {
@@ -697,13 +694,11 @@ npm install googleapis --save
           url: '/index.min.js'
       }
   ],
-  /* ... */
   ```
 
   На:
 
   ```js
-  /* ... */
   favicon: '/images/favicon.ico',
   styles: [
       {
@@ -717,7 +712,6 @@ npm install googleapis --save
           url: '/js/index.min.js'
       }
   ],
-  /* ... */
   ```
 
   [Полный код common.blocks/root/root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
