@@ -619,7 +619,7 @@ npm install googleapis --save
 
 #### Изменения для статических файлов
 
-![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg###ddd)
+![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg###ddewfvd)
 
 * Для удобства хранения статических файлов создадим в директории `static` поддиректории:
 

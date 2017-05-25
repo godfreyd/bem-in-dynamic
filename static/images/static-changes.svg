@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="940px" height="350px" viewBox="0 0 940 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
-    <title>bemtree</title>
+    <title>static-changes</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Desktop-Copy" transform="translate(-42.000000, -266.000000)">
-            <g id="bemtree" transform="translate(42.000000, 266.000000)">
+            <g id="static-changes" transform="translate(42.000000, 266.000000)">
                 <rect id="Rectangle-231" fill="#FFFFFF" opacity="0.4" x="0" y="0" width="940" height="350"></rect>
-                <g id="server" transform="translate(10.000000, 222.000000)">
+                <g id="server" transform="translate(0.000000, 222.000000)">
                     <g id="folder-copy">
                         <rect id="Rectangle-165" fill="#FFCC00" x="0" y="4" width="20" height="12"></rect>
                         <path d="M0,2 L19.0081969,2 C19.5446944,2 20,2.44771525 20,3 L20,4 L0,4 L0,2 Z M0.997030139,0 L7.00296986,0 C7.54696369,0 8,0.44771525 8,1 L8,2 L0,2 L0,1 C0,0.443864822 0.446385598,0 0.997030139,0 Z" id="Rectangle-166" fill="#E4A800"></path>
@@ -29,7 +29,7 @@
                         </g>
                     </g>
                 </g>
-                <g id="common.blocks" transform="translate(10.000000, 270.000000)">
+                <g id="common.blocks" transform="translate(0.000000, 270.000000)">
                     <g id="folder-copy">
                         <rect id="Rectangle-165" fill="#FFCC00" x="0" y="4" width="20" height="12"></rect>
                         <path d="M0,2 L19.0081969,2 C19.5446944,2 20,2.44771525 20,3 L20,4 L0,4 L0,2 Z M0.997030139,0 L7.00296986,0 C7.54696369,0 8,0.44771525 8,1 L8,2 L0,2 L0,1 C0,0.443864822 0.446385598,0 0.997030139,0 Z" id="Rectangle-166" fill="#E4A800"></path>
@@ -57,7 +57,7 @@
                         </g>
                     </g>
                 </g>
-                <g id="static" transform="translate(10.000000, 54.000000)">
+                <g id="static" transform="translate(0.000000, 54.000000)">
                     <g id="add-folder-copy" transform="translate(26.500000, 24.000000)">
                         <rect id="Rectangle-165" fill="#FFCC00" x="0" y="4" width="20" height="12"></rect>
                         <path d="M0,2 L19.0081969,2 C19.5446944,2 20,2.44771525 20,3 L20,4 L0,4 L0,2 Z M0.997030139,0 L7.00296986,0 C7.54696369,0 8,0.44771525 8,1 L8,2 L0,2 L0,1 C0,0.443864822 0.446385598,0 0.997030139,0 Z" id="Rectangle-166" fill="#E4A800"></path>
@@ -152,7 +152,7 @@
                         </g>
                     </g>
                 </g>
-                <g id=".enb" transform="translate(10.000000, 6.000000)">
+                <g id=".enb" transform="translate(0.000000, 6.000000)">
                     <g id="folder">
                         <rect id="Rectangle-165" fill="#FFCC00" x="0" y="4" width="20" height="12"></rect>
                         <path d="M0,2 L19.0081969,2 C19.5446944,2 20,2.44771525 20,3 L20,4 L0,4 L0,2 Z M0.997030139,0 L7.00296986,0 C7.54696369,0 8,0.44771525 8,1 L8,2 L0,2 L0,1 C0,0.443864822 0.446385598,0 0.997030139,0 Z" id="Rectangle-166" fill="#E4A800"></path>
