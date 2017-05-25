@@ -621,6 +621,23 @@ npm install googleapis --save
 
 ![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg#vd444444)
 
+**Директория `static`**
+
+* Создаем поддиректории:
+
+  * `css`;
+  * `images`;
+  * `js`.
+
+* Удаляем файлы:
+
+  * `index.min.js`;
+  * `index.min.css`.
+
+* Переносим фавиконку в поддиректорию `images`:
+
+  `favicon.ico` —> `images/favicon.ico`
+
 **Директория `.enb`**
 
 * Редактируем файл `.enb/make.js`.
@@ -661,22 +678,51 @@ npm install googleapis --save
 
   > Теперь, сборщик [ENB](https://ru.bem.info/toolbox/enb/) при пересборке проекта будет копировать бандлы `index.min.js` и `index.min.css` в директории `static/js/` и `static/css/`.
 
-**Директория `static`**
+**Директория `common.blocks`**
 
-* Создаем поддиректории:
+* Редактируем файл  `root/root.bemtree.js` (шаблон).
 
-  * `css`;
-  * `images`;
-  * `js`.
+  Меняем:
 
-* Удаляем файлы:
+  ```js
+  /* ... */
+  favicon: '/favicon.ico',
+  styles: [
+      {
+          elem: 'css',
+          url: '/index.min.css'
+      }
+  ],
+  scripts: [
+      {
+          elem: 'js',
+          url: '/index.min.js'
+      }
+  ],
+  /* ... */
+  ```
 
-  * `index.min.js`;
-  * `index.min.css`.
+  На:
 
-* Переносим фавиконку в поддиректорию `images`:
+  ```js
+  /* ... */
+  favicon: '/images/favicon.ico',
+  styles: [
+      {
+          elem: 'css',
+          url: '/css/index.min.css'
+      }
+  ],
+  scripts: [
+      {
+          elem: 'js',
+          url: '/js/index.min.js'
+      }
+  ],
+  /* ... */
+  ```
 
-  `favicon.ico` —> `images/favicon.ico`
+  [Полный код common.blocks/root/root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
 
 **Директория `server`**
 
@@ -730,52 +776,6 @@ npm install googleapis --save
   [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
 
   > Теперь, [livereload](https://github.com/napcs/node-livereload) будет отслеживать изменения в директориях `static/js/` и `static/css/`.
-
-**Директория `common.blocks`**
-
-* Редактируем файл  `root/root.bemtree.js` (шаблон).
-
-  Меняем:
-
-  ```js
-  /* ... */
-  favicon: '/favicon.ico',
-  styles: [
-      {
-          elem: 'css',
-          url: '/index.min.css'
-      }
-  ],
-  scripts: [
-      {
-          elem: 'js',
-          url: '/index.min.js'
-      }
-  ],
-  /* ... */
-  ```
-
-  На:
-
-  ```js
-  /* ... */
-  favicon: '/images/favicon.ico',
-  styles: [
-      {
-          elem: 'css',
-          url: '/css/index.min.css'
-      }
-  ],
-  scripts: [
-      {
-          elem: 'js',
-          url: '/js/index.min.js'
-      }
-  ],
-  /* ... */
-  ```
-
-  [Полный код common.blocks/root/root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
 
 В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
 
