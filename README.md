@@ -760,8 +760,6 @@ npm install googleapis --save
 
   > Теперь, [livereload](https://github.com/napcs/node-livereload) будет отслеживать изменения в директориях `static/js/` и `static/css/`.
 
-**ИТОГО**
-
 В результате выполненных действий файловая структура директории `static` будет иметь следующий вид:
 
 ```files
