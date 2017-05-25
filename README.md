@@ -780,8 +780,11 @@ static/
 * Cоздадим пустые `JS`-файлы для будущих модулей:
 
   *Директория `controllers`*
+  
   * `index.js` — контроллер;
+
   *Директория `helpers`*
+
   * `helpers/index.js` — входная точка для хелперов;
   * `helpers/twitter.js` — модуль-хелпер для работы с Twitter Search API;
   * `helpers/youtube.js` — модуль-хелпер для работы с YouTube Data API;
