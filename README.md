@@ -392,7 +392,7 @@ root(DECL)
 
 Вход и выход шаблонизатора:
 
-![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg#####)
+![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg)
 
 #### BEMHTML
 
@@ -425,7 +425,7 @@ JavaScript-код описывается в файлах с расширение
 
 ### Схема работы
 
-![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg###ff)
+![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
 
 #### Шаг 1. Получение данных
 
@@ -617,7 +617,7 @@ npm install googleapis --save
 
 #### Изменения для статических файлов
 
-![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg#8dgdnf###888)
+![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg)
 
 **Директория `static`**
 
@@ -671,7 +671,7 @@ npm install googleapis --save
   ]);
   ```
 
-  [Полный код .enb/make.js](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
+  [Полный код make.js](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
 
   > Теперь, сборщик [ENB](https://ru.bem.info/toolbox/enb/) при пересборке проекта будет копировать бандлы `index.min.js` и `index.min.css` в директории `static/js/` и `static/css/`.
 
@@ -715,7 +715,7 @@ npm install googleapis --save
   ],
   ```
 
-  [Полный код common.blocks/root/root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
+  [Полный код root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
 
 **Директория `server`**
 
@@ -733,7 +733,7 @@ npm install googleapis --save
   .use(favicon(path.join(staticFolder, '/images/favicon.ico')))
   ```
 
-  [Полный код server/index.js](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
+  [Полный код index.js](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
 
 * Редактируем файл `rebuild.js`.
 
@@ -917,7 +917,7 @@ server/
     }
   ```
 
-  [Полный код server/config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
+  [Полный код config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
 
 * Добавим файл `server/config.json` в `.gitignore`, чтобы случайно не добавить личные ключи в репозиторий файлов:
 
