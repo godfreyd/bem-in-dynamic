@@ -875,18 +875,18 @@ static/
 ```files
 server/
     controllers/        
-        index.js
+        index.js          # Контроллер обработки запросов и рендеринга HTML
     helpers/        
-        index.js
-        twitter.js
-        youtube.js
-    middleware/  
-        index.js
-    app.js         
-    auth.js             
-    config.json
-    index.js
-    rebuild.js
+        index.js          # Входная точка для модулей-хелперов
+        twitter.js        # Модуль-хелпер для работы с Twitter Search API
+        youtube.js        # Модуль-хелпер для работы с YouTube Data API
+    middleware/       
+        index.js          # Модуль проверки прохождения аутентификации
+    app.js                # Модуль монтирования промежуточных модулей
+    auth.js               # Модуль аутентификации на YouTube
+    config.json           # Конфигурация приложения
+    index.js              # Запуск приложения и прослушивание запросов на порте
+    rebuild.js            # Модуль отслеживания изменений и перезапуска сервера
     render.js             # Рендеринг HTML
     routes.js             # Маршрутизатор
 ```
