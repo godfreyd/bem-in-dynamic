@@ -696,6 +696,41 @@ npm install googleapis --save
 
   [Полный код server/index.js](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
 
+* Редактируем файл `rebuild.js`.
+
+  Меняем:
+
+  ```js
+  // livereload
+  process.env.NO_LIVERELOAD || watch([
+      path.join(rootDir, 'static', '*.min.*'),
+      path.join(bundlesDir, '*', '*.bemtree.js'),
+  ].concat(bundles.map(function(bundle) {
+      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
+  })), watchOpts).on('all', function(event, file) {
+      tinyLr.changed(file);
+  });
+  ```
+
+  На:
+
+  ```js
+  // livereload
+  process.env.NO_LIVERELOAD || watch([
+      path.join(rootDir, 'static/js', '*.min.*'),
+      path.join(rootDir, 'static/css', '*.min.*'),
+      path.join(bundlesDir, '*', '*.bemtree.js'),
+  ].concat(bundles.map(function(bundle) {
+      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
+  })), watchOpts).on('all', function(event, file) {
+      tinyLr.changed(file);
+  });
+  ```
+
+  [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
+
+  > Теперь, [livereload](https://github.com/napcs/node-livereload) будет отслеживать изменения в директориях `static/js/` и `static/css/`.
+
 **Директория `common.blocks`**
 
 * Редактируем файл  `root/root.bemtree.js` (шаблон).
@@ -741,39 +776,6 @@ npm install googleapis --save
   ```
 
   [Полный код common.blocks/root/root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
-
-* Осталось сообщить [livereload](https://github.com/napcs/node-livereload) об изменениях в директории `static` (файл `server/rebuild.js`).
-
-  Меняем:
-
-  ```js
-  // livereload
-  process.env.NO_LIVERELOAD || watch([
-      path.join(rootDir, 'static', '*.min.*'),
-      path.join(bundlesDir, '*', '*.bemtree.js'),
-  ].concat(bundles.map(function(bundle) {
-      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
-  })), watchOpts).on('all', function(event, file) {
-      tinyLr.changed(file);
-  });
-  ```
-
-  На:
-
-  ```js
-  // livereload
-  process.env.NO_LIVERELOAD || watch([
-      path.join(rootDir, 'static/js', '*.min.*'),
-      path.join(rootDir, 'static/css', '*.min.*'),
-      path.join(bundlesDir, '*', '*.bemtree.js'),
-  ].concat(bundles.map(function(bundle) {
-      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
-  })), watchOpts).on('all', function(event, file) {
-      tinyLr.changed(file);
-  });
-  ```
-
-  [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
 
 В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
 
