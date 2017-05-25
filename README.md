@@ -621,6 +621,8 @@ npm install googleapis --save
 
 ![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg###ddewfvd)
 
+**Директория `.enb`**
+
 * Для удобства хранения статических файлов создадим в директории `static` поддиректории:
 
   * `css`;
