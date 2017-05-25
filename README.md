@@ -679,7 +679,7 @@ npm install googleapis --save
 
 **Директория `common.blocks`**
 
-* Редактируем файл  `root/root.bemtree.js` (шаблон).
+* Редактируем файл  `root/root.bemtree.js`.
 
   Меняем:
 
