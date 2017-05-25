@@ -769,9 +769,9 @@ static/
 
 ![server-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/server-changes.svg)
 
-Для удобства работы с отдельными модулями:
+**Директория `server`**
 
-* Cоздадим в директории `server` поддиректории:
+* Создаем поддиректории:
 
   * `controllers` — контроллеры;
   * `helpers` — хелперы;
@@ -779,6 +779,7 @@ static/
 
 * Cоздадим пустые `JS`-файлы для будущих модулей:
 
+  **Директория `server`**
   * `controllers/index.js` — контроллер;
   * `helpers/index.js` — входная точка для хелперов;
   * `helpers/twitter.js` — модуль-хелпер для работы с Twitter Search API;
