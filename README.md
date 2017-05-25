@@ -610,12 +610,14 @@ npm install googleapis --save
 
 Прежде чем начать писать код, немного изменим структуру взятого за основу приложения **Hello, World**.
 
-* [Изменения для статических файлов](#Изменения-для-статических-файлов)
-* [Изменения для серверного кода](#Изменения-для-серверного-кода)
+Внесем изменения для:
+
+* [статических файлов](#Изменения-для-статических-файлов);
+* [серверного кода](#Изменения-для-серверного-кода).
 
 #### Изменения для статических файлов
 
-![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg#####8dgdnf###888)
+![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg#8dgdnf###888)
 
 **Директория `static`**
 
@@ -754,7 +756,7 @@ npm install googleapis --save
 
 **Файл `.gitignore`**
 
-* Редактируем файл `.gitignore`:
+* Редактируем файл:
 
   Меняем:
 
