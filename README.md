@@ -629,14 +629,13 @@ npm install googleapis --save
   * `images`;
   * `js`.
 
+* Переносим фавиконку в поддиректорию `images`:
+
+  `favicon.ico` —> `images/favicon.ico`
 * Удаляем файлы:
 
   * `index.min.js`;
   * `index.min.css`.
-
-* Переносим фавиконку в поддиректорию `images`:
-
-  `favicon.ico` —> `images/favicon.ico`
 
 **Директория `.enb`**
 
