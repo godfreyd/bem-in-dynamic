@@ -595,7 +595,7 @@ passport.use(new YoutubeV3Strategy({
 ```
 
 #### twitter
-
+TODO: добавить описание
 #### googleapis
 
 Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с различными [Google APIs](https://developers.google.com/apis-explorer/#p/). Из всего списка поддерживаемых APIs нас интересует YouTube Data API v3.
