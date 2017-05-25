@@ -746,30 +746,14 @@ npm install googleapis --save
   Меняем:
 
   ```js
-  // livereload
-  process.env.NO_LIVERELOAD || watch([
-      path.join(rootDir, 'static', '*.min.*'),
-      path.join(bundlesDir, '*', '*.bemtree.js'),
-  ].concat(bundles.map(function(bundle) {
-      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
-  })), watchOpts).on('all', function(event, file) {
-      tinyLr.changed(file);
-  });
+  path.join(rootDir, 'static', '*.min.*'),
   ```
 
   На:
 
   ```js
-  // livereload
-  process.env.NO_LIVERELOAD || watch([
-      path.join(rootDir, 'static/js', '*.min.*'),
-      path.join(rootDir, 'static/css', '*.min.*'),
-      path.join(bundlesDir, '*', '*.bemtree.js'),
-  ].concat(bundles.map(function(bundle) {
-      return path.join(bundlesDir, bundle, bundle + '.bemhtml.js');
-  })), watchOpts).on('all', function(event, file) {
-      tinyLr.changed(file);
-  });
+  path.join(rootDir, 'static/js', '*.min.*'),
+  path.join(rootDir, 'static/css', '*.min.*'),
   ```
 
   [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
