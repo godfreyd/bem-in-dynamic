@@ -623,13 +623,7 @@ npm install googleapis --save
 
 **Директория `.enb`**
 
-* Для удобства хранения статических файлов создадим в директории `static` поддиректории:
-
-  * `css`;
-  * `images`;
-  * `js`.
-
-* Теперь, чтобы сборщик [ENB](https://ru.bem.info/toolbox/enb/) при пересборке проекта копировал бандлы `index.min.js` и `index.min.css` в нужные директории, необходимо внести изменения в конфигурацию сборщика (файл `.enb/make.js`).
+* Редактируем файл `.enb/make.js`.
 
   Меняем:
 
@@ -665,12 +659,28 @@ npm install googleapis --save
 
   [Полный код .enb/make.js](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
 
-* Удаляем файлы: `static/index.min.js`, `static/index.min.css`.
+> Теперь, сборщик [ENB](https://ru.bem.info/toolbox/enb/) при пересборке проекта будет копировать бандлы `index.min.js` и `index.min.css` в директории `static/js/` и `static/css/`.
+
+**Директория `static`**
+
+* Создаем поддиректории:
+
+  * `css`;
+  * `images`;
+  * `js`.
+
+* Удаляем файлы:
+
+  * `index.min.js`;
+  * `index.min.css`.
+
 * Переносим фавиконку в поддиректорию `images`:
 
-  `static/favicon.ico` —> `static/images/favicon.ico`
+  `favicon.ico` —> `images/favicon.ico`
 
-* Вносим изменения в файл `server/index.js`.
+**Директория `server`**
+
+* Редактируем файл `index.js`.
 
   Меняем:
 
@@ -686,7 +696,9 @@ npm install googleapis --save
 
   [Полный код server/index.js](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
 
-* Вносим изменения в шаблон блока `root` (файл `common.blocks/root/root.bemtree.js`).
+**Директория `common.blocks`**
+
+* Редактируем файл  `root/root.bemtree.js` (шаблон).
 
   Меняем:
 
