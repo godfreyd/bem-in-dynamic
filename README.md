@@ -644,33 +644,33 @@ npm install googleapis --save
   Меняем:
 
   ```js
+  /* Change 1 */
   [techs.fileCopy, { source: '?.min.js', target: '../../static/?.min.js' }],
   [techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
-  /* ... */
 
+  /* Change 2 */  
   nodeConfig.addTargets([
     '?.bemtree.js',
     '?.bemhtml.js',
     '../../static/?.min.js',
     '../../static/?.min.css'
   ]);
-  /* ... */
   ```
 
   На:
 
   ```js
+  /* Change 1 */
   [techs.fileCopy, { source: '?.min.js', target: '../../static/js/?.min.js' }],
   [techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
-  /* ... */
 
+  /* Change 2 */  
   nodeConfig.addTargets([
     '?.bemtree.js',
     '?.bemhtml.js',
     '../../static/js/?.min.js',
     '../../static/css/?.min.css'
   ]);
-  /* ... */
   ```
 
   [Полный код .enb/make.js](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
