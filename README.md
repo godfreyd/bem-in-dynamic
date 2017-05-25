@@ -753,6 +753,24 @@ npm install googleapis --save
 
   > Теперь, [livereload](https://github.com/napcs/node-livereload) будет отслеживать изменения в директориях `static/js/` и `static/css/`.
 
+**Файл `.gitignore`**
+
+* Редактируем файл `.gitignore`:
+
+  Меняем:
+
+  ```bash
+  static/index.min.*
+  ```
+
+  На:
+
+  ```bash
+  static/*/index.min.*
+  ```
+
+  [Полный код .gitignore](https://gist.github.com/godfreyd/c105ced43f2954950ce43e23d6929dbf).
+
 В результате выполненных действий файловая структура директории `static` будет иметь следующий вид:
 
 ```files
@@ -871,27 +889,6 @@ server/
     render.js             # Рендеринг HTML
     routes.js             # Маршрутизатор
 ```
-
-
-
-#### Изменения для .gitignore
-
-
-* Вносим изменения в `.gitignore`:
-
-  Меняем:
-
-  ```bash
-  static/index.min.*
-  ```
-
-  На:
-
-  ```bash
-  static/*/index.min.*
-  ```
-
-  [Полный код .gitignore](https://gist.github.com/godfreyd/c105ced43f2954950ce43e23d6929dbf).
 
 
 
