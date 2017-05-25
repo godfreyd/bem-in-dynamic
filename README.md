@@ -644,11 +644,11 @@ npm install googleapis --save
   Меняем:
 
   ```js
-  /* Change 1 */
+  /* Изменение 1 */
   [techs.fileCopy, { source: '?.min.js', target: '../../static/?.min.js' }],
   [techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
 
-  /* Change 2 */  
+  /* Изменение 2 */  
   nodeConfig.addTargets([
     '?.bemtree.js',
     '?.bemhtml.js',
@@ -660,11 +660,11 @@ npm install googleapis --save
   На:
 
   ```js
-  /* Change 1 */
+  /* Изменение 1 */
   [techs.fileCopy, { source: '?.min.js', target: '../../static/js/?.min.js' }],
   [techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
 
-  /* Change 2 */  
+  /* Изменение 2 */  
   nodeConfig.addTargets([
     '?.bemtree.js',
     '?.bemhtml.js',
