@@ -621,7 +621,7 @@ npm install googleapis --save
 
 ![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg###ddewfvd)
 
-*Директория `.enb`*
+**Директория `.enb`**
 
 * Редактируем файл `.enb/make.js`.
 
