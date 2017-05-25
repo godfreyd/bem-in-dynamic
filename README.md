@@ -659,7 +659,7 @@ npm install googleapis --save
 
   [Полный код .enb/make.js](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
 
-> Теперь, сборщик [ENB](https://ru.bem.info/toolbox/enb/) при пересборке проекта будет копировать бандлы `index.min.js` и `index.min.css` в директории `static/js/` и `static/css/`.
+  > Теперь, сборщик [ENB](https://ru.bem.info/toolbox/enb/) при пересборке проекта будет копировать бандлы `index.min.js` и `index.min.css` в директории `static/js/` и `static/css/`.
 
 **Директория `static`**
 
