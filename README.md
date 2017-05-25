@@ -780,15 +780,19 @@ static/
 * Cоздадим пустые `JS`-файлы для будущих модулей:
 
   *Директория `controllers`*
-  
+
   * `index.js` — контроллер;
 
   *Директория `helpers`*
 
-  * `helpers/index.js` — входная точка для хелперов;
-  * `helpers/twitter.js` — модуль-хелпер для работы с Twitter Search API;
-  * `helpers/youtube.js` — модуль-хелпер для работы с YouTube Data API;
-  * `middleware/index.js` — модуль проверки прохождения аутентификации;
+  * `index.js` — входная точка для хелперов;
+  * `twitter.js` — модуль-хелпер для работы с Twitter Search API;
+  * `youtube.js` — модуль-хелпер для работы с YouTube Data API;
+
+  *Директория `middleware`*
+
+  * `index.js` — модуль проверки прохождения аутентификации;
+
   * `auth.js` — модуль аутентификации на YouTube.
 
   Должна получиться следующая файловая структура:
