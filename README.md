@@ -604,6 +604,27 @@ passport.use(new YoutubeV3Strategy({
 npm install twitter --save
 ```
 
+Пример:
+
+```js
+var Twitter = require('twitter');
+
+var client = new Twitter({
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: ''
+});
+
+var params = {q: 'bem'};
+
+client.get('search/tweets', params, function(error, tweets, response) {
+  if (!error) {
+    console.log(tweets);
+  }
+});
+```
+
 #### googleapis
 
 Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с [Google REST APIs](https://developers.google.com/apis-explorer/#p/).
@@ -612,6 +633,37 @@ npm install twitter --save
 
 ```bash
 npm install googleapis --save
+```
+
+Пример:
+
+```js
+var google = require('googleapis'),
+    OAuth2 = google.auth.OAuth2;
+
+var oauth2Client = new OAuth2(
+  YOUR_CLIENT_ID,
+  YOUR_CLIENT_SECRET,
+  YOUR_REDIRECT_URL
+);
+
+oauth2Client.setCredentials({
+  access_token: 'ACCESS TOKEN HERE',
+  refresh_token: 'REFRESH TOKEN HERE'
+});
+
+var youtube = google.youtube({
+    version: 'v3',
+    auth: this.oauth2Client
+});
+
+var params = {q: 'bem'};
+
+youtube.search.list(params, function(error, video, response) {
+  if (!error) {
+    console.log(video);
+  }
+});
 ```
 
 ### Подготовка структуры проекта
