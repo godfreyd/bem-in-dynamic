@@ -414,7 +414,7 @@ JavaScript-код описывается в файлах с расширение
 
 * разрабатывать веб-интерфейс в терминах блоков, элементов, модификаторов;
 * описывать логику работы блока в декларативном стиле — как набор состояний;
-* легко интегрировать код JavaScript с BEMHTML-шаблонами и CSS в стиле БЭМ;
+* легко интегрировать код JavaScript с BEMHTML-шаблонами и CSS;
 * гибко переопределять поведение библиотечных блоков.
 
 > **Примечание.** `i-bem.js` не предназначен для замены фреймворка общего назначения, подобного jQuery.
@@ -462,7 +462,7 @@ JavaScript-код описывается в файлах с расширение
 var express = require('express');
 ```
 
-Если мы подключаем собственный локальный модуль, необходимо указать путь к нему:
+При подключении собственного локального модуля, необходимо указать к нему путь:
 
 ```js
 var someModule = require('./somefolder/somemodule');
@@ -553,7 +553,7 @@ app.listen(3000, function () {
 npm install passport --save
 ```
 
-Пример авторизации по протоколу [OAuth 2.0](https://oauth.net/2/):
+Пример авторизации по протоколу OAuth 2.0:
 
 ```js
 var passport = require('passport'),
@@ -568,7 +568,7 @@ passport.use('provider', new OAuth2Strategy({
 }));
 ```
 
-> **Примечание.** [provider](http://passportjs.org/docs/facebook) — Facebook, Twitter, Google и др.
+> **Примечание.** [OAuth 2.0](https://oauth.net/2/) — открытый протокол авторизации, который позволяет предоставить третьей стороне ограниченный доступ к защищённым ресурсам пользователя без необходимости передавать ей (третьей стороне) логин и пароль.
 
 #### passport-youtube-v3
 
@@ -595,10 +595,18 @@ passport.use(new YoutubeV3Strategy({
 ```
 
 #### twitter
-TODO: добавить описание
+
+Клиентская [библиотека](https://www.npmjs.com/package/twitter) для работы с [Twitter REST APIs](https://dev.twitter.com/rest/public).
+
+Установка:
+
+```bash
+npm install twitter --save
+```
+
 #### googleapis
 
-Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с различными [Google APIs](https://developers.google.com/apis-explorer/#p/). Из всего списка поддерживаемых APIs нас интересует YouTube Data API v3.
+Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с [Google REST APIs](https://developers.google.com/apis-explorer/#p/).
 
 Установка:
 
