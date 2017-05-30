@@ -9,8 +9,8 @@
   * [Схема работы](#Схема-работы)
   * [Модули Node](#Модули-node)
   * [Подготовка структуры проекта](#Подготовка-структуры-проекта)
-  * [Работа с Twitter Search API](#)
-  * [Работа с YouTube Data API](#)
+  * [Работа с Twitter Search API](#Работа-с-twitter-search-api)
+  * [Работа с YouTube Data API](#Работа-с-youtube-data-api)
 
 ## Введение
 
@@ -440,8 +440,8 @@ JavaScript-код описывается в файлах с расширение
 
 Генерация запроса и подготовка полученных данных для дальнейшей шаблонизации более подробно рассматриваются в разделах:
 
-* [Работа с Twitter Search API](#).
-* [Работа с YouTube Data API](#).
+* [Работа с Twitter Search API](#Работа-с-twitter-search-api).
+* [Работа с YouTube Data API](#Работа-с-youtube-data-api).
 
 #### Шаг 2. BEMTREE-шаблонизация
 
