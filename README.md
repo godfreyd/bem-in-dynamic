@@ -959,7 +959,9 @@ server/
 ```
 
 
+## Работа с Twitter Search API
 
+## Работа с YouTube Data API
 
 
 
