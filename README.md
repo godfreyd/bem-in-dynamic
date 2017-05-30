@@ -961,6 +961,11 @@ server/
 
 ## Работа с Twitter Search API
 
+[Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
+
+Позволяет запрашивать индексы последних или популярных твитов, опубликованных на сайте [Twitter.com](https://twitter.com/) за последние 7 дней.
+
+
 ## Работа с YouTube Data API
 
 
