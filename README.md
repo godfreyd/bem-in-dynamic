@@ -335,7 +335,7 @@ static/
 
 #### BEMDECL
 
-Позволяет определить [список БЭМ-сущностей](https://ru.bem.info/methodology/declarations/), используемых на странице.
+Позволяет определить список БЭМ-сущностей, используемых на странице.
 
 Такой список в БЭМ принято называть декларацией. Задача декларации — определить, что и в каком порядке подключать в сборку.
 
@@ -376,9 +376,11 @@ root(DECL)
                └──> ...
 ```
 
+> Подробнее о [технологии BEMDECL](https://ru.bem.info/methodology/declarations/).
+
 #### DEPS
 
-Позволяет определить [зависимости](https://ru.bem.info/platform/deps/) между БЭМ-сущностями, которые разнесены по файловой структуре проекта и не отражены в [декларации](#bemdecl).
+Позволяет определить зависимости между БЭМ-сущностями, которые разнесены по файловой структуре проекта и не отражены в [декларации](#bemdecl).
 
 Зависимости описываются в виде JavaScript-объекта в файлах с расширением `.deps.js`.
 
@@ -391,6 +393,8 @@ root(DECL)
 })
 ```
 
+> Подробнее о [технологии DEPS](https://ru.bem.info/platform/deps/).
+
 #### BEMTREE
 
 Является частью шаблонизатора [bem-xjst](https://ru.bem.info/platform/bem-xjst/) и преобразует данные в BEMJSON.
@@ -400,6 +404,8 @@ root(DECL)
 Вход и выход шаблонизатора:
 
 ![BEMTREE](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemtree.svg)
+
+> Подробнее о [технологии BEMTREE](https://ru.bem.info/platform/bem-xjst/).
 
 #### BEMHTML
 
@@ -411,9 +417,11 @@ root(DECL)
 
 ![BEMHTML](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/bemhtml.svg)
 
+> Подробнее о [технологии BEMHTML](https://ru.bem.info/platform/bem-xjst/).
+
 #### i-bem.js
 
-Клиентский [JavaScript-фреймворк](https://ru.bem.info/platform/i-bem/) для веб-разработки в рамках БЭМ-методологии.
+Клиентский JavaScript-фреймворк для веб-разработки в рамках БЭМ-методологии.
 
 JavaScript-код описывается в файлах с расширением `.js`.
 
@@ -424,7 +432,7 @@ JavaScript-код описывается в файлах с расширение
 * легко интегрировать код JavaScript с BEMHTML-шаблонами и CSS;
 * гибко переопределять поведение библиотечных блоков.
 
-> **Примечание.** `i-bem.js` не предназначен для замены фреймворка общего назначения, подобного jQuery.
+> Подробнее об [технологии i-bem.js](https://ru.bem.info/platform/i-bem/).
 
 ## Приложение SSSR
 
