@@ -432,7 +432,7 @@ JavaScript-код описывается в файлах с расширение
 * легко интегрировать код JavaScript с BEMHTML-шаблонами и CSS;
 * гибко переопределять поведение библиотечных блоков.
 
-> Подробнее об [технологии i-bem.js](https://ru.bem.info/platform/i-bem/).
+> Подробнее о [технологии i-bem.js](https://ru.bem.info/platform/i-bem/).
 
 ## Приложение SSSR
 
