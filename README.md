@@ -965,13 +965,20 @@ server/
 
 Позволяет запрашивать индексы последних или популярных твитов, опубликованных на сайте [Twitter.com](https://twitter.com/) за последние 7 дней.
 
+**Лимит запросов** —
+
+**Формат ответа** — JSON.
 
 ## Работа с YouTube Data API
 
 
+[Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
 
+Позволяет запрашивать индексы последних или популярных твитов, опубликованных на сайте [Twitter.com](https://twitter.com/) за последние 7 дней.
 
+**Лимит запросов** —
 
+**Формат ответа** — JSON.
 
 * Добавьте в `server/config.json` поле `services` для хранения ключей и токенов YouTube и Twitter:
 
