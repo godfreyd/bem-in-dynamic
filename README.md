@@ -963,17 +963,19 @@ server/
 
 [Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
 
-Позволяет запрашивать индексы последних или популярных твитов, опубликованных на сайте [Twitter.com](https://twitter.com/) за последние 7 дней.
+Позволяет найти последние или популярные твиты, опубликованные на сайте [Twitter.com](https://twitter.com/) за последние 7 дней.
 
 **Формат ответа** — JSON.
-
 
 
 ## Работа с YouTube Data API
 
-[YouTube Data API](https://developers.google.com/youtube/v3/) позволяет запрашивать индексы видеороликов, опубликованных на сайте [Youtube.com](https://www.youtube.com). По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения. Можно настроить запросы только на получение определенного типа ресурса.
+[YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте [Youtube.com](https://www.youtube.com). По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения. Можно настроить запросы только на получение определенного типа ресурса.
 
 **Формат ответа** — JSON.
+
+
+
 
 * Добавьте в `server/config.json` поле `services` для хранения ключей и токенов YouTube и Twitter:
 
