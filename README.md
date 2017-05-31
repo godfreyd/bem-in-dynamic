@@ -871,7 +871,7 @@ server/
 
 1. Изучите [документацию](https://dev.twitter.com/oauth).
 2. [Зарегистрируйте](https://apps.twitter.com) приложение.
-3. Установите [Postman](https://www.getpostman.com).
+3. Установите [Postman](https://www.getpostman.com) любым удобным для вас способом.
 4. Получите [bearer_token](#Как-получить-bearer_token).
 5. Используйте полученный токен и  ключи в запросах к Twitter Search API.
 
