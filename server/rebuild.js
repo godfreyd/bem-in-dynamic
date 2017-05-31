@@ -34,7 +34,7 @@ process.env.NO_AUTOMAKE || watch(path.join(rootDir, '*.blocks/**'), watchOpts)
 
 // livereload
 process.env.NO_LIVERELOAD || watch([
-    path.join(rootDir, 'static', '{css,js}', '*.min.*'),
+    path.join(rootDir, 'static', '*.min.*'),
     path.join(rootDir, 'desktop.bundles/*/*.bemhtml.js'),
     path.join(rootDir, 'desktop.bundles/*/*.bemtree.js'),
 ], watchOpts).on('all', function(event, file) {

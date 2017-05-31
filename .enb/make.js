@@ -92,10 +92,10 @@ module.exports = function(config) {
             [techs.borschik, { source: '?.js', target: '?.min.js', minify: isProd }],
             [techs.borschik, { source: '?.css', target: '?.min.css', minify: isProd }],
 
-            [techs.fileCopy, { source: '?.min.js', target: '../../static/js/?.min.js' }],
-            [techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
+            [techs.fileCopy, { source: '?.min.js', target: '../../static/?.min.js' }],
+            [techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
         ]);
 
-        nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/js/?.min.js', '../../static/css/?.min.css']);
+        nodeConfig.addTargets(['?.bemtree.js', '?.bemhtml.js', '../../static/?.min.js', '../../static/?.min.css']);
     });
 };

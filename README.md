@@ -695,60 +695,11 @@ youtube.search.list(params, function(error, video, response) {
 
 **Директория `static`**
 
-* Создайте поддиректории:
-
-  * `css`;
-  * `images`;
-  * `js`.
+* Создайте поддиректорию `images`.
 
 * Перенесите фавиконку в поддиректорию `images`:
 
   `favicon.ico` —> `images/favicon.ico`
-
-* Удалите файлы:
-
-  * `index.min.js`;
-  * `index.min.css`.
-
-**Директория `.enb`**
-
-* Отредактируйте файл `.enb/make.js`.
-
-  Измените:
-
-  ```js
-  /* Изменение 1 */
-  [techs.fileCopy, { source: '?.min.js', target: '../../static/?.min.js' }],
-  [techs.fileCopy, { source: '?.min.css', target: '../../static/?.min.css' }]
-
-  /* Изменение 2 */  
-  nodeConfig.addTargets([
-    '?.bemtree.js',
-    '?.bemhtml.js',
-    '../../static/?.min.js',
-    '../../static/?.min.css'
-  ]);
-  ```
-
-  На:
-
-  ```js
-  /* Изменение 1 */
-  [techs.fileCopy, { source: '?.min.js', target: '../../static/js/?.min.js' }],
-  [techs.fileCopy, { source: '?.min.css', target: '../../static/css/?.min.css' }]
-
-  /* Изменение 2 */  
-  nodeConfig.addTargets([
-    '?.bemtree.js',
-    '?.bemhtml.js',
-    '../../static/js/?.min.js',
-    '../../static/css/?.min.css'
-  ]);
-  ```
-
-  [Полный код make.js](https://gist.github.com/godfreyd/e48e07abd314e124306b62b0b70780dc).
-
-  > Теперь, сборщик [ENB](https://ru.bem.info/toolbox/enb/) при пересборке проекта будет копировать бандлы `index.min.js` и `index.min.css` в директории `static/js/` и `static/css/`.
 
 **Директория `common.blocks`**
 
@@ -758,36 +709,12 @@ youtube.search.list(params, function(error, video, response) {
 
   ```js
   favicon: '/favicon.ico',
-  styles: [
-      {
-          elem: 'css',
-          url: '/index.min.css'
-      }
-  ],
-  scripts: [
-      {
-          elem: 'js',
-          url: '/index.min.js'
-      }
-  ],
   ```
 
   На:
 
   ```js
   favicon: '/images/favicon.ico',
-  styles: [
-      {
-          elem: 'css',
-          url: '/css/index.min.css'
-      }
-  ],
-  scripts: [
-      {
-          elem: 'js',
-          url: '/js/index.min.js'
-      }
-  ],
   ```
 
   [Полный код root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
@@ -810,53 +737,14 @@ youtube.search.list(params, function(error, video, response) {
 
   [Полный код index.js](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
 
-* Отредактируйте файл `rebuild.js`.
-
-  Измените:
-
-  ```js
-  path.join(rootDir, 'static', '*.min.*'),
-  ```
-
-  На:
-
-  ```js
-  path.join(rootDir, 'static/js', '*.min.*'),
-  path.join(rootDir, 'static/css', '*.min.*'),
-  ```
-
-  [Полный код rebuild.js](https://gist.github.com/godfreyd/ea8ee33850e42c48945d7ea3b4841b4a).
-
-  > Теперь, [livereload](https://github.com/napcs/node-livereload) будет отслеживать изменения в директориях `static/js/` и `static/css/`.
-
-**Файл `.gitignore`**
-
-* Отредактируйте файл:
-
-  Измените:
-
-  ```bash
-  static/index.min.*
-  ```
-
-  На:
-
-  ```bash
-  static/*/index.min.*
-  ```
-
-  [Полный код .gitignore](https://gist.github.com/godfreyd/c105ced43f2954950ce43e23d6929dbf).
-
 В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
 
 ```files
 static/                   
-    css/
-        index.min.css     # Оптимизированный файл стилей
     images/
         favicon.ico       # Фавиконка
-    js/
-        index.min.js      # Оптимизированный JavaScript-файл
+    index.min.css     # Оптимизированный файл стилей
+    index.min.js      # Оптимизированный JavaScript-файл
 ```
 
 #### Изменения для серверного кода
