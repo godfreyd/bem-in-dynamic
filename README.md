@@ -913,7 +913,7 @@ Twitter предлагает приложениям возможность вы�
 
     `Authorization: Basic eHZ6MWV2RlM0d0VFUFRHRUZQSEdFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
-6. Введите новый заголовок `Content-Type` со значением `application/x-www-form-urlencoded;charset=UTF-8`.
+6. Введите второй заголовок `Content-Type` со значением `application/x-www-form-urlencoded;charset=UTF-8`.
 
     **Пример:**
 
