@@ -892,7 +892,7 @@ Twitter предлагает приложениям возможность вы�
 4. Нажмите кнопку **Encode**.
 5. Скопируйте полученный код.
 
-    Пример кода:
+    Пример:
 
     `eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
@@ -909,6 +909,9 @@ Twitter предлагает приложениям возможность вы�
 4. Перейдите во вкладку **Headers**.
 5. Введите заголовок `Authorization` со значением `Basic <закодированная строка Consumer Key:Consumer Secret>`
 
+    Пример:
+
+    `Authorization: Basic eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
 
 
