@@ -894,7 +894,7 @@ Twitter предлагает приложениям возможность вы�
 
     **Пример:**
 
-    `eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
+    `eHZ6MWV2RlM0d0VFUFRHRUZQSEdFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
 ### Как получить OAuth-токен в обмен на код
 
@@ -911,7 +911,7 @@ Twitter предлагает приложениям возможность вы�
 
     **Пример:**
 
-    `Authorization: Basic eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
+    `Authorization: Basic eHZ6MWV2RlM0d0VFUFRHRUZQSEdFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
 6. Введите новый заголовок `Content-Type` со значением `application/x-www-form-urlencoded;charset=UTF-8`.
 
@@ -933,8 +933,7 @@ OAuth-сервер Twitter вернет токен в теле ответа в J
 ```json
 {
   "token_type": "bearer",
-  "access_token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%2F
-  AAAAAAAAAAAAAAAAAAAA%3DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  "access_token": "AAAAAAAAAAAAAAAAAAAAAA%2FAAAAAAAAAA%3DAAAAAAAAAAAAAAAAAA"
 }
 ```
 
