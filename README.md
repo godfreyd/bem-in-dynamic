@@ -594,7 +594,7 @@ passport.use('provider', new OAuth2Strategy({
 npm install passport-youtube-v3 --save
 ```
 
-Пример:
+**Пример:**
 
 ```js
 var passport = require('passport'),
@@ -618,7 +618,7 @@ passport.use(new YoutubeV3Strategy({
 npm install twitter --save
 ```
 
-Пример:
+**Пример:**
 
 ```js
 var Twitter = require('twitter');
@@ -649,7 +649,7 @@ client.get('search/tweets', params, function(error, tweets, response) {
 npm install googleapis --save
 ```
 
-Пример:
+**Пример:**
 
 ```js
 var google = require('googleapis'),
@@ -885,14 +885,14 @@ Twitter предлагает приложениям возможность вы�
 2. Перейдите в раздел **Encode**.
 3. Введите в поле **Type (or paste) here** строку вида: `Consumer Key:Consumer Secret`.
 
-    Пример:
+    **Пример:**
 
     `xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg`
 
 4. Нажмите кнопку **Encode**.
 5. Скопируйте полученный код.
 
-    Пример:
+    **Пример:**
 
     `eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
@@ -909,20 +909,20 @@ Twitter предлагает приложениям возможность вы�
 4. Перейдите во вкладку **Headers**.
 5. Введите в поле **Key** заголовок `Authorization` со значением (поле **Value**) `Basic <закодированная строка Consumer Key:Consumer Secret>`.
 
-    Пример:
+    **Пример:**
 
     `Authorization: Basic eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
 6. Введите новый заголовок `Content-Type` со значением `application/x-www-form-urlencoded;charset=UTF-8`.
 
-    Пример:
+    **Пример:**
 
     `Content-Type: application/x-www-form-urlencoded;charset=UTF-8`
 
 7. Перейдите во вкладку **Body**.
 8. Введите в поле **Key** тело запроса `grant_type` со значением `client_credentials`.
 
-    Пример:
+    **Пример:**
 
     `grant_type=client_credentials`
 
