@@ -883,9 +883,9 @@ Twitter предлагает приложениям возможность вы�
 
 1. Объедените полученные ключи в строку вида `Consumer Key:Consumer Secret`.
 
-  Пример:
+    Пример:
 
-  `xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg`
+    `xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg`
 
 2. Перейдите на сайт [www.base64encode.org](https://www.base64encode.org).
 3. Перейдите в раздел **Encode**.
