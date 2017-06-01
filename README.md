@@ -211,7 +211,7 @@ sssr-project/
     node_modules/         # Установленные модули (пакеты)
     server/               # Директория с серверным кодом
     static/               # Корневая директория для раздачи статических файлов
-    .bemhint.js           #
+    .bemhint.js           # Конфигурация линтера Bemhint
     .borschik             # Конфигурация сборщика файлов Borschik
     .eslintignore         # Исключение файлов и директорий в ESLint
     .eslintrc             # Конфигурация ESLint
