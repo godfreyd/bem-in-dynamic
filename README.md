@@ -928,14 +928,14 @@ Twitter предлагает приложениям возможность вы�
 
 9. Нажмите кнопку **Send**.
 
-OAuth-сервер Twitter вернет токен в теле ответа в JSON-формате:
+    OAuth-сервер Twitter вернет токен в теле ответа в JSON-формате:
 
-```json
-{
-  "token_type": "bearer",
-  "access_token": "AAAAAAAAAAAAAAAAAAAAAA%2FAAAAAAAAAA%3DAAAAAAAAAAAAAAAAAA"
-}
-```
+    ```json
+    {
+      "token_type": "bearer",
+      "access_token": "AAAAAAAAAAAAAAAAAAAAAA%2FAAAAAAAAAA%3DAAAAAAAAAAAAAAAAAA"
+    }
+    ```
 
 ## Получение OAuth-токена для Google
 
