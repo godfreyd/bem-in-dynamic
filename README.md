@@ -956,14 +956,9 @@ Google также предлагает приложениям возможнос
 
 1. Изучите [документацию](https://developers.google.com/youtube/v3/docs/search/list).
 2. Зарегистрируйте [приложение](https://developers.google.com/youtube/v3/getting-started) и получите OAuth client ID и Client Secret.
-3. Установите [Postman](https://www.getpostman.com) любым удобным для вас способом.
-4. [Закодируйте строку](#Как-закодировать-строку) `Consumer Key:Consumer Secret` методом [Base64](https://en.wikipedia.org/wiki/Base64).
-5. Получите [OAuth-токен](#Как-получить-oauth-токен-в-обмен-на-код) в обмен на код.
-6. Используйте полученные токен и ключи в запросах к Twitter Search API.
+3. Используйте полученные client ID и Client Secret в запросах к YouTube Data API.
 
-  > **Примечание.** Postman необходим для получения OAuth-токена с помощью POST-запроса в обмен на код, полученный методом Base64.
-
-
+  > **Важно!** Получать и обновлять OAuth-токен с помощью POST-запроса в обмен на код авторизации будет модуль [passport-youtube-v3](#passport-youtube-v3).
 
 ### Конфигурация приложения
 
