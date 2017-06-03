@@ -175,7 +175,7 @@
     });
     ```
 
-9. Измените функцию `content` для блока `page-index`. Файл `common.blocks/page-index/page-index.bemtree.js`:
+9. Измените режим `content` для блока `page-index`. Файл `common.blocks/page-index/page-index.bemtree.js`:
 
     ```js
     block('page-index').content()(function() {
@@ -804,7 +804,7 @@ static/
 
 * Отредактируйте файл `index.js`.
 
-  Измените весь текущий контент на [следующий](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3).
+  Измените весь текущий код на [следующий](https://gist.github.com/godfreyd/37d903c73f863619e2e1be1cd946d4c3).
 
   > **Примечание.** В `index.js` остается только функциональность, отвечающая за запуск приложения и прослушивание запросов на порте.
 
