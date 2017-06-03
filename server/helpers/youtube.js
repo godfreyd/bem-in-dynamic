@@ -6,6 +6,7 @@ function GoogleYoutube(credentials) {
 };
 
 GoogleYoutube.prototype.searchList = function(user, params, callback) {
+  
     this.oauth2Client.setCredentials({
         access_token: user.token,
         refresh_token: user.refreshtoken
