@@ -961,9 +961,9 @@ Google также как и Twitter предлагает приложениям 
 1. Изучите [документацию](https://developers.google.com/youtube/v3/docs/search/list).
 2. Зарегистрируйте [приложение](https://developers.google.com/youtube/v3/getting-started) и получите Client ID и Client Secret.
 3. Укажите callback URL в учетной записи вашего приложения. В нашем случае это http://localhost:3000.
-4. Используйте полученные client ID и Client Secret в запросах к YouTube Data API.
+4. Используйте полученные Client ID и Client Secret в запросах к YouTube Data API.
 
-> **Важно!** Сохраните полученные токен и ключи (Consumer Key и Consumer Secret). Они необходимы для [конфигурационного файла](#Конфигурация-приложения) приложения.
+> **Важно!** Сохраните полученные токен и ключи (Client ID и Client Secret). Они необходимы для [конфигурационного файла](#Конфигурация-приложения) приложения.
 
 ### Конфигурация приложения
 
