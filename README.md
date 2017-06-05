@@ -625,8 +625,7 @@ var Twitter = require('twitter');
 var client = new Twitter({
   consumer_key: '',
   consumer_secret: '',
-  access_token_key: '',
-  access_token_secret: ''
+  bearer_token: ''
 });
 
 var params = {q: 'bem'};
@@ -1019,7 +1018,11 @@ Google также как и Twitter предлагает приложениям 
 
 #### Вызов API
 
-// TODO: дописать
+Если у вас еще не установлен модуль [twitter](#twitter), установите его:
+
+```bash
+npm install twitter --save
+```
 
 ### Работа с YouTube Data API
 
@@ -1039,4 +1042,8 @@ Google также как и Twitter предлагает приложениям 
 
 #### Вызов API
 
-// TODO: дописать
+Если у вас еще не установлен модуль [googleapis](#googleapis), установите его:
+
+```bash
+npm install googleapis --save
+```
