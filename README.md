@@ -997,6 +997,13 @@ Google также как и Twitter предлагает приложениям 
 
 ### Работа с APIs
 
+Общие изменения для всех API:
+
+**Директория `controllers`**
+
+
+
+
 #### Работа с Twitter Search API
 
 [Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
