@@ -1130,6 +1130,13 @@ Google также как и Twitter предлагает приложениям 
 npm install twitter --save
 ```
 
+Изменения для работы с Twitter Search API:
+
+**Директория `controllers`**
+
+**Директория `helpers`**
+
+
 #### Работа с YouTube Data API
 
 [YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте [Youtube.com](https://www.youtube.com). По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения. Можно настроить запросы только на получение определенного типа ресурса.
@@ -1156,6 +1163,12 @@ npm install twitter --save
 npm install googleapis --save
 ```
 
+Изменения для работы с YouTube Data API:
 
+**Директория `server`**
+
+**Директория `controllers`**
+
+**Директория `helpers`**
 
 ### Верстка
