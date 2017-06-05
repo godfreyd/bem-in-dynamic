@@ -142,7 +142,7 @@
     * [chokidar](https://github.com/paulmillr/chokidar) — cледит за изменениями в файлах директорий `*.blocks/` и перестраивает структуру проекта;
     * [livereload](https://github.com/napcs/node-livereload) — обновляет страницу в браузере.
 
-7. Откройте браузер и введите адрес [http://localhost:3000](http://localhost:3000).
+7. Откройте браузер и введите адрес [localhost:3000](http://localhost:3000).
 
     Должна открыться страница со следующим контентом:
 
@@ -977,7 +977,7 @@ Google также как и Twitter предлагает приложениям 
 
 1. Изучите [документацию](https://developers.google.com/youtube/v3/docs/search/list).
 2. Зарегистрируйте [приложение](https://developers.google.com/youtube/v3/getting-started) и получите Client ID и Client Secret.
-3. Укажите callback URL (в нашем случае это http://localhost:3000) в учетной записи вашего приложения. 
+3. Укажите callback URL (в нашем случае это [localhost:3000](http://localhost:3000)) в учетной записи вашего приложения.
 4. Используйте полученные Client ID и Client Secret в запросах к YouTube Data API.
 
 > **Важно!** Сохраните полученные ключи (Client ID и Client Secret). Они необходимы для [конфигурационного файла](#Конфигурация-приложения) приложения.
