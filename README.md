@@ -523,6 +523,7 @@ console.log(hello.Hello);
 * [passport-youtube-v3](#passport-youtube-v3)
 * [twitter](#twitter)
 * [googleapis](#googleapis)
+* [moment](#moment)
 
 #### express
 
@@ -673,6 +674,24 @@ youtube.search.list(params, function(error, video, response) {
     console.log(video);
   }
 });
+```
+
+#### moment
+
+JavaScript [библиотека](http://momentjs.com) для синтаксического анализа, валидации и форматирования дат.
+
+Установка:
+
+```bash
+npm install moment --save
+```
+
+**Пример**
+
+```js
+var moment = require('moment');
+
+moment().startOf('day').fromNow();            // 17 часов назад
 ```
 
 ### Подготовка структуры проекта
@@ -999,7 +1018,13 @@ Google также как и Twitter предлагает приложениям 
 
 Общие изменения для всех API:
 
+
 **Директория `controllers`**
+
+
+
+
+
 
 
 
