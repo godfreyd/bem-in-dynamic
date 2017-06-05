@@ -999,7 +999,9 @@ Google также как и Twitter предлагает приложениям 
 
   [Полный код .gitignore](https://gist.github.com/godfreyd/71a35fde50f54205fa395230bc97358f).
 
-### Работа с Twitter Search API
+### Работа с APIs
+
+#### Работа с Twitter Search API
 
 [Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
 
@@ -1010,14 +1012,14 @@ Google также как и Twitter предлагает приложениям 
 * [Доступ к API](#Доступ-к-api)
 * [Вызов API](#Вызов-api)
 
-#### Доступ к API
+##### Доступ к API
 
 Для успешного вызова API необходимы:
 
 * URL, составленный согласно требованиям к нужному запросу.
 * [OAuth-токен](#Получение-oauth-токена-для-twitter), выданный вашему приложению для доступа к API.
 
-#### Вызов API
+##### Вызов API
 
 Если у вас еще не установлен модуль [twitter](#twitter), установите его:
 
@@ -1025,7 +1027,7 @@ Google также как и Twitter предлагает приложениям 
 npm install twitter --save
 ```
 
-### Работа с YouTube Data API
+#### Работа с YouTube Data API
 
 [YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте [Youtube.com](https://www.youtube.com). По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения. Можно настроить запросы только на получение определенного типа ресурса.
 
@@ -1034,14 +1036,14 @@ npm install twitter --save
 * [Доступ к API](#Доступ-к-api-1)
 * [Вызов API](#Вызов-api-1)
 
-#### Доступ к API
+##### Доступ к API
 
 Для успешного вызова API необходимы:
 
 * URL, составленный согласно требованиям к нужному запросу.
 * [OAuth-токен](#Получение-oauth-токена-для-google), выданный вашему приложению для доступа к API.
 
-#### Вызов API
+##### Вызов API
 
 Если у вас еще не установлен модуль [googleapis](#googleapis), установите его:
 
