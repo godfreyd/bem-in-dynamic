@@ -965,23 +965,37 @@ Google также предлагает приложениям возможнос
 
 ### Конфигурация приложения
 
-* Добавьте в `server/config.json` поле `services` для хранения ключей и токенов YouTube и Twitter:
+После того, как все ключи и токены получены, их необходимо добавить в конфигурационный файл приложения:
+
+* Добавьте в `server/config.json` поле `services`. Значением поля будет объект со своими строковыми полями `twitter` и `youtube`.   
 
   ```json
     "services": {
         "twitter": {
-            "consumer_key": "",
-            "consumer_secret": "",
-            "access_token_key": "",
-            "access_token_secret": ""
+
         },
         "youtube": {
-            "client_id": "",
-            "client_secret": "",
-            "redirect_url": ""
+
         }
     }
   ```
+
+* Добавьте полям `twitter` и `youtube` соответствующие поля, для хранения ключей и токенов YouTube и Twitter:
+
+    ```json
+      "services": {
+          "twitter": {
+              "consumer_key": "",
+              "consumer_secret": "",
+              "bearer_token": ""
+          },
+          "youtube": {
+              "client_id": "",
+              "client_secret": "",
+              "redirect_url": ""
+          }
+      }
+    ```
 
   [Полный код config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
 
