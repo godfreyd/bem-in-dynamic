@@ -1091,8 +1091,16 @@ Google также как и Twitter предлагает приложениям 
   };
   ```
 
+**Директория `helpers`**
 
+* Добавьте в файл `index.js` следующий контент:
 
+  ```js
+  module.exports = {
+      youtube: require('./youtube'),
+      twitter: require('./twitter')
+  };
+  ```
 
 #### Работа с Twitter Search API
 
