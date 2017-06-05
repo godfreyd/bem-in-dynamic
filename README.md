@@ -1021,10 +1021,75 @@ Google также как и Twitter предлагает приложениям 
 
 **Директория `controllers`**
 
+* Отредактируйте файл `index.js`.
 
+  Измените:
 
+  ```js
+  var Render = require('../render'),
+      render = Render.render;
 
+  function getContent(req, res) {
+      var hello = 'Hello';
+      var world = 'World';
+      render(req, res, {
+          view: 'page-index',
+          title: 'Main page',
+          meta: {
+              description: 'Page description',
+              og: {
+                  url: 'https://site.com',
+                  siteName: 'Site name'
+              }
+          },
+          hello: hello,
+          world: world
+      });
+  }
 
+  module.exports = {
+      getContent
+  };
+  ```
+
+  На:
+
+  ```js
+  var Render = require('../render'),
+      render = Render.render,
+      config = require('../config'),
+      moment = require('moment'),
+      helpers = require('../helpers'),
+      env = process.env;
+
+  function getContent(req, res) {
+      var passport = req.session.passport || {};
+      var query = req.query || {},
+          q = query.q ? '#' + query.q : '#bem',
+          lang = query.lang || 'en',
+          count = query.count || 12;
+
+      var hello = 'Hello';
+      var world = 'World';
+      render(req, res, {
+          view: 'page-index',
+          title: 'Main page',
+          meta: {
+              description: 'Page description',
+              og: {
+                  url: 'https://site.com',
+                  siteName: 'Site name'
+              }
+          },
+          hello: hello,
+          world: world
+      });
+  }
+
+  module.exports = {
+      getContent
+  };
+  ```
 
 
 
