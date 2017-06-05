@@ -445,10 +445,7 @@ JavaScript-код описывается в файлах с расширение
 
 Приложение получает запрос от пользователя и обращается за данными к [Twitter Search API](https://dev.twitter.com/rest/public/search) и [YouTube Data API](https://developers.google.com/youtube/v3/docs/search/list).
 
-Генерация запроса и подготовка полученных данных для дальнейшей шаблонизации подробно рассматриваются в разделах:
-
-* [Работа с Twitter Search API](#Работа-с-twitter-search-api).
-* [Работа с YouTube Data API](#Работа-с-youtube-data-api).
+Генерация запроса и подготовка полученных данных для дальнейшей шаблонизации подробно рассматриваются в разделе [Работа с APIs](#Работа-с-apis).
 
 #### Шаг 2. BEMTREE-шаблонизация
 
