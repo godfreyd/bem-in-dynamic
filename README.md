@@ -956,7 +956,7 @@ Google также как и Twitter предлагает приложениям 
 
 > **Примечание.** Получать и обновлять OAuth-токен с помощью POST-запроса в обмен на код авторизации будет модуль [passport-youtube-v3](#passport-youtube-v3).
 
-##### С чего начать
+**С чего начать**
 
 1. Изучите [документацию](https://developers.google.com/youtube/v3/docs/search/list).
 2. Зарегистрируйте [приложение](https://developers.google.com/youtube/v3/getting-started) и получите Client ID и Client Secret.
