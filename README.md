@@ -1048,6 +1048,8 @@ footer content
 
 #### Реализация общей функциональности
 
+![common-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/common-changes.svg)
+
 **Директория `controllers`**
 
 * Отредактируйте файл `index.js`.
@@ -1161,6 +1163,8 @@ npm install twitter --save
 
 Изменения для работы с Twitter Search API:
 
+![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg)
+
 **Директория `controllers`**
 
 **Директория `helpers`**
@@ -1193,6 +1197,8 @@ npm install googleapis --save
 ```
 
 Изменения для работы с YouTube Data API:
+
+![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg)
 
 **Директория `server`**
 
