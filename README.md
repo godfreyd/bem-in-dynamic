@@ -435,7 +435,7 @@ JavaScript-код описывается в файлах с расширение
 
 ## Приложение SSSR
 
-**SSSR** — это сервис для поиска твитов и видео с заданным набором параметров. Параметры поиска передаются в APIs [Twitter](https://dev.twitter.com/rest/public/search) и [YouTube](https://developers.google.com/youtube/v3/docs/search/list) в виде HTTP-запроса методом GET. APIs формируют ответ в виде JSON-документа.
+**SSSR** — это сервис для поиска твитов и видео с заданным набором параметров. Параметры поиска передаются в APIs [Twitter](https://dev.twitter.com/rest/public/search) и [YouTube](https://developers.google.com/youtube/v3/docs/search/list) в виде HTTP-запроса методом GET. APIs формируют ответ в виде [JSON-документа](http://www.json.org).
 
 Основная цель разработки данного приложения — показать:
 
@@ -829,8 +829,6 @@ static/
     "sessionSecret": "REPLACE_ME_WITH_RANDOM_STRING"
   }
   ```
-
-  > Подробнее о [JSON-формате](http://www.json.org).
 
 * Отредактируйте файл `index.js`.
 
