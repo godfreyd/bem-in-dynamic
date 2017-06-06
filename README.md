@@ -732,7 +732,7 @@ moment().startOf('day').fromNow();            // 17 часов назад
 
 **Директория `common.blocks`**
 
-* Отредактируйте файл  `root/root.bemtree.js`.
+* Отредактируйте файл `root/root.bemtree.js`.
 
   Измените:
 
@@ -1087,11 +1087,11 @@ footer content
 
   ```js
   var Render = require('../render'),
-      render = Render.render,
-      config = require('../config'),
-      moment = require('moment'),
-      helpers = require('../helpers'),
-      env = process.env;
+        render = Render.render,
+        config = require('../config'),
+        moment = require('moment'),
+        helpers = require('../helpers'),
+        env = process.env;
 
   function getContent(req, res) {
       var passport = req.session.passport || {};
@@ -1100,21 +1100,6 @@ footer content
           lang = query.lang || 'en',
           count = query.count || 12;
 
-      var hello = 'Hello';
-      var world = 'World';
-      render(req, res, {
-          view: 'page-index',
-          title: 'Main page',
-          meta: {
-              description: 'Page description',
-              og: {
-                  url: 'https://site.com',
-                  siteName: 'Site name'
-              }
-          },
-          hello: hello,
-          world: world
-      });
   }
 
   module.exports = {
@@ -1167,7 +1152,11 @@ npm install twitter --save
 
 **Директория `controllers`**
 
+* Измените весь текущий код файла `index.js` на [следующий](https://gist.github.com/godfreyd/3420597de46509b02c69707d596c8dc4).
+
 **Директория `helpers`**
+
+* Добавьте в файл `twitter.js` [следующий код](https://gist.github.com/godfreyd/e48b6831d785e51ee6ce0892151e3395).
 
 
 #### Реализация функциональности для работы с YouTube Data API
