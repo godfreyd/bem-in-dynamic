@@ -156,6 +156,12 @@
 8. Откройте файл `server/index.js` и внесите следующие изменения (см. комментарии) в код начинающего строкой `app.get('/', function(req, res)`:
 
     ```js
+    /**
+     * Функция обрабатывает все GET-запросы с главной страницы приложения
+     * @function
+     * @param {object} req - Запрос.
+     * @param {object} res - Ответ.
+     */
     app.get('/', function(req, res) {
         var hello = 'Hello';                  // Инициализировали переменную `hello`
         var world = 'World';                  // Инициализировали переменную `world`
