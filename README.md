@@ -1048,6 +1048,8 @@ footer content
 
 #### Реализация общей функциональности
 
+Изменения для работы с Twitter и YouTube APIs:
+
 ![common-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/common-changes.svg)
 
 **Директория `controllers`**
