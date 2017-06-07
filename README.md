@@ -575,10 +575,6 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 });
 
-/**
- * Функция запускает приложение на порту 3000
- * @callback
- */
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
@@ -604,6 +600,12 @@ npm install passport --save
 var passport = require('passport'),
     OAuth2Strategy = require('passport-oauth').OAuth2Strategy;
 
+/**
+ * Функция монтирует необходимую стратегию авторизации
+ * @function
+ * @param {string} provider — Например, facebook, twitter, google, ...
+ * @param {} todo
+ */
 passport.use('provider', new OAuth2Strategy({
     authorizationURL: 'https://www.provider.com/oauth2/authorize',
     tokenURL: 'https://www.provider.com/oauth2/token',
@@ -662,6 +664,12 @@ var client = new Twitter({
 
 var params = {q: 'bem'};
 
+/**
+ * Функция обрабатывает все GET-запросы со страницы search/tweets
+ * @function
+ * @param {object} params - Параметры поиска.
+ * @param {object} callback - Возвращает найденные твиты.
+ */
 client.get('search/tweets', params, function(error, tweets, response) {
   if (!error) {
     console.log(tweets);
