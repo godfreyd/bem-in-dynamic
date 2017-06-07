@@ -1158,7 +1158,6 @@ npm install twitter --save
 
 * Добавьте в файл `twitter.js` [следующий код](https://gist.github.com/godfreyd/e48b6831d785e51ee6ce0892151e3395).
 
-
 #### Реализация функциональности для работы с YouTube Data API
 
 [YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте [Youtube.com](https://www.youtube.com). По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения. Можно настроить запросы только на получение определенного типа ресурса.
@@ -1191,8 +1190,118 @@ npm install googleapis --save
 
 **Директория `server`**
 
+* Добавьте в файл `auth.js` следующий контент:
+
+  * [Полный код auth.js](https://gist.github.com/godfreyd/68af82df0bc171da54971990f442dddb).
+
+* Отредактируйте файл `routes.js`.
+
+  Измените:
+
+  ```js
+  var router = require('express').Router(),
+      controllers = require('./controllers');
+
+  router
+      .get('/ping/', function(req, res) {
+          res.send('ok');
+      })
+      .get('/', controllers.getContent);
+
+  module.exports = router;
+  ```
+
+  На:
+
+  ```js
+  var router = require('express').Router(),
+      controllers = require('./controllers'),
+      passportYouTube = require('./auth'),
+      middleware = require('./middleware/auth'),
+      isAuthenticated = middleware.isAuthenticated;
+
+  router
+      .get('/auth/youtube', passportYouTube.authenticate('youtube'))
+      .get('/auth/youtube/callback', passportYouTube.authenticate('youtube', { failureRedirect: '/error', failureFlash: true }), (req, res) => {
+          res.redirect('/');
+      })
+      .get('/', isAuthenticated, controllers.getContent);
+
+  module.exports = router;
+  ```
+
 **Директория `controllers`**
 
+* Отредактируйте файл `index.js`.
+
+  * Измените весь текущий контент на [следующий](https://gist.github.com/godfreyd/60d5d123c45c067b3fb675688dc74835).
+
 **Директория `helpers`**
+
+* Добавьте в файл `youtube.js` следующий контент:
+
+  ```js
+  var google = require('googleapis'),
+      OAuth2 = google.auth.OAuth2;
+
+  function GoogleYoutube(credentials) {
+      this.oauth2Client = new OAuth2(credentials.client_id, credentials.client_secret, credentials.redirect_url);
+  };
+
+  GoogleYoutube.prototype.searchList = function(user, params, callback) {
+
+      this.oauth2Client.setCredentials({
+          access_token: user.token,
+          refresh_token: user.refreshtoken
+      });
+
+      var youtube = google.youtube({
+          version: 'v3',
+          auth: this.oauth2Client
+      });
+
+      youtube.search.list(params, function(err, response) {
+          err ? callback(err, null) : callback(null, response);
+      });
+  };
+
+  module.exports = function(config, user, params) {
+      return new Promise(function(resolve, reject) {
+          (new GoogleYoutube(config)).searchList(user, params, function(err, data) {
+              if (err) return reject(err);
+
+              if (!data.items.length) return resolve({});
+
+              resolve({
+                  nextPageId: data.items[data.items.length -1].nextPageToken,
+                  videos: data.items.map(function(item) {
+                      return {
+                          name: item.snippet.channelTitle,
+                          time: item.snippet.publishedAt, // RFC 3339 formatted date-time
+                          q: params.q,
+                          nextpage: data.nextPageToken,
+                          url: 'https://www.youtube.com/embed/' + item.id.videoId,
+                          service: 'youtube'
+                      };
+                  })
+              });
+          });
+      });
+  };
+  ```
+
+**Директория `middleware`**
+
+* Добавьте в файл `auth.js` следующий контент:
+
+  ```js
+  module.exports = {
+      isAuthenticated: function(req, res, next) {
+          if (req.isAuthenticated()) return next();
+
+          return res.redirect('/auth/youtube');
+      }
+  };
+  ```
 
 ### Верстка
