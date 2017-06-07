@@ -184,6 +184,12 @@
 9. Измените режим `content` для блока `page-index`. Файл `common.blocks/page-index/page-index.bemtree.js`:
 
     ```js
+    /**
+     * @function
+     * @param {} todo
+     * @param {} todo
+     * @param {} todo
+     */
     block('page-index').content()(function() {
         var data = this.data;                  // Получаем данные
         return data.hello + ', ' + data.world; // Возвращаем содержимое
@@ -513,17 +519,20 @@ exports.someFunction = function () {
 Также можно создавать модули, состоящие из конструкторов и функций, затем экспортировать их с помощью `module.exports`:
 
 ```js
-// создаем функцию Hello
+/**
+ * Создаем функцию Hello.
+ * @constructor
+ */
 function Hello() {
 
     return 'Hello, World';
 
 }
 
-// создаем экземпляр
+// Создаем экземпляр функции Hello
 var hello = new Hello();
 
-// присваиваем функцию Hello одноименному свойству
+// Присваиваем функцию Hello одноименному свойству
 hello.Hello = Hello();
 
 // Экспортируем экземпляр
