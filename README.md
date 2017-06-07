@@ -138,7 +138,7 @@
     На вашем компьютере запустился:
 
     * сервер — отвечает за обработку динамических данных;
-    * [nodemon](https://github.com/remy/nodemon/) — cледит за изменениями в файловой структуре и перезапускает сервер;
+    * [nodemon](https://github.com/remy/nodemon/) — cледит за изменениями в [файловой структуре](https://ru.bem.info/methodology/filestructure/) и перезапускает сервер;
     * [chokidar](https://github.com/paulmillr/chokidar) — cледит за изменениями в файлах директорий `*.blocks/` и перестраивает структуру проекта;
     * [livereload](https://github.com/napcs/node-livereload) — обновляет страницу в браузере.
 
