@@ -50,8 +50,8 @@
 
 В `bem-express` по умолчанию подключены основные БЭМ-библиотеки:
 
-* [bem-core](https://github.com/bem/bem-core);
-* [bem-components](https://github.com/bem/bem-components).
+* [bem-core](https://ru.bem.info/platform/libs/bem-core/);
+* [bem-components](https://ru.bem.info/platform/libs/bem-components/).
 
 Для начала работы с шаблонным репозиторием на вашей машине необходимо установить [Node.js 4+](https://nodejs.org).
 
@@ -92,7 +92,7 @@
     git clone git@github.com:bem/bem-express.git sssr-project
     ```
 
-    > **Примечание.** Текущая версия `bem-express`: 2.0.0. // TODO: дописать
+    > **Примечание.** На момент написания документа текущей версией `bem-express` была версия 2.00.
 
 2. Перейдите в директорию проекта:
 
