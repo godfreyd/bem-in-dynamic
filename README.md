@@ -1140,7 +1140,7 @@ footer content
         helpers = require('../helpers'),
         env = process.env;
   /**
-   * Функция-обертка, контроллер. Объявлена для экспорта себя в модуль `routes.js`.
+   * Функция-обертка, контроллер. Объявлена для экспорта в модуль `routes.js`.
    * @function
    * @param {object} req - Запрос.
    * @param {object} res - Ответ.
@@ -1153,7 +1153,7 @@ footer content
           count = query.count || 12;
 
   }
-
+  // Экспортируем функцию getContent()
   module.exports = {
       getContent
   };
