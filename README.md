@@ -203,7 +203,7 @@
     });
     ```
 
-> Подробнее о [режиме `content`](https://ru.bem.info/platform/bem-xjst/templates-syntax/#content).
+> Подробнее о [режиме content](https://ru.bem.info/platform/bem-xjst/templates-syntax/#content).
 
     После сохранения сервер автоматически перезапустится и контент страницы изменится на:
 
