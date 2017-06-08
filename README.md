@@ -171,8 +171,8 @@
      * @param {object} res - Ответ.
      */
     app.get('/', function(req, res) {
-        var hello = 'Hello';                  // Инициализировали переменную `hello`
-        var world = 'World';                  // Инициализировали переменную `world`
+        var hello = 'Hello';                  // Инициализируем переменную `hello`
+        var world = 'World';                  // Инициализируем переменную `world`
         render(req, res, {
             view: 'page-index',
             title: 'Main page',
@@ -183,8 +183,8 @@
                     siteName: 'Site name'
                 }
             },
-            hello: hello,                     // Передали переменную `hello` в data.hello
-            world: world                      // Передали переменную `world` в data.world
+            hello: hello,                     // Передаем переменную `hello` в data.hello
+            world: world                      // Передаем переменную `world` в data.world
         })
     });
     ```
