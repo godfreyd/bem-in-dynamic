@@ -1139,7 +1139,12 @@ footer content
         moment = require('moment'),
         helpers = require('../helpers'),
         env = process.env;
-
+  /**
+   * Функция-обертка. Необходима для экспорта в другой модуль.
+   * @function
+   * @param {object} req - Запрос.
+   * @param {object} res - Ответ.
+   */
   function getContent(req, res) {
       var passport = req.session.passport || {};
       var query = req.query || {},
