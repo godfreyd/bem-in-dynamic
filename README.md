@@ -658,6 +658,8 @@ passport.use(new YoutubeV3Strategy({
 }, verify));
 ```
 
+> Подробнее о [том как получить OAuth-токены](#Получение-oauth-токенов).
+
 #### twitter
 
 Клиентская [библиотека](https://www.npmjs.com/package/twitter) для работы с [Twitter REST APIs](https://dev.twitter.com/rest/public).
