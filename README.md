@@ -193,7 +193,7 @@
 
     ```js
     /**
-     * Режим `content()(value)` генерирует содержимое БЭМ-сущности
+     * Режим `content()(value)` генерирует содержимое БЭМ-сущности (блок `page-index`)
      * @param {*} value
      */
     block('page-index').content()(function() {
