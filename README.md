@@ -189,7 +189,7 @@
     });
     ```
 
-9. Измените режим `content` для блока `page-index`. Файл `common.blocks/page-index/page-index.bemtree.js`:
+9. Откройте файл `common.blocks/page-index/page-index.bemtree.js` и замените его содержимое на следующее:
 
     ```js
     /**
