@@ -275,15 +275,15 @@ sssr-project/
 
 ```files
 common.blocks/
-    body/                # Директория блока `body`
-    footer/              # Директория блока `footer`
-    header/              # Директория блока `header`
-    page/                # Директория блока `page`
-        _view/           # Поддиректория модификатора `page_view`
-        page.bemtree.js  # Реализация блока `page` в технологии BEMTREE  
-        page.deps.js     # Реализация блока `page` в технологии DEPS
-    page-index/          # Директория блока `page-index`
-    root/                # Директория блока `root`
+    body/                 # Директория блока `body`
+    footer/               # Директория блока `footer`
+    header/               # Директория блока `header`
+    page/                 # Директория блока `page`
+        _view/            # Поддиректория модификатора `page_view`
+        page.bemtree.js   # Реализация блока `page` в технологии BEMTREE  
+        page.deps.js      # Реализация блока `page` в технологии DEPS
+    page-index/           # Директория блока `page-index`
+    root/                 # Директория блока `root`
 ```
 
 Перед отправкой в браузер файлы [собираются](#enb) и оптимизируются.
@@ -596,7 +596,7 @@ app.listen(3000, function () {
 
 #### passport
 
-Предоставляет [более 300 механизмов](http://passportjs.org) аутентификации в приложениях на Node.js.
+Предоставляет [более 300 стратегий](http://passportjs.org) аутентификации в приложениях на Node.js.
 
 Установка:
 
@@ -743,7 +743,7 @@ npm install moment --save
 ```js
 var moment = require('moment');
 
-moment().startOf('day').fromNow();            // 17 часов назад
+moment().startOf('day').fromNow();             // 17 часов назад
 ```
 
 ### Подготовка структуры проекта
@@ -809,8 +809,8 @@ moment().startOf('day').fromNow();            // 17 часов назад
 static/                   
     images/
         favicon.ico       # Фавиконка
-    index.min.css     # Оптимизированный файл стилей
-    index.min.js      # Оптимизированный JavaScript-файл
+    index.min.css         # Оптимизированный файл стилей
+    index.min.js          # Оптимизированный JavaScript-файл
 ```
 
 #### Изменения для серверного кода
