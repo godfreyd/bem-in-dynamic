@@ -194,7 +194,7 @@
     ```js
     /**
      * Режим `content()(value)` генерирует содержимое БЭМ-сущности (блок `page-index`)
-     * @param {*} value
+     * @param {*} value - Значение.
      */
     block('page-index').content()(function() {
         // Получаем данные из глобального объекта `this`
