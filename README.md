@@ -197,9 +197,9 @@
      * @param {*} value
      */
     block('page-index').content()(function() {
-        // Получаем данные из глобального объекта this
+        // Получаем данные из глобального объекта `this`
         var data = this.data;
-        // Возвращаем полученные данные data.hello: 'Hello', data.world: 'World'
+        // Возвращаем полученные данные `data.hello: 'Hello'`, `data.world: 'World'`
         return data.hello + ', ' + data.world;
     });
     ```
