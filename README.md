@@ -193,16 +193,17 @@
 
     ```js
     /**
-     * @function
-     * @param {} todo
-     * @param {} todo
-     * @param {} todo
+     * Режим `content()(value)` генерирует содержимое БЭМ-сущности
+     * @param {*} value
      */
     block('page-index').content()(function() {
-        var data = this.data;                  // Получаем данные
-        return data.hello + ', ' + data.world; // Возвращаем содержимое
+        var data = this.data;
+        // Возвращаем полученные с сервера данные data.hello: 'Hello', data.world: 'World'
+        return data.hello + ', ' + data.world;
     });
     ```
+
+> Подробнее о [режиме `content`](https://ru.bem.info/platform/bem-xjst/templates-syntax/#content).
 
     После сохранения сервер автоматически перезапустится и контент страницы изменится на:
 
