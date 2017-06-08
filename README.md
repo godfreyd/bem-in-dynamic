@@ -1051,20 +1051,20 @@ Google также как и Twitter предлагает приложениям 
 
 * Добавьте в файл `server/config.json` поле `services`, заполнив одноименные поля полученными данными.
 
-    ```json
-    "services": {
-        "twitter": {
-            "consumer_key": "",
-            "consumer_secret": "",
-            "bearer_token": ""
-        },
-        "youtube": {
-            "client_id": "",
-            "client_secret": "",
-            "redirect_url": "http://localhost:3000"
-        }
-    }
-    ```
+  ```json
+  "services": {
+      "twitter": {
+          "consumer_key": "",
+          "consumer_secret": "",
+          "bearer_token": ""
+      },
+      "youtube": {
+          "client_id": "",
+          "client_secret": "",
+          "redirect_url": "http://localhost:3000"
+      }
+  }
+  ```
 
   [Полный код config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
 
