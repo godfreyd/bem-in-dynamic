@@ -50,8 +50,8 @@
 
 В `bem-express` по умолчанию подключены основные БЭМ-библиотеки:
 
-* [bem-core](https://github.com/bem/bem-core)
-* [bem-components](https://github.com/bem/bem-components)
+* [bem-core](https://github.com/bem/bem-core);
+* [bem-components](https://github.com/bem/bem-components).
 
 Для начала работы с шаблонным репозиторием на вашей машине необходимо установить [Node.js 4+](https://nodejs.org).
 
