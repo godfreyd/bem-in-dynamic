@@ -642,7 +642,11 @@ npm install passport-youtube-v3 --save
 ```js
 var passport = require('passport'),
     YoutubeV3Strategy = require('passport-youtube-v3').Strategy;
-
+/**
+ * Функция монтирует стратегию YoutubeV3Strategy
+ * @function
+ * @param {} todo
+ */
 passport.use(new YoutubeV3Strategy({
     clientID: YOUTUBE_APP_ID,
     clientSecret: YOUTUBE_APP_SECRET,
@@ -665,17 +669,16 @@ npm install twitter --save
 
 ```js
 var Twitter = require('twitter');
-
+// Создаем экземпляр объекта Twitter
 var client = new Twitter({
   consumer_key: '',
   consumer_secret: '',
   bearer_token: ''
 });
-
+// Инициализируем параметр поиска
 var params = {q: 'bem'};
-
 /**
- * Функция обрабатывает все GET-запросы со страницы search/tweets
+ * Функция поиска. Ищет твиты по заданным параметрам.
  * @function
  * @param {object} params - Параметры поиска.
  * @param {object} callback - Возвращает найденные твиты.
@@ -702,25 +705,30 @@ npm install googleapis --save
 ```js
 var google = require('googleapis'),
     OAuth2 = google.auth.OAuth2;
-
+// Создаем экземпляр объекта OAuth2
 var oauth2Client = new OAuth2(
   YOUR_CLIENT_ID,
   YOUR_CLIENT_SECRET,
   YOUR_REDIRECT_URL
 );
-
+// Устанавливаем учетные данные для исходящих вызовов
 oauth2Client.setCredentials({
   access_token: 'ACCESS TOKEN HERE',
   refresh_token: 'REFRESH TOKEN HERE'
 });
-
+// Логинимся
 var youtube = google.youtube({
     version: 'v3',
     auth: this.oauth2Client
 });
-
+// Инициализируем параметр поиска
 var params = {q: 'bem'};
-
+/**
+ * Функция поиска. Ищет видео по заданным параметрам.
+ * @function
+ * @param {object} params - Параметры поиска.
+ * @param {object} callback - Возвращает найденные видеоролики.
+ */
 youtube.search.list(params, function(error, video, response) {
   if (!error) {
     console.log(video);
