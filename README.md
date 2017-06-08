@@ -1053,16 +1053,16 @@ Google также как и Twitter предлагает приложениям 
 
   ```json
   "services": {
-      "twitter": {
-          "consumer_key": "",
-          "consumer_secret": "",
-          "bearer_token": ""
-      },
-      "youtube": {
-          "client_id": "",
-          "client_secret": "",
-          "redirect_url": "http://localhost:3000"
-      }
+    "twitter": {
+      "consumer_key": "",
+      "consumer_secret": "",
+      "bearer_token": ""
+    },
+    "youtube": {
+      "client_id": "",
+      "client_secret": "",
+      "redirect_url": "http://localhost:3000"
+    }
   }
   ```
 
