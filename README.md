@@ -1049,26 +1049,26 @@ Google также как и Twitter предлагает приложениям 
 
 После того как все ключи и токены получены, их необходимо добавить в конфигурационный файл приложения:
 
-* Добавьте в файл `server/config.json` поле `services`, заполнив одноименные поля полученными данными:  
+* Добавьте в файл `server/config.json` поле `services`, заполнив одноименные поля полученными данными.
 
     ```json
-      "services": {
-          "twitter": {
-              "consumer_key": "",
-              "consumer_secret": "",
-              "bearer_token": ""
-          },
-          "youtube": {
-              "client_id": "",
-              "client_secret": "",
-              "redirect_url": "http://localhost:3000"
-          }
-      }
+    "services": {
+        "twitter": {
+            "consumer_key": "",
+            "consumer_secret": "",
+            "bearer_token": ""
+        },
+        "youtube": {
+            "client_id": "",
+            "client_secret": "",
+            "redirect_url": "http://localhost:3000"
+        }
+    }
     ```
 
   [Полный код config.json](https://gist.github.com/godfreyd/3697d1ba5fe5ac298a9b471fe943340f).
 
-* Скройте файл `server/config.json` от системы контроля версий Git, чтобы случайно не добавить личные ключи в репозиторий файлов:
+* Скройте файл `server/config.json` от системы контроля версий Git, чтобы случайно не добавить личные ключи в репозиторий файлов.
 
   ```bash
   # файл .gitignore
