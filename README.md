@@ -1,11 +1,11 @@
 # Динамический проект на БЭМ
 
 * [Введение](#Введение)
-* [Шаблонный репозиторий](#Шаблонный-репозиторий)
+* [Используемые технологии](#Используемые-технологии)
 * [Используемые обозначения](#Используемые-обозначения)
+* [Шаблонный репозиторий](#Шаблонный-репозиторий)
 * [Приложение Hello, World](#Приложение-hello-world)
   * [Файловая структура](#Файловая-структура)
-  * [Технологии](#Технологии)
 * [Приложение Social Services Search Robot](#Приложение-social-services-search-robot)
   * [Схема работы](#Схема-работы)
   * [Модули Node](#Модули-node)
@@ -42,9 +42,9 @@
 * JavaScript.
 * БЭМ.
 
-> **Важно!** В документе не рассматриваются вопросы верстки и клиентского JS. Цель документа — показать как разрабатывать динамические проекты по БЭМ, используя [полный стек технологий](#Используемые-технологии-БЭМ).
+> **Важно!** В документе не рассматриваются вопросы верстки и клиентского JS. Цель документа — показать как разрабатывать динамические проекты по БЭМ, используя [полный стек технологий](#Используемые-технологии).
 
-## Используемые технологии БЭМ
+## Используемые технологии
 
 Полный стек технологий БЭМ состоит из:
 
@@ -157,6 +157,13 @@ JavaScript-код описывается в файлах с расширение
 
 > Подробнее о [технологии i-bem.js](https://ru.bem.info/platform/i-bem/).
 
+## Используемые обозначения
+
+* ![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg) — директория;
+* ![add folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-folder.svg) — создать директорию;
+* ![add file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-file.svg) — создать файл;
+* ![edit file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/edit-file.svg) — отредактировать файл.
+
 ## Шаблонный репозиторий
 
 При решении задач по разработке динамических приложений в рамках БЭМ был создан шаблонный репозиторий [bem-express](https://github.com/bem/bem-express). Он содержит необходимый минимум конфигурационных файлов и решает целый класс задач, таких как сборка проекта, настройка линтеров, подключение библиотек и др.
@@ -176,13 +183,6 @@ JavaScript-код описывается в файлах с расширение
 * npm — 4.5.0.
 
 > **Примечание.** [npm](https://www.npmjs.com) — менеджер пакетов, входящий в состав Node.js.
-
-## Используемые обозначения
-
-* ![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg) — директория;
-* ![add folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-folder.svg) — создать директорию;
-* ![add file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-file.svg) — создать файл;
-* ![edit file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/edit-file.svg) — отредактировать файл.
 
 ## Приложение Hello, World
 
