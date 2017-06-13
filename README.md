@@ -6,7 +6,7 @@
 * [Приложение Hello, World](#Приложение-hello-world)
   * [Файловая структура](#Файловая-структура)
   * [Технологии](#Технологии)
-* [Приложение SSSR](#Приложение-sssr)
+* [Приложение Social Services Search Robot](#Приложение-social-services-search-robot)
   * [Схема работы](#Схема-работы)
   * [Модули Node](#Модули-node)
   * [Подготовка структуры проекта](#Подготовка-структуры-проекта)
@@ -458,7 +458,7 @@ JavaScript-код описывается в файлах с расширение
 
 > Подробнее о [технологии i-bem.js](https://ru.bem.info/platform/i-bem/).
 
-## Приложение SSSR
+## Приложение Social Services Search Robot
 
 **SSSR** — это сервис для поиска твитов и видео с заданным набором параметров. Параметры поиска передаются в APIs [Twitter](https://dev.twitter.com/rest/public/search) и [YouTube](https://developers.google.com/youtube/v3/docs/search/list) в виде HTTP-запроса методом GET. APIs формируют ответ в виде [JSON-документа](http://www.json.org).
 
