@@ -89,7 +89,7 @@
 1. Склонируйте bem-express:
 
     ```bash
-    git clone git@github.com:bem/bem-express.git sssr-project
+    git clone https://github.com/bem/bem-express.git sssr-project
     ```
 
     > **Примечание.** На момент написания документа текущей версией `bem-express` была версия 2.00.
