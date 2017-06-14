@@ -776,13 +776,13 @@ moment().startOf('day').fromNow();             // 17 часов назад
 
 ![static](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/static-changes.svg)
 
-Директория `static`:
+**Директория `static`**
 
 * Создайте поддиректорию `images`.
 
 * Перенесите фавиконку в поддиректорию `images`.
 
-Директория `common.blocks`:
+**Директория `common.blocks`**
 
 * Отредактируйте файл `root/root.bemtree.js`.
 
@@ -800,7 +800,7 @@ moment().startOf('day').fromNow();             // 17 часов назад
 
   [Полный код root.bemtree.js](https://gist.github.com/godfreyd/fba71361207a95134982579c13b0050d).
 
-Директория `server`:
+**Директория `server`**
 
 * Отредактируйте файл `index.js`.
 
