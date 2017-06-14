@@ -820,14 +820,6 @@ moment().startOf('day').fromNow();             // 17 часов назад
 
 В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
 
-```files
-static/
-    images/
-        favicon.ico       # Фавиконка
-    index.min.css         # Оптимизированный файл стилей
-    index.min.js          # Оптимизированный JavaScript-файл
-```
-
 ![new-static-folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/new-static-folder.svg)
 
 #### Изменения для серверного кода
