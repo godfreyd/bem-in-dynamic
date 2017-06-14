@@ -828,6 +828,8 @@ static/
     index.min.js          # Оптимизированный JavaScript-файл
 ```
 
+![new-static-folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/new-static-folder.svg)
+
 #### Изменения для серверного кода
 
 ![server-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/server-changes.svg)
