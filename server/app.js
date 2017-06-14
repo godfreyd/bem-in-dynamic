@@ -48,8 +48,8 @@ app
     }))
     .use(passport.initialize())
     .use(passport.session())
-    .use(baseUrl, routes)
-    .use(csrf());
+    .use(csrf())
+    .use(baseUrl, routes);
 
 // NOTE: conflicts with livereload
 isDev || app.use(slashes());

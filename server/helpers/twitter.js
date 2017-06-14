@@ -4,7 +4,7 @@ module.exports = function getContent(config, params) {
     return new Promise(function(resolve, reject) {
         new Twitter(config).get('search/tweets', params, function(err, data) {
             if (err) return reject(err);
-
+            if(!data.statuses.length) return resolve({});
             resolve({
                 nextPageId: data.statuses[data.statuses.length -1].id,
                 tweets: data.statuses.map(function(item) {

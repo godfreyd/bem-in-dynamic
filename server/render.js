@@ -23,14 +23,15 @@ function render(req, res, data, context) {
     }
 
     if (isDev && query.json) return res.send('<pre>' + JSON.stringify(data, null, 4) + '</pre>');
-
+    console.log('gfgfggfgfff');
+console.log(req.csrfToken());
     var bemtreeCtx = {
         block: 'root',
         context: context,
         // extend with data needed for all routes
         data: Object.assign({}, {
             url: req._parsedUrl,
-            // csrf: req.csrfToken()
+            csrf: req.csrfToken()
         }, data)
     };
 

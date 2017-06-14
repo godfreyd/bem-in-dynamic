@@ -1,8 +1,8 @@
 # Динамический проект на БЭМ
 
 * [Введение](#Введение)
-* [Используемые технологии](#Используемые-технологии)
 * [Используемые обозначения](#Используемые-обозначения)
+* [Используемые технологии](#Используемые-технологии)
 * [Приложение Hello, World](#Приложение-hello-world)
   * [Шаблонный репозиторий](#Шаблонный-репозиторий)
   * [Быстрый старт](#Быстрый-старт)
@@ -54,6 +54,13 @@
 * npm — 4.5.0.
 
 > **Примечание.** [npm](https://www.npmjs.com) — менеджер пакетов, входящий в состав Node.js.
+
+## Используемые обозначения
+
+* ![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg) — директория;
+* ![add folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-folder.svg) — создать директорию;
+* ![add file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-file.svg) — создать файл;
+* ![edit file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/edit-file.svg) — отредактировать файл.
 
 ## Используемые технологии
 
@@ -167,13 +174,6 @@ JavaScript-код описывается в файлах с расширение
 * гибко переопределять поведение библиотечных блоков.
 
 > Подробнее о [технологии i-bem.js](https://ru.bem.info/platform/i-bem/).
-
-## Используемые обозначения
-
-* ![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg) — директория;
-* ![add folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-folder.svg) — создать директорию;
-* ![add file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-file.svg) — создать файл;
-* ![edit file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/edit-file.svg) — отредактировать файл.
 
 ## Приложение Hello, World
 
@@ -619,7 +619,7 @@ var passport = require('passport'),
  * Функция монтирует необходимую стратегию авторизации
  * @function
  * @param {string} provider — Например, facebook, twitter, google, ...
- * @param {} todo
+ * @param {object} strategy — Стратегия авторизации
  */
 passport.use('provider', new OAuth2Strategy({
     authorizationURL: 'https://www.provider.com/oauth2/authorize',
@@ -650,7 +650,7 @@ var passport = require('passport'),
 /**
  * Функция монтирует стратегию YoutubeV3Strategy
  * @function
- * @param {} todo
+ * @param {object} strategy — Стратегия
  */
 passport.use(new YoutubeV3Strategy({
     clientID: YOUTUBE_APP_ID,
@@ -682,13 +682,13 @@ var client = new Twitter({
   consumer_secret: '',
   bearer_token: ''
 });
-// Инициализируем параметр поиска
+
 var params = {q: 'bem'};
 /**
  * Функция поиска. Ищет твиты по заданным параметрам.
  * @function
  * @param {object} params - Параметры поиска.
- * @param {object} callback - Возвращает найденные твиты.
+ * @param {function} callback - Получает найденные твиты.
  */
 client.get('search/tweets', params, function(error, tweets, response) {
   if (!error) {
@@ -728,13 +728,13 @@ var youtube = google.youtube({
     version: 'v3',
     auth: this.oauth2Client
 });
-// Инициализируем параметр поиска
+
 var params = {q: 'bem'};
 /**
  * Функция поиска. Ищет видео по заданным параметрам.
  * @function
  * @param {object} params - Параметры поиска.
- * @param {object} callback - Возвращает найденные видеоролики.
+ * @param {function} callback - Получает найденные видеоролики.
  */
 youtube.search.list(params, function(error, video, response) {
   if (!error) {
@@ -972,8 +972,6 @@ Twitter предлагает приложениям возможность вы�
 
     `eHZ6MWV2RlM0d0VFUFRHRUZQSEdFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
-    > **Примечание.** Пример кода умышленно сокращен.
-
 <a name="gettoken"></a>
 **Как получить OAuth-токен в обмен на код**
 
@@ -1141,7 +1139,7 @@ footer content
         helpers = require('../helpers'),
         env = process.env;
   /**
-   * Функция-обертка, контроллер. Объявлена для экспорта в модуль `routes.js`.
+   * Функция-обертка, контроллер.
    * @function
    * @param {object} req - Запрос.
    * @param {object} res - Ответ.
