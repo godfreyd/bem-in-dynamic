@@ -484,7 +484,7 @@ static/
 
 Схематично работу приложения можно представить следующим образом:
 
-![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
+![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg##ff)
 
 #### Шаг 1. Запрос
 
