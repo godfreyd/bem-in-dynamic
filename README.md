@@ -470,7 +470,7 @@ static/
 
 ## Приложение Social Services Search Robot
 
-**SSSR** — это сервис для поиска твитов и видео с заданным набором параметров. Параметры поиска передаются в APIs [Twitter](https://dev.twitter.com/rest/public/search) и [YouTube](https://developers.google.com/youtube/v3/docs/search/list) в виде HTTP-запроса методом GET. APIs формируют ответ в виде [JSON-документа](http://www.json.org).
+**SSSR** — это сервис для поиска твитов и видео, отвечающих заданному набору параметров. Параметры поиска передаются в APIs [Twitter](https://dev.twitter.com/rest/public/search) и [YouTube](https://developers.google.com/youtube/v3/docs/search/list) в виде HTTP-запроса методом GET. APIs формируют ответ в виде [JSON-документа](http://www.json.org).
 
 Цель разработки данного приложения — показать:
 
@@ -485,25 +485,27 @@ static/
 
 ![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
 
-#### Шаг 1. Получение данных
+#### Шаг 1. Запрос
 
-Приложение получает запрос от пользователя и обращается за данными к [Twitter Search API](https://dev.twitter.com/rest/public/search) и [YouTube Data API](https://developers.google.com/youtube/v3/docs/search/list).
+Пользователь отправляет запрос.
 
-За работу с [событиями](https://ru.bem.info/platform/i-bem/events/) и с [DOM-узлами блоков и элементов](https://ru.bem.info/platform/i-bem/dom/) отвечает клиентский JavaScript-фреймворк [i-bem.js](#i-bemjs).
+#### Шаг 2. Получение данных
+
+Приложение обращается за данными к [Twitter Search API](https://dev.twitter.com/rest/public/search) и [YouTube Data API](https://developers.google.com/youtube/v3/docs/search/list) в соответствии с полученным от пользователя запросом.
 
 > **Примечание.** Генерация запроса и подготовка полученных данных для дальнейшей шаблонизации подробно рассматриваются в разделе [работа с программными интерфейсами (API)](#Работа-с-программными-интерфейсами-api).
 
-#### Шаг 2. BEMTREE-шаблонизация
+#### Шаг 3. BEMTREE-шаблонизация
 
-После того как данные были получены, их необходимо добавить тем блокам, которые их ожидают.
+Приложение передает полученные данные шаблонизатору [BEMTREE](#bemtree). BEMTREE преобразует данные в BEMJSON.
 
-За обработку полученных данных отвечает [BEMTREE](#bemtree).
+#### Шаг 4. BEMHTML-шаблонизация
 
-#### Шаг 3. BEMHTML-шаблонизация
+Приложение передает BEMJSON шаблонизатору [BEMHTML](#bemhtml). BEMHTML преобразует BEMJSON в HTML.
 
-После того как итоговый BEMJSON был достроен необходимыми данными, его необходимо преобразовать в HTML.
+#### Шаг 5. Результат
 
-За преобразование результирующего BEMJSON в HTML отвечает [BEMHTML](#bemhtml).
+Приложение передает HTML браузеру пользователя.
 
 ### Используемые модули Node
 
