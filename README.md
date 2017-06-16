@@ -63,6 +63,7 @@ TODO// После прочтения вы сможете разрабатыва�
 В документе приняты следующие условные обозначения:
 
 * ![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg) — директория;
+* ![file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/file.svg) — файл;
 * ![add folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-folder.svg) — создать директорию;
 * ![add file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/add-file.svg) — создать файл;
 * ![edit file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/edit-file.svg) — отредактировать файл.
