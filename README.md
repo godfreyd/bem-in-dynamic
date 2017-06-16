@@ -1162,15 +1162,10 @@ Google предлагает приложениям возможность выд
 
 * URL, составленный согласно требованиям к нужному запросу.
 * [OAuth-токен](#Получение-oauth-токена-для-twitter), выданный вашему приложению для доступа к API.
+* Модуль [twitter](#twitter).
 
 <a name="twitter-call"></a>
 **Вызов API**
-
-Если у вас еще не установлен модуль [twitter](#twitter), установите его:
-
-```bash
-npm install twitter --save
-```
 
 Изменения для работы с Twitter Search API:
 
@@ -1186,7 +1181,7 @@ npm install twitter --save
 
 #### Реализация функциональности для работы с YouTube Data API
 
-[YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте [Youtube.com](https://www.youtube.com). По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения. Можно настроить запросы только на получение определенного типа ресурса.
+[YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте [Youtube.com](https://www.youtube.com). По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения.
 
 Подробнее:
 
@@ -1200,15 +1195,10 @@ npm install twitter --save
 
 * URL, составленный согласно требованиям к нужному запросу.
 * [OAuth-токен](#Получение-oauth-токена-для-google), выданный вашему приложению для доступа к API.
+* Модуль [googleapis](#googleapis).
 
 <a name="google-call"></a>
 **Вызов API**
-
-Если у вас еще не установлен модуль [googleapis](#googleapis), установите его:
-
-```bash
-npm install googleapis --save
-```
 
 Изменения для работы с YouTube Data API:
 
