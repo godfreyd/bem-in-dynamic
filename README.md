@@ -536,7 +536,7 @@ var express = require('express');
 var someModule = require('./somefolder/somemodule');
 ```
 
-Важной особенностью любого модуля является то, что он должен быть рассчитан на взаимодействие с Node. Для этого его нужно экспортировать с помощью объекта `exports`:
+Важной особенностью любого модуля является то, что он должен быть рассчитан на взаимодействие с Node. Для этого модуль нужно экспортировать с помощью объекта `exports`:
 
 ```js
 exports.someFunction = function () {
@@ -879,9 +879,7 @@ moment().startOf('day').fromNow();             // 17 часов назад
 
   * `index.js` — контроллер обработки запросов и рендеринга HTML.
 
-* Добавьте в файл `index.js` следующий контент:
-
-  * [Полный код index.js](https://gist.github.com/godfreyd/4bda7da3db029890378e15bcc38f32de).
+* Добавьте [следующий код](https://gist.github.com/godfreyd/4bda7da3db029890378e15bcc38f32de) в файл `index.js`.
 
 **Директория `helpers`**
 
@@ -1230,9 +1228,7 @@ npm install googleapis --save
 
 **Директория `server`**
 
-* Добавьте в файл `auth.js` следующий контент:
-
-  * [Полный код auth.js](https://gist.github.com/godfreyd/68af82df0bc171da54971990f442dddb).
+* Добавьте [следующий код](https://gist.github.com/godfreyd/68af82df0bc171da54971990f442dddb) в файл `auth.js`.
 
 * Отредактируйте файл `routes.js`.
 
