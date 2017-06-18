@@ -1276,7 +1276,7 @@ Google предлагает приложениям возможность выд
 3. Добавьте [logo.svg](static/images/logo.svg) в директорию `static/images`.
 4. Перезапустите сервер: `npm run dev`.
 
-Приложение **SSSR** готово.
+Приложение **Social Services Search Robot** готово.
 
 **Не получилось?**
 
