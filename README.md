@@ -1133,17 +1133,6 @@ Google предлагает приложениям возможность выд
   };
   ```
 
-**Директория `helpers`**
-
-* Добавьте в файл `index.js` следующий контент:
-
-  ```js
-  module.exports = {
-      youtube: require('./youtube'),
-      twitter: require('./twitter')
-  };
-  ```
-
 ### Работа с Twitter Search API
 
 [Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
@@ -1174,6 +1163,14 @@ Google предлагает приложениям возможность выд
 * Измените весь текущий контент файла `index.js` на [следующий](https://gist.github.com/godfreyd/3420597de46509b02c69707d596c8dc4).
 
 **Директория `helpers`**
+
+* Добавьте в файл `index.js` следующий контент:
+
+  ```js
+  module.exports = {
+      twitter: require('./twitter')
+  };
+  ```
 
 * Добавьте [следующий код](https://gist.github.com/godfreyd/e48b6831d785e51ee6ce0892151e3395) в файл `twitter.js`.
 
