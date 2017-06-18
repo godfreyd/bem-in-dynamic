@@ -16,7 +16,11 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
             }
         },
 
-        _onChange: function(e) {
+        _onChange: function() {
+            this._getTweets();
+        },
+
+        _onFormSubmit: function(e) {
             e.preventDefault();
             this._getTweets();
         },
@@ -83,7 +87,7 @@ modules.define('sssr', ['i-bem-dom', 'jquery', 'menu', 'form', 'input', 'checkbo
             var ptp = this.prototype;
             this._events(Menu).on('change', ptp._onMenuChange);
             this._events(Input).on('change', ptp._onChange);
-            this._events(Form).on('submit', ptp._onChange);
+            this._events(Form).on('submit', ptp._onFormSubmit);
             this._events(Result).on('scroll', ptp._onScroll);
             this._events(Checkbox).on({ modName : 'checked', modVal : '*' }, ptp._onChange);
         }
