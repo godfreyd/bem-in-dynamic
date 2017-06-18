@@ -487,7 +487,7 @@ static/
 
 Схематично работу приложения можно представить следующим образом:
 
-![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg##ff)
+![Chart of Social Services Search Robot](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/chart.svg)
 
 #### Шаг 1. Запрос
 
@@ -1078,7 +1078,7 @@ Google предлагает приложениям возможность выд
 
 Изменения для работы с Twitter Search API:
 
-![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg)
+![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg#33)
 
 **Директория `controllers`**
 
