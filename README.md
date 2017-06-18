@@ -956,7 +956,7 @@ Twitter предлагает приложениям возможность вы�
 
     **Пример**
 
-    `eHZ6MWV2RlM0d0VFUFRHRUZQSEJvZzpMOHFxOVBaeVJnNmllS0dFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZwo=`
+    `eHZ6MWV2RlM0d0VFUFRHRUZQSEdFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
 
 > **Примечание.** Если возникли сложности, воспользуйтесь онлайн-ресурсом [base64encode.org](https://www.base64encode.org).
 
