@@ -944,20 +944,21 @@ Twitter предлагает приложениям возможность вы�
 
 Чтобы закодировать строку методом Base64:
 
-1. Перейдите на сайт [base64encode.org](https://www.base64encode.org).
-2. Перейдите в раздел **Encode**.
-3. Введите в поле **Type (or paste) here** строку вида: `Consumer Key:Consumer Secret`.
+1. Сформируйте строку вида: `Consumer Key:Consumer Secret`.
 
     **Пример**
 
     `xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg`
 
-4. Нажмите кнопку **Encode**.
+2. Запустите терминал или Git Bash.
+4. Выполните команду `echo "xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg" | base64`.
 5. Скопируйте полученный код.
 
     **Пример**
 
     `eHZ6MWV2RlM0d0VFUFRHRUZQSEdFS2hab2xHQzB2SldMdzhpRUo4OERSZHlPZw==`
+
+    > **Примечание.** Если возникли сложности, воспользуйтесь онлайн-ресурсом [base64encode.org](https://www.base64encode.org).
 
 <a name="gettoken"></a>
 **Как получить OAuth-токен в обмен на код**
