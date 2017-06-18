@@ -1155,8 +1155,7 @@ Google предлагает приложениям возможность выд
 * [Доступ к API](#twitter-access)
 * [Вызов API](#twitter-call)
 
-<a name="twitter-access"></a>
-**Доступ к API**
+#### Доступ к API
 
 Для успешного вызова API необходимы:
 
@@ -1164,8 +1163,7 @@ Google предлагает приложениям возможность выд
 * [OAuth-токен](#Получение-oauth-токена-для-twitter), выданный вашему приложению для доступа к API.
 * Модуль [twitter](#twitter).
 
-<a name="twitter-call"></a>
-**Вызов API**
+#### Вызов API
 
 Изменения для работы с Twitter Search API:
 
@@ -1188,8 +1186,7 @@ Google предлагает приложениям возможность выд
 * [Доступ к API](#google-access)
 * [Вызов API](#google-call)
 
-<a name="google-access"></a>
-**Доступ к API**
+#### Доступ к API
 
 Для успешного вызова API необходимы:
 
@@ -1197,8 +1194,7 @@ Google предлагает приложениям возможность выд
 * [OAuth-токен](#Получение-oauth-токена-для-google), выданный вашему приложению для доступа к API.
 * Модуль [googleapis](#googleapis).
 
-<a name="google-call"></a>
-**Вызов API**
+#### Вызов API
 
 Изменения для работы с YouTube Data API:
 
