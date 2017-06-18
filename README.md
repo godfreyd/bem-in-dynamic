@@ -1117,7 +1117,7 @@ Google предлагает приложениям возможность выд
 
 Изменения для работы с YouTube Data API:
 
-![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg)
+![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg#33)
 
 **Директория `server`**
 
@@ -1164,6 +1164,15 @@ Google предлагает приложениям возможность выд
 * Измените весь текущий контент файла `index.js` на [следующий](https://gist.github.com/godfreyd/60d5d123c45c067b3fb675688dc74835).
 
 **Директория `helpers`**
+
+* Добавьте в файл `index.js` следующий контент (см. комментарии):
+
+  ```js
+  module.exports = {
+      twitter: require('./twitter'),
+      youtube: require('./youtube')        // Подключаем модуль `youtube.js`
+  };
+  ```
 
 * Добавьте [следующий код](https://gist.github.com/godfreyd/e103013e1fe480965cd84b3e7040d04b) в файл `youtube.js`.
 
