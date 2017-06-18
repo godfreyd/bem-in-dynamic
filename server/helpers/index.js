@@ -1,4 +1,4 @@
 module.exports = {
-    youtube: require('./youtube'),
-    twitter: require('./twitter')
+    twitter: require('./twitter'),
+    youtube: require('./youtube')
 };
