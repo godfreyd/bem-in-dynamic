@@ -270,8 +270,8 @@ JavaScript-код описывается в файлах с расширение
     На компьютере запустился:
 
     * сервер — отвечает за обработку динамических данных;
-    * [nodemon](https://github.com/remy/nodemon/) — cледит за изменениями в [файловой структуре](https://ru.bem.info/methodology/filestructure/) и перезапускает сервер;
-    * [chokidar](https://github.com/paulmillr/chokidar) — cледит за изменениями в файлах директорий `*.blocks/` и перестраивает структуру проекта;
+    * [nodemon](https://github.com/remy/nodemon/) — следит за изменениями в [файловой структуре](https://ru.bem.info/methodology/filestructure/) и перезапускает сервер;
+    * [chokidar](https://github.com/paulmillr/chokidar) — следит за изменениями в файлах директорий `*.blocks/` и перестраивает структуру проекта;
     * [livereload](https://github.com/napcs/node-livereload) — обновляет страницу в браузере.
 
 7. Откройте браузер и введите адрес [localhost:3000](http://localhost:3000).
