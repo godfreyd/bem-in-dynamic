@@ -23,8 +23,7 @@ function render(req, res, data, context) {
     }
 
     if (isDev && query.json) return res.send('<pre>' + JSON.stringify(data, null, 4) + '</pre>');
-    console.log('gfgfggfgfff');
-console.log(req.csrfToken());
+
     var bemtreeCtx = {
         block: 'root',
         context: context,
