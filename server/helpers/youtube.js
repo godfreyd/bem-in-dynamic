@@ -26,7 +26,6 @@ module.exports = function(config, user, params) {
     return new Promise(function(resolve, reject) {
         (new GoogleYoutube(config)).searchList(user, params, function(err, data) {
             if (err) return reject(err);
-
             if (!data.items.length) return resolve({});
 
             resolve({
