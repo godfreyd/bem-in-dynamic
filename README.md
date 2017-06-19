@@ -1018,7 +1018,7 @@ Google предлагает приложениям возможность выд
 
 1. Изучите [документацию](https://developers.google.com/youtube/v3/docs/search/list).
 2. Зарегистрируйте [приложение](https://console.developers.google.com/) и получите Client ID и Client Secret.
-3. Укажите callback URL (в нашем случае это [localhost:3000](http://localhost:3000)) в учетной записи вашего приложения.
+3. Укажите callback URL (в нашем случае это `http://localhost:3000`) в учетной записи вашего приложения.
 4. Используйте полученные Client ID и Client Secret в запросах к YouTube Data API.
 
 > **Важно!** Сохраните полученные ключи (Client ID и Client Secret). Они необходимы для [конфигурационного файла](#Конфигурация-приложения) приложения.
