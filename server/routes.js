@@ -1,7 +1,7 @@
 var router = require('express').Router(),
     controllers = require('./controllers'),
     passportYouTube = require('./auth'),
-    middleware = require('./middleware'),
+    middleware = require('./middleware/auth'),
     isAuthenticated = middleware.isAuthenticated;
 
 router
