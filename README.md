@@ -947,6 +947,8 @@ Twitter предлагает приложениям возможность вы�
 
     `xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg`
 
+    > **Примечание.** Получить ключи *Consumer Key* и *Consumer Secret* можно зайдя во вкладку **Keys and Access Tokens** [вашего приложения](https://apps.twitter.com).
+
 2. Запустите терминал или Git Bash.
 4. Выполните команду `echo "xvz1evFS4wEEPTGEFPHBog:L8qq9PZyRg6ieKGEKhZolGC0vJWLw8iEJ88DRdyOg" | base64`.
 5. Скопируйте полученный код.
