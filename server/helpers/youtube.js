@@ -6,7 +6,7 @@ function GoogleYoutube(credentials) {
 };
 
 GoogleYoutube.prototype.searchList = function(user, params, callback) {
-  
+
     this.oauth2Client.setCredentials({
         access_token: user.token,
         refresh_token: user.refreshtoken
@@ -30,7 +30,7 @@ module.exports = function(config, user, params) {
             if (!data.items.length) return resolve({});
 
             resolve({
-                nextPageId: data.items[data.items.length -1].nextPageToken,
+                nextPageId: data.nextPageToken,
                 videos: data.items.map(function(item) {
                     return {
                         name: item.snippet.channelTitle,
