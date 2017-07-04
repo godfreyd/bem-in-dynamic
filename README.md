@@ -547,7 +547,7 @@ exports.someFunction = function () {
 
 Также можно создавать модули, состоящие из конструкторов и функций, затем экспортировать их с помощью `module.exports`.
 
-Основные модули **SSSR**:
+Для работы приложения потребуются следующие модули:
 
 * [express](#express)
 * [passport](#passport)
@@ -555,6 +555,12 @@ exports.someFunction = function () {
 * [twitter](#twitter)
 * [googleapis](#googleapis)
 * [moment](#moment)
+
+> **Примечание.** Установить необходимые модули можно одной командой:
+>
+> ```bash
+> npm install express passport passport-youtube-v3 twitter googleapis moment --save
+> ```
 
 #### express
 
