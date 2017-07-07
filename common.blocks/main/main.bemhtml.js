@@ -2,9 +2,7 @@ block('main')(
     tag()(function() {
         return this.ctx.tag || 'section';
     }),
-
-    js()(true),
-
+    addJs()(true),
     content()(function() {
         return {
             elem: 'inner',

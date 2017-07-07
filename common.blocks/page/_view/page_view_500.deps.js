@@ -1,5 +1,5 @@
 ({
     mustDeps: {
-        mods: { theme: 'art' }
+        mods: { theme: 'sssr' }
     }
 });

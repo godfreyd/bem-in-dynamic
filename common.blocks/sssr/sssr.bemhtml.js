@@ -1,1 +1,1 @@
-block('sssr').js()(true);
+block('sssr').addJs()(true);
