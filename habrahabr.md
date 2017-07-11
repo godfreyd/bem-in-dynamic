@@ -57,7 +57,7 @@
 
 ## Используемые обозначения
 
-В документе приняты следующие условные обозначения:
+Чтобы статья получилась ярче, мы немного порисуем:
 
 * ![folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/folder.svg) — директория;
 * ![file](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/icons/file.svg) — файл;
