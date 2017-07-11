@@ -1,0 +1,12 @@
+:block(page):mod(theme sssr)
+{
+    font: 16px 'Open Sans', Arial, sans-serif;
+
+    margin: 0;
+
+    background: #fff;
+    @media (max-width: 319px)
+    {
+        font-size: 12px;
+    }
+}
