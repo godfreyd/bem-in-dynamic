@@ -47,7 +47,7 @@
 * [YouTube Data API](https://developers.google.com/youtube/v3/docs/search/list);
 * [Twitter Search API](https://dev.twitter.com/rest/public/search).
 
-Также потребуется установить:
+Для начала потребуется установить:
 
 * [Node.js 4+](https://nodejs.org)
 * [Git](https://git-scm.com)
