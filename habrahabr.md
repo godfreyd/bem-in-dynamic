@@ -426,7 +426,7 @@ desktop.bundles/
 Файловая структрура директории:
 
 ```files
-server/                   
+server/
     config.js             # Конфигурация приложения
     index.js              # Точка входа приложения
     rebuild.js            # Пересборка приложения
@@ -450,8 +450,6 @@ static/
     index.min.css         # Символическая ссылка на `desktop.bundles/index/index.min.css`
     index.min.js          # Символическая ссылка на `desktop.bundles/index/index.min.js`
 ```
-
-> Подробнее о [символических ссылках](https://ru.wikipedia.org/wiki/Символическая_ссылка).
 
 ## Приложение Social Services Search Robot
 
