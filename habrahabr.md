@@ -427,22 +427,10 @@ npm install express --save
 var express = require('express');
 var app = express();
 
-/**
- * Функция обрабатывает все GET-запросы с главной страницы приложения
- * @function
- * @param {object} req - Запрос.
- * @param {object} res - Ответ.
- */
 app.get('/', function (req, res) {
   res.send('Hello World!')
 });
 
-/**
- * Функция запускает приложение и прослушивает запросы на порте
- * @function
- * @param {TODO}
- * @param {TODO}
- */
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 });
