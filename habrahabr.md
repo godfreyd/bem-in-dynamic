@@ -708,9 +708,7 @@ Google предлагает приложениям возможность выд
 
 ### Работа с Twitter Search API
 
-[Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
-
-Позволяет найти последние или популярные твиты, опубликованные на сайте Twitter.com за последние 7 дней.
+[Twitter Search API](https://dev.twitter.com/rest/public/search) позволяет найти последние или популярные твиты, опубликованные на сайте Twitter.com за последние 7 дней.
 
 Подробнее:
 
