@@ -710,7 +710,7 @@ Google предлагает приложениям возможность выд
 
 [Twitter Search API](https://dev.twitter.com/rest/public/search) позволяет найти последние или популярные твиты, опубликованные на сайте Twitter.com за последние 7 дней.
 
-Для успешного вызова API необходимо сделать следующее:
+Для успешного вызова API необходимо сделать следующие изменения:
 
 ![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg)
 
@@ -734,7 +734,7 @@ Google предлагает приложениям возможность выд
 
 [YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте Youtube.com. По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения.
 
-Для успешного вызова API необходимо сделать следующее:
+Для успешного вызова API необходимо сделать следующие изменения:
 
 ![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg)
 
