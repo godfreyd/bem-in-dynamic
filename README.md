@@ -1091,7 +1091,7 @@ Google предлагает приложениям возможность выд
 
 Изменения для работы с YouTube Data API:
 
-![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg#33)
+![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg)
 
 **Директория `server`**
 

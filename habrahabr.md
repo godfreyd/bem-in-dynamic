@@ -721,7 +721,7 @@ Google предлагает приложениям возможность выд
 
 * URL, составленный согласно требованиям к нужному запросу.
 * [OAuth-токен](#Получение-oauth-токена-для-twitter), выданный вашему приложению для доступа к API.
-* Модуль [twitter](#twitter).
+* Модуль twitter.
 
 #### Вызов API
 
@@ -760,13 +760,13 @@ Google предлагает приложениям возможность выд
 
 * URL, составленный согласно требованиям к нужному запросу.
 * [OAuth-токен](#Получение-oauth-токена-для-google), выданный вашему приложению для доступа к API.
-* Модуль [googleapis](#googleapis).
+* Модуль googleapis.
 
 #### Вызов API
 
 Изменения для работы с YouTube Data API:
 
-![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg#33)
+![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg)
 
 **Директория `server`**
 
