@@ -375,8 +375,6 @@ JavaScript-код описывается в файлах с расширение
 
 Давайте ближе познакомимся с концепцией модуля Node и рассмотрим основные из них, необходимые для работы приложения.
 
-> **Важно!** Мы не станем рассматривать все используемые модули. Подробно с необходимым модулем можно ознакомиться на сайте [npm](https://www.npmjs.com).
-
 Базовая реализация Node остается настолько простой, насколько это возможно. Вместо того, чтобы встраивать все возможные компоненты прямо в Node, разработчики предоставляют дополнительную функциональность в виде отдельных модулей (пакетов).
 
 Система модулей Node построена по образцу системы [CommonJS](https://en.wikipedia.org/wiki/CommonJS), механизма создания взаимодействующих модулей. Центральное место в системе занимает контракт, который должен выполняться разработчиками, чтобы их модули нормально взаимодействовали с другими.
@@ -405,42 +403,18 @@ module.exports = {
 
 Для работы приложения потребуются следующие модули:
 
-* [express](#express)
-* [passport](#passport)
-* [passport-youtube-v3](#passport-youtube-v3)
-* [twitter](#twitter)
-* [googleapis](#googleapis)
-* [moment](#moment)
+* [express](http://expressjs.com/ru/) — предоставляет большую часть функциональности, необходимой для построения веб-приложения;
+* [passport](http://passportjs.org) — предоставляет различные стратегии аутентификации для приложений Node.js;
+* [passport-youtube-v3](https://github.com/yanatan16/passport-youtube-v3) — предоставляет механизм аутентификации на Youtube посредством аккаунта Youtube и токенов [OAuth 2.0](https://oauth.net/2/);
+* [twitter](https://www.npmjs.com/package/twitter) — клиентская библиотека для работы с Twitter REST APIs;
+* [googleapis](http://google.github.io/google-api-nodejs-client/) — клиентская библиотека для работы с Google REST APIs;
+* [moment](http://momentjs.com) — JavaScript библиотека для синтаксического анализа, валидации и форматирования дат.
 
 Установить их можно одной командой:
 
 ```bash
 npm install express passport passport-youtube-v3 twitter googleapis moment --save
 ```
-
-#### express
-
-Предоставляет большую часть функциональности, необходимой разработчику для построения веб-приложений.
-
-#### passport
-
-Предоставляет [различные стратегии](http://passportjs.org) аутентификации в приложениях на Node.js.
-
-#### passport-youtube-v3
-
-Предоставляет [механизм](https://github.com/yanatan16/passport-youtube-v3) аутентификации на Youtube посредством аккаунта Youtube и токенов [OAuth 2.0](https://oauth.net/2/).
-
-#### twitter
-
-Клиентская [библиотека](https://www.npmjs.com/package/twitter) для работы с Twitter REST APIs.
-
-#### googleapis
-
-Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с Google REST APIs.
-
-#### moment
-
-JavaScript [библиотека](http://momentjs.com) для синтаксического анализа, валидации и форматирования дат.
 
 ### Подготовка структуры проекта
 
