@@ -471,10 +471,6 @@ npm install express passport passport-youtube-v3 twitter googleapis moment --sav
 
   [Полный код index.js](https://gist.github.com/godfreyd/fdc6e2d7f1f42deac4dcfc0dde36bd11).
 
-В результате выполненных действий файловая структура директории `static` должна иметь следующий вид:
-
-![new-static-folder](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/new-static-folder.svg)
-
 #### Изменения для серверного кода
 
 ![server-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/server-changes.svg)
@@ -550,27 +546,6 @@ npm install express passport passport-youtube-v3 twitter googleapis moment --sav
 * Создайте пустой `JS`-файл:
 
   * `auth.js` — модуль проверки прохождения аутентификации на YouTube.
-
-В результате выполненных действий файловая структура директории `server` должна иметь следующий вид:
-
-```files
-server/
-    controllers/
-        index.js          # Контроллер обработки запросов и рендеринга HTML
-    helpers/
-        index.js          # Входная точка для модулей-хелперов (пустой)
-        twitter.js        # Модуль-хелпер для работы с Twitter Search API (пустой)
-        youtube.js        # Модуль-хелпер для работы с YouTube Data API (пустой)
-    middleware/
-        auth.js           # Модуль проверки прохождения аутентификации на YouTube (пустой)
-    app.js                # Модуль монтирования промежуточных модулей
-    auth.js               # Модуль аутентификации на YouTube (пустой)
-    config.json           # Конфигурация приложения
-    index.js              # Запуск приложения и прослушивание запросов на порте
-    rebuild.js            # Модуль отслеживания изменений и перезапуска сервера
-    render.js             # Рендеринг HTML
-    routes.js             # Маршрутизатор
-```
 
 ### Получение OAuth-токенов
 
