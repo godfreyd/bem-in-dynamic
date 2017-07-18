@@ -98,7 +98,7 @@ exports.blocks = [
 Конечно перечислять все блоки страницы в нужном порядке неудобно. Поэтому обычно в декларации определяют только один блок, например `root`, который следует рассматривать как центральную «точку входа»:
 
 ```js
-// `page.bemdecl.js`
+// Файл page.bemdecl.js`
 exports.blocks = [
     { name: 'root' }
 ];  
@@ -107,11 +107,11 @@ exports.blocks = [
 Все остальные БЭМ-сущности попадают в сборку [по зависимостям](#deps):
 
 ```files
-root(DECL)                   # Файл `page.bemdecl.js`, в нем определен блок `root`
+root(DECL)                   # Файл page.bemdecl.js (в нем определен блок `root`)
 |
-└──> root(DEPS)              # Файл `root.deps.js` (блок `root` зависит от блока `page`)
+└──> root(DEPS)              # Файл root.deps.js (блок `root` зависит от блока `page`)
      |
-     └──> page(DEPS)         # Файл `page.deps.js` (блок `page` зависит от: `header`, `body`, `footer`)
+     └──> page(DEPS)         # Файл page.deps.js (блок `page` зависит от: `header`, `body`, `footer`)
           |
           ├──> header(DEPS)  # И т. д.
           |    |
