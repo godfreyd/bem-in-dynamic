@@ -432,11 +432,11 @@ npm install express passport passport-youtube-v3 twitter googleapis moment --sav
 
 #### twitter
 
-Клиентская [библиотека](https://www.npmjs.com/package/twitter) для работы с [Twitter REST APIs](https://dev.twitter.com/rest/public).
+Клиентская [библиотека](https://www.npmjs.com/package/twitter) для работы с Twitter REST APIs.
 
 #### googleapis
 
-Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с [Google REST APIs](https://developers.google.com/apis-explorer/#p/).
+Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с Google REST APIs.
 
 #### moment
 
