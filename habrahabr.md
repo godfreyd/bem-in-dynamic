@@ -109,7 +109,7 @@ exports.blocks = [
 Примерно так:
 
 ```files
-root(DECL)                   # Файл page.bemdecl.js (определен блок `root`)
+root(DECL)                   # Файл page.bemdecl.js (задекларирован только блок `root`)
 |
 └──> root(DEPS)              # Файл root.deps.js (блок `root` зависит от блока `page`)
      |
