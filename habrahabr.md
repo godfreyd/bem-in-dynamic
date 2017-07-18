@@ -710,24 +710,9 @@ Google предлагает приложениям возможность выд
 
 [Twitter Search API](https://dev.twitter.com/rest/public/search) позволяет найти последние или популярные твиты, опубликованные на сайте Twitter.com за последние 7 дней.
 
-Подробнее:
+Для успешного вызова API необходимо сделать следующее:
 
-* [Доступ к API](#Доступ-к-api)
-* [Вызов API](#Вызов-api)
-
-#### Доступ к API
-
-Для успешного вызова API необходимы:
-
-* URL, составленный согласно требованиям к нужному запросу.
-* [OAuth-токен](#Получение-oauth-токена-для-twitter), выданный вашему приложению для доступа к API.
-* Модуль twitter.
-
-#### Вызов API
-
-Изменения для работы с Twitter Search API:
-
-![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg#33)
+![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg)
 
 **Директория `controllers`**
 
@@ -749,22 +734,7 @@ Google предлагает приложениям возможность выд
 
 [YouTube Data API](https://developers.google.com/youtube/v3/) позволяет найти видеоролики, опубликованные на сайте Youtube.com. По умолчанию в набор результата поиска включены следующие ресурсы: видео, каналы, списки воспроизведения.
 
-Подробнее:
-
-* [Доступ к API](#Доступ-к-api-1)
-* [Вызов API](#Вызов-api-1)
-
-#### Доступ к API
-
-Для успешного вызова API необходимы:
-
-* URL, составленный согласно требованиям к нужному запросу.
-* [OAuth-токен](#Получение-oauth-токена-для-google), выданный вашему приложению для доступа к API.
-* Модуль googleapis.
-
-#### Вызов API
-
-Изменения для работы с YouTube Data API:
+Для успешного вызова API необходимо сделать следующее:
 
 ![youtube-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/youtube-changes.svg)
 

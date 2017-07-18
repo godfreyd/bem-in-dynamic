@@ -1052,7 +1052,7 @@ Google предлагает приложениям возможность выд
 
 Изменения для работы с Twitter Search API:
 
-![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg#33)
+![twitter-changes](https://rawgit.com/godfreyd/bem-in-dynamic/master/static/images/twitter-changes.svg)
 
 **Директория `controllers`**
 
