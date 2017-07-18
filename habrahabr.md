@@ -108,19 +108,19 @@ exports.blocks = [
 ```files
 root(DECL)                   # Файл page.bemdecl.js, в нем определен блок `root`
 |
-└──> root(DEPS)              # Файл root.deps.js с зависимостью от блока `page`
+└──> root(DEPS)              # Файл root.deps.js (блок `root` зависит от блока `page`)
      |
-     └──> page(DEPS)         # Файл page.deps.js с зависимостью от блоков: `header`, `body`, `footer`
+     └──> page(DEPS)         # Файл page.deps.js (блок `page` зависит от блоков: `header`, `body`, `footer`)
           |
-          ├──> header(DEPS)
+          ├──> header(DEPS)  # И т. д.
           |    |
           |    └──> ...
           |
-          ├──> body(DEPS)
+          ├──> body(DEPS)    # И т. д.
           |    |
           |    └──> ...
           |
-          └──> footer(DEPS)
+          └──> footer(DEPS)  # И т. д.
                |
                └──> ...
 ```
