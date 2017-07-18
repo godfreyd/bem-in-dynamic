@@ -644,7 +644,7 @@ passport.use(new YoutubeV3Strategy({
 
 #### twitter
 
-Клиентская [библиотека](https://www.npmjs.com/package/twitter) для работы с [Twitter REST APIs](https://dev.twitter.com/rest/public).
+Клиентская [библиотека](https://www.npmjs.com/package/twitter) для работы с [Twitter REST API](https://dev.twitter.com/rest/public).
 
 Установка:
 
@@ -679,7 +679,7 @@ client.get('search/tweets', params, function(error, tweets, response) {
 
 #### googleapis
 
-Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с [Google REST APIs](https://developers.google.com/apis-explorer/#p/).
+Клиентская [библиотека](http://google.github.io/google-api-nodejs-client/) для работы с [Google REST API](https://developers.google.com/apis-explorer/#p/).
 
 Установка:
 
@@ -1033,9 +1033,7 @@ Google предлагает приложениям возможность выд
 
 ### Работа с Twitter Search API
 
-[Twitter Search API](https://dev.twitter.com/rest/public/search) — это часть [Twitter REST APIs](https://dev.twitter.com/rest/public).
-
-Позволяет найти последние или популярные твиты, опубликованные на сайте Twitter.com за последние 7 дней.
+[Twitter Search API](https://dev.twitter.com/rest/public/search) позволяет найти последние или популярные твиты, опубликованные на сайте Twitter.com за последние 7 дней.
 
 Подробнее:
 

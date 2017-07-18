@@ -406,8 +406,8 @@ module.exports = {
 * [express](http://expressjs.com/ru/) — предоставляет большую часть функциональности, необходимой для построения веб-приложения;
 * [passport](http://passportjs.org) — предоставляет различные стратегии аутентификации для приложений Node.js;
 * [passport-youtube-v3](https://github.com/yanatan16/passport-youtube-v3) — предоставляет механизм аутентификации на Youtube посредством аккаунта Youtube и токенов [OAuth 2.0](https://oauth.net/2/);
-* [twitter](https://www.npmjs.com/package/twitter) — клиентская библиотека для работы с Twitter REST APIs;
-* [googleapis](http://google.github.io/google-api-nodejs-client/) — клиентская библиотека для работы с Google REST APIs;
+* [twitter](https://www.npmjs.com/package/twitter) — клиентская библиотека для работы с Twitter REST API;
+* [googleapis](http://google.github.io/google-api-nodejs-client/) — клиентская библиотека для работы с Google REST API;
 * [moment](http://momentjs.com) — JavaScript библиотека для синтаксического анализа, валидации и форматирования дат.
 
 Установить их можно одной командой:
