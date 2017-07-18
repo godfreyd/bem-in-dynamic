@@ -107,9 +107,9 @@ exports.blocks = [
 Все остальные БЭМ-сущности попадают в сборку [по зависимостям](#deps) (технология DEPS). Примерно так:
 
 ```files
-root(DECL)                   # Файл page.bemdecl.js (в нем определен блок `root`)
+root(DECL)                   # Файл page.bemdecl.js (определен блок `root`)
 |
-└──> root(DEPS)              # Файл root.deps.js (в нем определена зависимость блока `root` от блока `page`)
+└──> root(DEPS)              # Файл root.deps.js (блок `root` зависит от блока `page`)
      |
      └──> page(DEPS)         # Файл page.deps.js (блок `page` зависит от: `header`, `body`, `footer`)
           |
