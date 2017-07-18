@@ -1,4 +1,13 @@
 :block(page):mod(view 404)
 {
+    font-size: 72px;
+
+    text-align: center;
+
     color: red;
+
+    :block(page):elem(inner)
+    {
+        padding: 0;
+    }
 }
