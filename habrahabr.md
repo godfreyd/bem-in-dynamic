@@ -412,7 +412,7 @@ module.exports = {
 * [googleapis](#googleapis)
 * [moment](#moment)
 
-Установить необходимые для приложения модули можно одной командой:
+Установить их можно одной командой:
 
 ```bash
 npm install express passport passport-youtube-v3 twitter googleapis moment --save
