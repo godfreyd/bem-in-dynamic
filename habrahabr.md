@@ -101,6 +101,7 @@ exports.blocks = [
 Давайте представим себе мифический проект, в декларации которого определен блок `root`:
 
 ```js
+// desktop.bundles/page/page.bemdecl.js
 exports.blocks = [
     { name: 'root' }
 ];  
@@ -109,6 +110,7 @@ exports.blocks = [
 Чтобы добавить в сборку другие блоки (например `header`, `body`, `footer`), необходимо создать файл `root.deps.js` и описать зависимость от этих блоков:
 
 ```js
+// common.blocks/root/root.deps.js
 ({
     block: 'root',
     shouldDeps: [
