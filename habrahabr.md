@@ -8,7 +8,7 @@
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 
-<p align="center">
+<p align="right">
   <b>Some Links:</b><br>
   <a href="#">Link 1</a> |
   <a href="#">Link 2</a> |
