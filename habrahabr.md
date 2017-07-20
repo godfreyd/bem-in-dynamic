@@ -1,6 +1,13 @@
 # Изучаем БЭМ — переходим на сторону сервера
 
-<div style="text-align: right"> your-text-here </div>
+
+<div style="text-align:right"> your-text-here </div>
+
+| Option | Description |
+| ------:| -----------:|
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+
 <small>Сначала вы его отрицаете, потом вы его ненавидите, а потом вы не можете без него жить.</small></br>
 <small>*Артем Курбатов. Из доклада «БЭМ: мастер-класс» от 02.11.2013*</small>
 
