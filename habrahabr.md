@@ -140,19 +140,19 @@ exports.blocks = [
 Нижеследующая схема показывает логику сборки по зависимостям:
 
 ```files
-index(DECL)               # декларация блока page
+index(DECL)               # Декларация блока page
 |
-└──> page(DEPS)           # зависимость блока page
+└──> page(DEPS)           # Зависимость блока page от header, body, footer
     |
-    ├──> header(DEPS)     # зависимость блока header
+    ├──> header(DEPS)
     |    |
     |    └──> ...
     |
-    ├──> body(DEPS)       # зависимость блока body
+    ├──> body(DEPS)
     |    |
     |    └──> ...
     |
-    └──> footer(DEPS)     # зависимость блока footer
+    └──> footer(DEPS)
          |
          └──> ...
 ```
