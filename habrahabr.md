@@ -8,8 +8,14 @@
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 
-<center>Centered text</center>
-
+<p align="center">
+  <b>Some Links:</b><br>
+  <a href="#">Link 1</a> |
+  <a href="#">Link 2</a> |
+  <a href="#">Link 3</a>
+  <br><br>
+  <img src="http://s.4cdn.org/image/title/105.gif">
+</p>
 
 <small>Сначала вы его отрицаете, потом вы его ненавидите, а потом вы не можете без него жить.</small></br>
 <small>*Артем Курбатов. Из доклада «БЭМ: мастер-класс» от 02.11.2013*</small>
